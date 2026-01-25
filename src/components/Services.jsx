@@ -25,25 +25,28 @@ const Services = () => {
     {
       icon: <FileCheck className="w-8 h-8" />,
       bgIcon: <ShieldCheck className="w-32 h-32 opacity-5 absolute top-4 right-4" />,
-      title: 'Security Reviews & Assessments',
-      description: 'Comprehensive security posture evaluations, risk assessments, and compliance reviews aligned with industry frameworks and best practices.',
+      title: 'Enterprise Security Assessments (GCED Certified)',
+      description: 'SANS GCED certified enterprise defense assessments evaluating your security posture, detection capabilities, and defensive architecture.',
       features: [
+        'Enterprise defense capability assessment',
         'Security policy and procedure reviews',
         'Compliance gap analysis (ISO 27001, NIST, SOC 2)',
-        'Risk assessment and remediation planning',
-        'Security architecture evaluation'
+        'Detection and response capability evaluation',
+        'Risk assessment and remediation planning'
       ]
     },
     {
       icon: <Terminal className="w-8 h-8" />,
       bgIcon: <Bug className="w-32 h-32 opacity-5 absolute top-4 right-4" />,
-      title: 'Penetration Testing',
-      description: 'Advanced penetration testing services to identify vulnerabilities before attackers do, with detailed remediation guidance.',
+      title: 'Penetration Testing (GPEN/GCPN Certified)',
+      description: 'SANS GPEN and GCPN certified penetration testing services across network, web, and cloud environments using advanced offensive techniques.',
       features: [
         'External and internal network penetration testing',
-        'Web application security testing (OWASP)',
-        'API security assessments',
-        'Social engineering and phishing simulations'
+        'Web application and API security testing (OWASP)',
+        'Cloud penetration testing (AWS, Azure, GCP)',
+        'Advanced exploitation and post-exploitation',
+        'Social engineering and phishing simulations',
+        'Comprehensive remediation roadmaps'
       ]
     },
     {
@@ -101,15 +104,15 @@ const Services = () => {
     {
       icon: <Activity className="w-8 h-8" />,
       bgIcon: <Zap className="w-32 h-32 opacity-5 absolute top-4 right-4" />,
-      title: 'Incident Response & Post Breach Recovery',
-      description: 'Expert incident response services, post breach incident recovery, digital forensics, and emergency recovery planning to contain, investigate, and recover from security incidents.',
+      title: 'Incident Response (GCIH Certified)',
+      description: 'SANS GCIH certified incident handling services leveraging proven methodologies for detection, containment, eradication, and recovery from security incidents.',
       features: [
         'Incident response planning and readiness',
-        'Breach investigation and containment',
-        'Post breach incident recovery and remediation',
+        'Breach investigation and rapid containment',
+        'Malware analysis and threat identification',
         'Digital forensics and evidence collection',
-        'Emergency recovery planning and execution',
-        'Post-incident analysis and lessons learned'
+        'Post breach recovery and remediation',
+        'Lessons learned and defense hardening'
       ]
     },
     {
@@ -127,13 +130,15 @@ const Services = () => {
     {
       icon: <Lock className="w-8 h-8" />,
       bgIcon: <Shield className="w-32 h-32 opacity-5 absolute top-4 right-4" />,
-      title: 'Security Architecture Consulting',
-      description: 'Design secure, scalable architectures aligned with business objectives and security best practices.',
+      title: 'Zero Trust Architecture (GDSA Certified)',
+      description: 'SANS GDSA certified defensible security architecture design built on Zero Trust principles—never trust, always verify, assume breach.',
       features: [
-        'Zero-trust architecture design',
+        'Zero Trust architecture design and implementation',
+        'Micro-segmentation and network isolation',
+        'Identity-centric security controls',
         'Cloud security architecture (AWS, Azure, GCP)',
-        'Network segmentation and micro-segmentation',
-        'Identity and access management strategy'
+        'Continuous verification and monitoring',
+        'Least-privilege access enforcement'
       ]
     },
     {

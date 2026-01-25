@@ -26,14 +26,22 @@ const About = () => {
   ];
 
   const certifications = [
-    'Incident Response & Post Breach Recovery',
-    'Business Continuity & Emergency Recovery Planning',
+    'SANS SEC501 - GCED (Advanced Security Essentials)',
+    'SANS SEC504 - GCIH (Incident Handler)',
+    'SANS SEC530 - GDSA (Defensible Security Architecture)',
+    'SANS SEC560 - GPEN (Penetration Tester)',
+    'SANS SEC588 - GCPN (Cloud Penetration Tester)'
+  ];
+
+  const expertise = [
+    'Zero Trust Architecture Design & Implementation',
+    'Advanced Penetration Testing (Network, Web, Cloud)',
+    'Incident Response & Digital Forensics',
+    'Defensible Security Architecture',
+    'Cloud Security (AWS, Azure, GCP)',
     'SIEM Integration (Splunk, Sentinel, QRadar)',
-    'Splunk Enterprise Deployment & Configuration',
-    'Microsoft Sentinel Automation & Orchestration',
-    'Vulnerability Management & Threat Intelligence',
-    'Security Automation & SOAR Implementation',
-    'Cloud Security Architecture (AWS, Azure, GCP)'
+    'Enterprise Defense & Threat Detection',
+    'Security Automation & Orchestration'
   ];
 
   return (
@@ -54,30 +62,29 @@ const About = () => {
             </h3>
             <div className="space-y-4 text-gray-400 leading-relaxed">
               <p>
-                With over a decade of hands-on experience in enterprise security operations, Cloud Secure Canada 
-                brings deep expertise in incident response, post breach recovery, business continuity planning, 
-                SIEM integration, Splunk deployment and configuration, Microsoft Sentinel automation, and comprehensive 
-                cyber security solutions across diverse industries.
+                With over a decade of hands-on experience in enterprise security operations and multiple SANS GIAC certifications 
+                (GCED, GCIH, GDSA, GPEN, GCPN), Cloud Secure Canada delivers elite-level cybersecurity consulting backed by 
+                industry-recognized credentials in penetration testing, incident handling, defensible security architecture, 
+                and cloud security.
               </p>
               <p>
-                Experience spans directing comprehensive Information Security Programs at major Higher Education 
-                institutions, implementing enterprise-wide security solutions at Large Scale Financial Institutions, 
-                and leading post-breach security rebuilds at prominent Technology companies. This includes overseeing 
-                incident response operations, emergency recovery planning, vulnerability management, and compliance 
-                assessments while coordinating with law enforcement and external partners during critical security incidents.
+                <span className="text-primary-400 font-semibold">Zero Trust is at the core of my methodology.</span> Every engagement 
+                begins with the principle of "never trust, always verify." I architect security solutions that assume breach, 
+                verify explicitly, and enforce least-privilege access. This includes micro-segmentation strategies, identity-centric 
+                security controls, continuous validation, and comprehensive monitoring—ensuring your organization is protected 
+                against both external threats and insider risks.
               </p>
               <p>
-                The approach combines strategic vision with tactical execution—from leading complex incident response 
-                operations and executing post breach recovery plans, to implementing Splunk Enterprise deployments, 
-                configuring Microsoft Sentinel automation, developing business continuity strategies, and integrating 
-                comprehensive SIEM solutions. Proven track record of partnering with CISOs, executive leadership, and 
-                cross-functional teams to shape long-term cyber security strategies and drive measurable results.
+                Experience spans directing comprehensive Information Security Programs at major Higher Education institutions, 
+                implementing enterprise-wide security solutions at Financial Institutions, and leading post-breach security 
+                rebuilds at prominent Technology companies. This includes advanced penetration testing (network, web, API, 
+                and cloud environments), incident response operations, digital forensics, and designing defensible architectures 
+                that withstand sophisticated attacks.
               </p>
               <p>
-                Capabilities span the full spectrum of cyber security operations: from vulnerability management and 
-                penetration testing to security automation and orchestration, from threat intelligence integration to 
-                digital forensics, from SOC build-up to enterprise security architecture. This breadth of experience 
-                ensures comprehensive, tailored solutions for any cybersecurity challenge.
+                My SANS training in enterprise defense (SEC501), incident handling (SEC504), defensible security architecture 
+                (SEC530), penetration testing (SEC560), and cloud penetration testing (SEC588) provides the technical depth 
+                to identify vulnerabilities attackers exploit, build resilient defenses, and respond effectively when incidents occur.
               </p>
             </div>
           </div>
@@ -99,19 +106,37 @@ const About = () => {
           </div>
         </div>
 
-        {/* Areas of Expertise */}
-        <div className="bg-dark-800 rounded-2xl p-8 border border-dark-700">
+        {/* SANS Certifications */}
+        <div className="bg-dark-800 rounded-2xl p-8 border border-dark-700 mb-8">
           <h3 className="text-2xl font-bold mb-6 text-center text-white">
-            Areas of Expertise
+            SANS GIAC Certifications
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {certifications.map((cert, index) => (
               <div
                 key={index}
+                className="flex items-start space-x-3 bg-gradient-to-r from-primary-600/10 to-primary-800/10 rounded-lg p-4 border border-primary-500/30 hover:border-primary-500 transition-all"
+              >
+                <div className="text-primary-400 mt-1"><Award className="w-5 h-5" /></div>
+                <span className="text-gray-200 font-medium">{cert}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Areas of Expertise */}
+        <div className="bg-dark-800 rounded-2xl p-8 border border-dark-700">
+          <h3 className="text-2xl font-bold mb-6 text-center text-white">
+            Areas of Expertise
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {expertise.map((skill, index) => (
+              <div
+                key={index}
                 className="flex items-start space-x-3 bg-dark-900/50 rounded-lg p-4 border border-dark-700 hover:border-primary-500 transition-all"
               >
                 <div className="text-primary-500 mt-1">✓</div>
-                <span className="text-gray-300">{cert}</span>
+                <span className="text-gray-300">{skill}</span>
               </div>
             ))}
           </div>
