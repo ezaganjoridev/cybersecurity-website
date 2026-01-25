@@ -1,0 +1,9 @@
+# robots.txt for Cloud Secure Canada
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://cloudsecurecanada.com/sitemap.xml
+
+# Crawl-delay (optional - be nice to crawlers)
+Crawl-delay: 1
