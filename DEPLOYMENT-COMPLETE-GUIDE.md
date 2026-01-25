@@ -35,7 +35,7 @@ Add these lines (you'll need your GitHub username):
 ```json
 {
   "name": "cybersecurity-services",
-  "homepage": "https://YOUR_GITHUB_USERNAME.github.io/cybersecurity-website",
+  "homepage": "https://YOUR_GITHUB_USERNAME.github.io/cybersecurity",
   "private": true,
   ...
 }
@@ -55,7 +55,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/cybersecurity-website/',
+  base: '/cybersecurity/',
   server: {
     port: 3000,
     open: true
@@ -79,7 +79,7 @@ export default defineConfig({
 ### Step 2: Create a New Repository
 
 1. Once logged in, click the **+** icon (top right) → **New repository**
-2. **Repository name:** `cybersecurity-website`
+2. **Repository name:** `cybersecurity`
 3. **Description:** "Cloud Secure Canada - Professional Cybersecurity Services"
 4. **Visibility:** Choose **Private** (keeps your source code hidden)
 5. **DO NOT** check "Initialize this repository with a README"
@@ -89,7 +89,7 @@ export default defineConfig({
 
 You'll see a URL like:
 ```
-https://github.com/YOUR_USERNAME/cybersecurity-website.git
+https://github.com/YOUR_USERNAME/cybersecurity.git
 ```
 
 **Copy this URL** - you'll need it in the next steps.
@@ -103,7 +103,7 @@ https://github.com/YOUR_USERNAME/cybersecurity-website.git
 Open PowerShell in your project directory:
 
 ```powershell
-cd C:\Users\Admin\Documents\Development\cybersecurity-website
+cd C:\Users\Admin\Documents\Development\cybersecurity
 npm install --save-dev gh-pages
 ```
 
@@ -137,7 +137,7 @@ git commit -m "Initial commit - Cloud Secure Canada website"
 **Replace `YOUR_USERNAME` with your actual GitHub username:**
 
 ```powershell
-git remote add origin https://github.com/YOUR_USERNAME/cybersecurity-website.git
+git remote add origin https://github.com/YOUR_USERNAME/cybersecurity.git
 ```
 
 ### Step 7: Push to GitHub
@@ -171,7 +171,7 @@ This will:
 
 ### Step 1: Configure GitHub Pages
 
-1. Go to your repository on GitHub: `https://github.com/YOUR_USERNAME/cybersecurity-website`
+1. Go to your repository on GitHub: `https://github.com/YOUR_USERNAME/cybersecurity`
 2. Click **Settings** (top menu)
 3. Scroll down to **Pages** (left sidebar under "Code and automation")
 4. Under **Source**, select:
@@ -183,11 +183,11 @@ This will:
 
 - GitHub will take 2-5 minutes to deploy
 - You'll see a green checkmark when ready
-- Your site will be at: `https://YOUR_USERNAME.github.io/cybersecurity-website`
+- Your site will be at: `https://YOUR_USERNAME.github.io/cybersecurity`
 
 ### Step 3: Test Your Website
 
-Visit: `https://YOUR_USERNAME.github.io/cybersecurity-website`
+Visit: `https://YOUR_USERNAME.github.io/cybersecurity`
 
 Your website should now be live!
 
@@ -226,7 +226,7 @@ Your website should now be live!
 
 ### Step 1: Add CNAME File to Your Project
 
-**Create file:** `c:\Users\Admin\Documents\Development\cybersecurity-website\public\CNAME`
+**Create file:** `c:\Users\Admin\Documents\Development\cybersecurity\public\CNAME`
 
 **Content** (no file extension, just one line):
 ```
@@ -285,7 +285,7 @@ Replace `yourdomain.com` with your actual domain (e.g., `www.cloudsecurecanada.c
 ### Step 4: Redeploy Your Website
 
 ```powershell
-cd C:\Users\Admin\Documents\Development\cybersecurity-website
+cd C:\Users\Admin\Documents\Development\cybersecurity
 git add public/CNAME
 git commit -m "Add custom domain"
 git push
@@ -347,7 +347,7 @@ If you want to showcase your code:
 3. Once satisfied, commit and deploy:
 
 ```powershell
-cd C:\Users\Admin\Documents\Development\cybersecurity-website
+cd C:\Users\Admin\Documents\Development\cybersecurity
 
 # Save your changes
 git add .
@@ -370,7 +370,7 @@ Your website will update in 2-5 minutes!
 - Go to your repo → Branches → should see `gh-pages`
 
 **Solution 2:** Verify base path in vite.config.js
-- Should match your repo name: `base: '/cybersecurity-website/'`
+- Should match your repo name: `base: '/cybersecurity/'`
 
 **Solution 3:** Make sure GitHub Pages is enabled
 - Settings → Pages → Source should be `gh-pages` branch
@@ -427,7 +427,7 @@ Once your custom domain is connected:
 
 ```powershell
 # Navigate to project
-cd C:\Users\Admin\Documents\Development\cybersecurity-website
+cd C:\Users\Admin\Documents\Development\cybersecurity
 
 # Test locally
 npm run dev
@@ -475,7 +475,7 @@ git push
 - **GitHub Pages Docs:** https://docs.github.com/pages
 - **Formspree Help:** https://help.formspree.io
 - **DNS Checker:** https://dnschecker.org
-- **Your Website Status:** https://github.com/YOUR_USERNAME/cybersecurity-website/deployments
+- **Your Website Status:** https://github.com/YOUR_USERNAME/cybersecurity/deployments
 
 ---
 
@@ -483,8 +483,8 @@ git push
 
 After setup, you'll have:
 
-1. **GitHub Pages URL:** `https://YOUR_USERNAME.github.io/cybersecurity-website`
-2. **Custom Domain:** `https://www.yourdomain.com` or `https://www.yourdomain.ca`
+1. **GitHub Pages URL:** `https://YOUR_USERNAME.github.io/cybersecurity`
+2. **Custom Domain:** `https://www.cloudsecurecanada.com`
 
 Both will work, and visitors can use either!
 
