@@ -102,18 +102,38 @@ const Hero = () => {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 mt-12">
-              <div className="bg-dark-800/50 backdrop-blur-sm border border-dark-700 rounded-lg p-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+              <div className="bg-dark-800/50 backdrop-blur-sm border border-dark-700 rounded-lg p-4 text-center">
                 <div className="text-2xl md:text-3xl font-bold text-primary-400 mb-1">10+</div>
-                <div className="text-gray-400 text-sm">Years Experience</div>
+                <div className="text-gray-400 text-xs md:text-sm">Years Experience</div>
               </div>
-              <div className="bg-dark-800/50 backdrop-blur-sm border border-dark-700 rounded-lg p-4">
+              <div className="bg-dark-800/50 backdrop-blur-sm border border-dark-700 rounded-lg p-4 text-center">
                 <div className="text-2xl md:text-3xl font-bold text-primary-400 mb-1">500+</div>
-                <div className="text-gray-400 text-sm">Incidents Handled</div>
+                <div className="text-gray-400 text-xs md:text-sm">Incidents Handled</div>
               </div>
-              <div className="bg-dark-800/50 backdrop-blur-sm border border-dark-700 rounded-lg p-4">
-                <div className="text-2xl md:text-3xl font-bold text-primary-400 mb-1">100%</div>
-                <div className="text-gray-400 text-sm">Client Satisfaction</div>
+              <div className="bg-dark-800/50 backdrop-blur-sm border border-dark-700 rounded-lg p-4 text-center">
+                <div className="text-2xl md:text-3xl font-bold text-primary-400 mb-1">50+</div>
+                <div className="text-gray-400 text-xs md:text-sm">SIEM Deployments</div>
+              </div>
+              <div className="bg-dark-800/50 backdrop-blur-sm border border-dark-700 rounded-lg p-4 text-center">
+                <div className="text-2xl md:text-3xl font-bold text-primary-400 mb-1">&lt;4hr</div>
+                <div className="text-gray-400 text-xs md:text-sm">Avg Response Time</div>
+              </div>
+            </div>
+            
+            {/* Additional metrics row */}
+            <div className="grid grid-cols-3 gap-4 mt-4">
+              <div className="bg-gradient-to-r from-primary-500/10 to-primary-600/10 border border-primary-500/20 rounded-lg p-3 text-center">
+                <div className="text-lg md:text-xl font-bold text-white mb-0.5">$50M+</div>
+                <div className="text-gray-400 text-xs">Assets Protected</div>
+              </div>
+              <div className="bg-gradient-to-r from-primary-500/10 to-primary-600/10 border border-primary-500/20 rounded-lg p-3 text-center">
+                <div className="text-lg md:text-xl font-bold text-white mb-0.5">99.9%</div>
+                <div className="text-gray-400 text-xs">Uptime Maintained</div>
+              </div>
+              <div className="bg-gradient-to-r from-primary-500/10 to-primary-600/10 border border-primary-500/20 rounded-lg p-3 text-center">
+                <div className="text-lg md:text-xl font-bold text-white mb-0.5">0</div>
+                <div className="text-gray-400 text-xs">Repeat Breaches</div>
               </div>
             </div>
           </div>
