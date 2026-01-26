@@ -78,6 +78,12 @@ const countryCodes = [
   { code: '+420', country: 'Czech Republic', flag: '🇨🇿' },
   { code: '+421', country: 'Slovakia', flag: '🇸🇰' },
   { code: '+30', country: 'Greece', flag: '🇬🇷' },
+  { code: '+355', country: 'Albania', flag: '🇦🇱' },
+  { code: '+381', country: 'Serbia', flag: '🇷🇸' },
+  { code: '+387', country: 'Bosnia', flag: '🇧🇦' },
+  { code: '+389', country: 'N. Macedonia', flag: '🇲🇰' },
+  { code: '+383', country: 'Kosovo', flag: '🇽🇰' },
+  { code: '+382', country: 'Montenegro', flag: '🇲🇪' },
   { code: '+7', country: 'Russia', flag: '🇷🇺' },
   // Asia Pacific
   { code: '+61', country: 'Australia', flag: '🇦🇺' },
