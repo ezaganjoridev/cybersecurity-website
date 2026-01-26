@@ -7,26 +7,26 @@ const Experience = () => {
   const highlights = [
     {
       icon: <Shield className="w-12 h-12" />,
-      title: 'Incident Response & Recovery',
-      description: 'Led comprehensive incident response operations, post breach recovery initiatives, and emergency recovery planning while coordinating with law enforcement and providing forensic evidence in security incidents',
+      title: 'Incident Response & Digital Forensics',
+      description: 'Led comprehensive DFIR operations, threat hunting initiatives, ransomware recovery, and breach remediation. Expert in forensic analysis, evidence preservation, chain of custody, and coordinating with law enforcement and legal teams during critical security events',
       stats: '10+ Years'
     },
     {
       icon: <Target className="w-12 h-12" />,
-      title: 'SIEM Integration & Deployment',
-      description: 'Expert in Splunk deployment and configuration, Microsoft Sentinel automation, enterprise-wide SIEM integration with advanced threat detection, and automated incident response workflows',
+      title: 'SIEM, SOAR & XDR Solutions',
+      description: 'Architected and deployed Splunk, Microsoft Sentinel, and XDR platforms with SOAR automation. Expertise in threat detection engineering, custom detection rules, MITRE ATT&CK mapping, log analytics, and building automated playbooks for rapid incident triage',
       stats: '500+ Incidents'
     },
     {
       icon: <Award className="w-12 h-12" />,
-      title: 'Business Continuity & Security Architecture',
-      description: 'Implemented business continuity planning, emergency recovery strategies, cutting-edge security automation platforms, and enterprise security architecture for resilient cyber security operations',
+      title: 'Zero Trust & Cloud Security',
+      description: 'Designed Zero Trust Architecture (ZTA) frameworks, implemented IAM/PAM solutions, and secured multi-cloud environments (AWS, Azure, GCP). Proficient in CSPM, CASB, container security, and infrastructure-as-code security assessments',
       stats: 'Industry Speaker'
     },
     {
       icon: <Briefcase className="w-12 h-12" />,
-      title: 'Team Leadership',
-      description: 'Built and mentored high-performing security teams, driving collaborative culture through career development',
+      title: 'GRC & Security Program Leadership',
+      description: 'Built and led security teams while driving compliance initiatives across NIST CSF, ISO 27001, SOC 2, PCI-DSS, and HIPAA. Expert in risk assessments, security awareness training, vendor risk management, and executive-level security reporting',
       stats: '15+ Mentored'
     }
   ];
