@@ -24,10 +24,10 @@ function App() {
       <div className="min-h-screen bg-dark-900">
         <Navbar scrolled={scrolled} />
         <Hero />
+        <Contact />
         <Services />
         <About />
         <Experience />
-        <Contact />
         <Footer />
       </div>
     </Router>
