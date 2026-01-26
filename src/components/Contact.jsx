@@ -266,6 +266,68 @@ const Contact = () => {
               </button>
             </form>
           </div>
+
+          {/* Contact Information - Now on the RIGHT */}
+          <div>
+            <h3 className="text-2xl font-bold mb-6 text-white">Get in Touch</h3>
+            <p className="text-gray-400 mb-8 leading-relaxed">
+              Whether you need a security assessment, incident response support, or strategic consulting, 
+              I'm here to help protect your organization. Let's start a conversation about your security challenges.
+            </p>
+
+            <div className="space-y-6 mb-8">
+              <div className="flex items-start space-x-4">
+                <div className="bg-primary-500/10 p-3 rounded-lg">
+                  <Mail className="w-6 h-6 text-primary-400" />
+                </div>
+                <div>
+                  <div className="font-semibold text-white mb-1">Email</div>
+                  <a href="mailto:cloudsecurecanada@gmail.com" className="text-gray-400 hover:text-primary-400 transition-colors">
+                    cloudsecurecanada@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="bg-primary-500/10 p-3 rounded-lg">
+                  <MapPin className="w-6 h-6 text-primary-400" />
+                </div>
+                <div>
+                  <div className="font-semibold text-white mb-1">Location</div>
+                  <div className="text-gray-400">
+                    Toronto, ON, Canada<br />
+                    Available for remote consultations
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Social Links */}
+            <div className="border-t border-dark-700 pt-6">
+              <div className="font-semibold text-white mb-4">Connect</div>
+              <div className="flex space-x-4">
+                <a
+                  href="mailto:cloudsecurecanada@gmail.com"
+                  className="bg-primary-500/10 p-3 rounded-lg hover:bg-primary-500/20 transition-colors"
+                  aria-label="Email"
+                >
+                  <Mail className="w-6 h-6 text-primary-400" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Contact Us Header - Moved to the END */}
+        <div className="text-center mt-16">
+          <div className="inline-flex items-center space-x-2 bg-primary-500/10 border border-primary-500/30 rounded-full px-4 py-2 mb-6">
+            <Mail className="w-4 h-4 text-primary-400" />
+            <span className="text-primary-400 text-sm font-medium">Contact</span>
+          </div>
+          <h2 className="section-title">Let's Discuss Your Security Needs</h2>
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            Ready to enhance your cybersecurity posture? Reach out for a consultation
+          </p>
         </div>
       </div>
     </section>
