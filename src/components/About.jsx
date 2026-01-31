@@ -45,7 +45,7 @@ const About = () => {
             <Shield className="w-4 h-4 text-primary-400" />
             <span className="text-primary-400 text-sm font-medium">About</span>
           </div>
-          <h2 className="section-title">Senior-Led, Impact-Driven</h2>
+          <h2 className="section-title">Results-Driven</h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
             A senior consultant leads every engagement, balancing technical depth with practical outcomes.
           </p>

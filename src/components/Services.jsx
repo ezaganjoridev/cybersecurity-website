@@ -37,7 +37,7 @@ const Services = () => {
     {
       icon: <Search className="w-7 h-7" />,
       title: 'Vulnerability Management',
-      description: 'Build a practical program that prioritizes what matters most and drives measurable risk reduction.'
+      description: 'Vulnerability management with Nessus, Tenable Vulnerability Management (Tenable.io), Tenable.sc, Rapid7 InsightVM, and Qualys VMDR—tuned for risk-based prioritization and reporting.'
     }
   ];
 
@@ -61,6 +61,14 @@ const Services = () => {
       icon: <Radar className="w-7 h-7" />,
       title: 'Operational Readiness',
       description: 'Documentation, runbooks, and system checks that keep IT services reliable and secure.'
+    }
+  ];
+
+  const securityTooling = [
+    {
+      icon: <ShieldCheck className="w-7 h-7" />,
+      title: 'Network Security Tooling',
+      description: 'Deploy and tune visibility tools including Zeek, Corelight, Argus, and Suricata for deeper network insight.'
     }
   ];
 
@@ -95,6 +103,19 @@ const Services = () => {
           <h3 className="text-2xl font-bold text-white mb-4">IT & Operational Services</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {itServices.map((service, index) => (
+              <div key={index} className="card">
+                <div className="text-primary-500 mb-4">{service.icon}</div>
+                <h4 className="text-xl font-semibold mb-2 text-white">{service.title}</h4>
+                <p className="text-gray-400 text-sm leading-relaxed">{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mb-12">
+          <h3 className="text-2xl font-bold text-white mb-4">Security Tooling</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {securityTooling.map((service, index) => (
               <div key={index} className="card">
                 <div className="text-primary-500 mb-4">{service.icon}</div>
                 <h4 className="text-xl font-semibold mb-2 text-white">{service.title}</h4>

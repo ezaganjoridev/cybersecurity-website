@@ -41,6 +41,8 @@ const Experience = () => {
     'Cloud security reviews (AWS, Azure, GCP)',
     'Threat hunting and detection coverage analysis',
     'EDR/XDR selection, deployment, and tuning (Defender for Endpoint, CrowdStrike, SentinelOne, Cortex XDR)',
+    'Vulnerability management programs (Nessus, Tenable.io, Tenable.sc, Rapid7, Qualys)',
+    'Network security tooling (Zeek, Corelight, Argus, Suricata)',
     'Security automation and response workflows',
     'Vendor and third‑party risk assessment'
   ];
