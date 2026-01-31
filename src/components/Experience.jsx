@@ -16,12 +16,12 @@ const Experience = () => {
     {
       icon: <Layers className="w-6 h-6" />,
       title: 'SIEM & Detection Engineering',
-      description: 'Use‑case coverage, alert tuning, and MITRE‑aligned detection strategies.'
+      description: 'Use-case coverage, alert tuning, and MITRE-aligned detection across Splunk, Sentinel, QRadar, LogRhythm, ArcSight, and Sumo Logic.'
     },
     {
       icon: <Settings className="w-6 h-6" />,
       title: 'Security Architecture',
-      description: 'Zero Trust design, identity‑first controls, and cloud security baselines.'
+      description: 'Zero Trust design, identity-first controls, and cloud security baselines.'
     },
     {
       icon: <Server className="w-6 h-6" />,
@@ -40,6 +40,7 @@ const Experience = () => {
     'SOC build‑out, tuning, and operational readiness',
     'Cloud security reviews (AWS, Azure, GCP)',
     'Threat hunting and detection coverage analysis',
+    'EDR/XDR selection, deployment, and tuning (Defender for Endpoint, CrowdStrike, SentinelOne, Cortex XDR)',
     'Security automation and response workflows',
     'Vendor and third‑party risk assessment'
   ];

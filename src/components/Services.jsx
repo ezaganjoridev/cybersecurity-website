@@ -22,7 +22,12 @@ const Services = () => {
     {
       icon: <Layers className="w-7 h-7" />,
       title: 'SIEM & SOC Engineering',
-      description: 'Design, deploy, and optimize Splunk and Microsoft Sentinel for reliable detection.'
+      description: 'Design, deploy, and optimize SIEM platforms including Splunk, Microsoft Sentinel, QRadar, LogRhythm, ArcSight, and Sumo Logic.'
+    },
+    {
+      icon: <ShieldCheck className="w-7 h-7" />,
+      title: 'EDR/XDR Strategy & Deployment',
+      description: 'Selection, rollout, and tuning for Microsoft Defender for Endpoint, CrowdStrike Falcon, SentinelOne, Palo Alto Cortex XDR, and other XDR agents.'
     },
     {
       icon: <Lock className="w-7 h-7" />,
