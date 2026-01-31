@@ -10,6 +10,7 @@ const Navbar = ({ scrolled }) => {
     { name: 'Services', href: '/services' },
     { name: 'About', href: '/about' },
     { name: 'Experience', href: '/experience' },
+    { name: 'Testimonials', href: '/testimonials' },
     { name: 'FAQ', href: '/faq' },
   ];
 

@@ -8,6 +8,7 @@ import ServicesPage from './pages/ServicesPage';
 import AboutPage from './pages/AboutPage';
 import ExperiencePage from './pages/ExperiencePage';
 import FAQPage from './pages/FAQPage';
+import TestimonialsPage from './pages/TestimonialsPage';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -31,6 +32,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/experience" element={<ExperiencePage />} />
           <Route path="/faq" element={<FAQPage />} />
+          <Route path="/testimonials" element={<TestimonialsPage />} />
         </Routes>
         <Footer />
       </div>
