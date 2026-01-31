@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Services from './components/Services';
-import About from './components/About';
-import Experience from './components/Experience';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
+import Home from './pages/Home';
+import ServicesPage from './pages/ServicesPage';
+import AboutPage from './pages/AboutPage';
+import ExperiencePage from './pages/ExperiencePage';
+import FAQPage from './pages/FAQPage';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -21,13 +22,16 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen bg-dark-900">
         <Navbar scrolled={scrolled} />
-        <Hero />
-        <Services />
-        <About />
-        <Experience />
-        <Contact />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/experience" element={<ExperiencePage />} />
+          <Route path="/faq" element={<FAQPage />} />
+        </Routes>
         <Footer />
       </div>
     </Router>

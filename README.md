@@ -4,7 +4,7 @@ This is my website for cybersecurity consultation services.
 
 ## Contact
 
-For immediate inquiries, please contact: **cloudsecurecanada@gmail.com**
+For immediate inquiries, please use the contact form on the site.
 
 ## Website
 
