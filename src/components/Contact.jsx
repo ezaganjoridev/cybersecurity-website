@@ -100,7 +100,7 @@ const Contact = () => {
             <div className="space-y-3 text-gray-300">
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-primary-400" />
-                <span>Based in Toronto, ON, Canada with remote delivery across the United States of America, Canada, and other major first-world countries</span>
+                <span>Located in North America (Toronto, ON) with remote delivery Globally</span>
               </div>
             </div>
           </div>
