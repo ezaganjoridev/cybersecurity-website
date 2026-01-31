@@ -7,17 +7,17 @@ const Hero = () => {
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900">
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-primary-500 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary-700 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-primary-500 rounded-full blur-3xl animate-float-slow"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary-700 rounded-full blur-3xl animate-float-slow"></div>
         </div>
       </div>
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="text-center lg:text-left">
-            <div className="inline-flex items-center space-x-2 bg-primary-500/10 border border-primary-500/30 rounded-full px-4 py-2 mb-8">
-              <Shield className="w-4 h-4 text-primary-400" />
-              <span className="text-primary-400 text-sm font-medium">Cybersecurity Consulting</span>
+          <div className="text-center lg:text-left animate-fade-up">
+            <div className="chip mb-8 justify-center lg:justify-start">
+              <Shield className="w-4 h-4" />
+              <span>Cybersecurity Consulting</span>
             </div>
 
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
@@ -29,7 +29,7 @@ const Hero = () => {
 
             <p className="text-lg md:text-xl text-gray-400 mb-8">
               Cloud Secure Canada delivers incident response, penetration testing, and SIEM/SOC engineering with a
-              practical, no-nonsense approach. We’re based in Toronto, Ontario, Canada, and deliver engagements
+              practical, no-nonsense approach. As a Toronto-based cyber security consultant, we deliver engagements
               remotely across Canada, the United States, and other countries such as the United Kingdom, Ireland,
               Australia, New Zealand, and Singapore. On-site support is available when needed.
             </p>
@@ -60,7 +60,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="card text-left">
+          <div className="card text-left animate-fade-up-slow">
             <h3 className="text-2xl font-bold mb-4 text-white">Engagement Options</h3>
             <p className="text-gray-400 mb-6">
               Flexible support for fast-moving security needs, from targeted assessments to long-term programs.

@@ -21,29 +21,29 @@ const About = () => {
   ];
 
   const certifications = [
-    'GCED • Enterprise Defense',
-    'GCIH • Incident Handler',
-    'GDSA • Defensible Security Architecture',
-    'GPEN • Penetration Tester',
-    'GCPN • Cloud Penetration Tester'
+    'GIAC Certified Enterprise Defender (GCED)',
+    'GIAC Certified Incident Handler (GCIH)',
+    'GIAC Defensible Security Architect (GDSA)',
+    'GIAC Penetration Tester (GPEN)',
+    'GIAC Cloud Penetration Tester (GCPN)'
   ];
 
   const skills = [
-    'Incident response & digital forensics',
-    'Penetration testing (network, web, cloud)',
-    'Zero Trust architecture design',
-    'SIEM engineering (Splunk, Sentinel)',
-    'Security assessments & risk reviews',
-    'Security automation & detection tuning'
+    'Incident response & digital forensics [Velociraptor, KAPE, Volatility]',
+    'Penetration testing (network, web, cloud) [Nmap, Burp Suite, Metasploit]',
+    'Zero Trust architecture design [Entra ID, Okta, Zscaler]',
+    'SIEM engineering [Splunk, Microsoft Sentinel, QRadar, LogRhythm]',
+    'Security assessments & risk reviews [NIST CSF, CIS Controls, ISO 27001, SOC 2]',
+    'Security automation & detection tuning [Splunk SOAR, Cortex XSOAR, Sentinel Logic Apps]'
   ];
 
   return (
     <section id="about" className="py-20 bg-dark-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center space-x-2 bg-primary-500/10 border border-primary-500/30 rounded-full px-4 py-2 mb-6">
-            <Shield className="w-4 h-4 text-primary-400" />
-            <span className="text-primary-400 text-sm font-medium">About</span>
+          <div className="chip justify-center mb-6">
+            <Shield className="w-4 h-4" />
+            <span>About</span>
           </div>
           <h2 className="section-title">Results-Driven</h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">

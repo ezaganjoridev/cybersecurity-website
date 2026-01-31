@@ -39,6 +39,10 @@ const HomeHighlights = () => {
     <section className="py-16 bg-dark-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
+          <div className="chip-accent justify-center mb-6">
+            <Sparkles className="w-4 h-4" />
+            <span>Why Teams Choose Us</span>
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">Serious Security. Practical Delivery.</h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
             A focused practice that blends cybersecurity depth with real IT operations experience.
@@ -46,7 +50,7 @@ const HomeHighlights = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {highlights.map((item, index) => (
-            <div key={index} className="card">
+            <div key={index} className="card animate-fade-up" style={{ animationDelay: `${index * 0.06}s` }}>
               <div className="text-primary-500 mb-3">{item.icon}</div>
               <h3 className="text-lg font-semibold mb-2 text-white">{item.title}</h3>
               <p className="text-gray-400 text-sm">{item.description}</p>

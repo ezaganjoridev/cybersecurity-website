@@ -8,6 +8,10 @@ const FAQ = () => {
       answer: 'Engagements span higher education, financial services, and technology organizations, from small teams to enterprise environments. Every scope is right-sized so you get senior expertise without oversized overhead.'
     },
     {
+      question: 'Do you provide managed SOC or 24/7 MDR services?',
+      answer: 'We do not run a 24/7 managed SOC. We build and tune detections, design SIEM/SOC architecture, and coordinate with your in-house team or MDR provider so coverage improves without vendor lock-in.'
+    },
+    {
       question: 'Do you offer remote and on-site engagements?',
       answer: 'Yes. We’re based in Toronto, Ontario, Canada, and we deliver engagements remotely across Canada, the United States, and other countries such as the United Kingdom, Ireland, Australia, New Zealand, and Singapore. On-site support is available when needed. Contact us for more information regarding if we can provide services to you/your area.'
     },
@@ -20,6 +24,10 @@ const FAQ = () => {
       answer: 'Cybersecurity is the core focus, and we also deliver IT services like asset tracking, device deployment, and endpoint hardening. These services reduce blind spots and make your security program more effective.'
     },
     {
+      question: 'What does a penetration test include?',
+      answer: 'A scoped rules-of-engagement, manual testing, evidence-backed findings, and prioritized remediation guidance. Retesting is available to confirm fixes.'
+    },
+    {
       question: 'How quickly can you start?',
       answer: 'We move quickly. After a short discovery call, you receive a clear scope, timeline, and the earliest available start date. Urgent incidents are prioritized whenever possible.'
     },
@@ -28,8 +36,16 @@ const FAQ = () => {
       answer: 'Yes. We design and optimize SIEM programs for Splunk and Microsoft Sentinel, including deployment, tuning, use-case development, and automation to improve detection coverage.'
     },
     {
+      question: 'Do you help with compliance readiness?',
+      answer: 'Yes. We map gaps and controls to frameworks such as NIST CSF, SOC 2, ISO 27001, PCI DSS, and CIS Controls, and help organize evidence for audits.'
+    },
+    {
       question: 'How is pricing structured?',
       answer: 'Pricing is transparent and built to be accessible. You receive a clear scope and options that match your budget, with no pressure to buy services you do not need.'
+    },
+    {
+      question: 'Do you offer ongoing support or retainers?',
+      answer: 'Yes. Retainers cover advisory, detection tuning, incident response readiness, and hands-on implementation support each month.'
     },
     {
       question: 'What does a typical engagement include?',
@@ -53,9 +69,9 @@ const FAQ = () => {
     <section id="faq" className="py-20 bg-dark-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center space-x-2 bg-primary-500/10 border border-primary-500/30 rounded-full px-4 py-2 mb-6">
-            <HelpCircle className="w-4 h-4 text-primary-400" />
-            <span className="text-primary-400 text-sm font-medium">FAQ</span>
+          <div className="chip justify-center mb-6">
+            <HelpCircle className="w-4 h-4" />
+            <span>FAQ</span>
           </div>
           <h2 className="section-title">Common Questions</h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">

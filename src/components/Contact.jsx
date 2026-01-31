@@ -88,11 +88,11 @@ const Contact = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div>
-            <div className="inline-flex items-center space-x-2 bg-primary-500/10 border border-primary-500/30 rounded-full px-4 py-2 mb-6">
-              <Mail className="w-4 h-4 text-primary-400" />
-              <span className="text-primary-400 text-sm font-medium">Contact</span>
+            <div className="chip mb-6">
+              <Mail className="w-4 h-4" />
+              <span>Contact</span>
             </div>
-            <h2 className="section-title">Let’s plan your next security step</h2>
+            <h2 className="section-title leading-[1.1] pb-1">Let’s plan your next security step</h2>
             <p className="text-lg text-gray-400 mb-8">
               Share your goals, timeline, and environment. You’ll get a clear scope and a straightforward plan.
             </p>

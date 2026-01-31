@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+        body: ['"Manrope"', 'system-ui', 'sans-serif'],
+      },
       colors: {
         primary: {
           50: '#f0f9ff',
@@ -30,7 +34,14 @@ export default {
           700: '#334155',
           800: '#1e293b',
           900: '#0f172a',
-        }
+        },
+        accent: {
+          100: '#fef3c7',
+          300: '#fcd34d',
+          500: '#f59e0b',
+          600: '#d97706',
+          700: '#b45309',
+        },
       },
     },
   },

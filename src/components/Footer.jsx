@@ -33,7 +33,7 @@ const Footer = () => {
               </span>
             </Link>
             <p className="text-gray-400 mb-4 max-w-md">
-              Cybersecurity consulting for incident response, penetration testing, and SOC engineering.
+              Toronto-based cyber security consultant delivering incident response, penetration testing, and SOC engineering.
             </p>
           </div>
 
