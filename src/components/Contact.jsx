@@ -27,9 +27,25 @@ const Contact = () => {
     'Other'
   ];
 
+  const formatPhone = (value) => {
+    const digits = value.replace(/\D/g, '');
+    if (!digits) return '';
+    if (digits.length <= 3) return digits;
+    if (digits.length <= 6) return `(${digits.slice(0, 3)})-${digits.slice(3)}`;
+    if (digits.length <= 10) {
+      return `(${digits.slice(0, 3)})-${digits.slice(3, 6)}-${digits.slice(6)}`;
+    }
+    const country = digits.slice(0, digits.length - 10);
+    const area = digits.slice(-10, -7);
+    const mid = digits.slice(-7, -4);
+    const last = digits.slice(-4);
+    return `+${country} (${area})-${mid}-${last}`;
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    const nextValue = name === 'phone' ? formatPhone(value) : value;
+    setFormData(prev => ({ ...prev, [name]: nextValue }));
   };
 
   const handleServiceToggle = (service) => {
@@ -159,7 +175,7 @@ const Contact = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-white focus:outline-none focus:border-primary-500 transition-colors"
-                  placeholder="(416) 555-0123"
+                  placeholder="(416)-555-0123"
                 />
               </div>
 

@@ -60,30 +60,40 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="card text-left animate-fade-up-slow">
-            <h3 className="text-2xl font-bold mb-4 text-white">Engagement Options</h3>
-            <p className="text-gray-400 mb-6">
-              Flexible support for fast-moving security needs, from targeted assessments to long-term programs.
-            </p>
-            <div className="space-y-3 text-gray-300">
-              <div className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-primary-400 mt-0.5" />
-                <span>Rapid incident response and recovery support</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-primary-400 mt-0.5" />
-                <span>Security assessments and penetration testing</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-primary-400 mt-0.5" />
-                <span>SIEM/SOC architecture, tuning, and automation</span>
-              </div>
+          <div className="relative overflow-hidden rounded-2xl border border-primary-500/30 bg-dark-900/90 p-6 text-left animate-fade-up-slow shadow-[0_0_32px_rgba(14,165,233,0.18)]">
+            <div className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-primary-200/80 mb-5">
+              <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/80" />
+              <span className="h-2.5 w-2.5 rounded-full bg-primary-400/80" />
+              <span className="h-2.5 w-2.5 rounded-full bg-amber-400/80" />
+              <span className="ml-2">secure terminal</span>
             </div>
 
-            <div className="mt-8 space-y-2 text-sm text-gray-400">
-              <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4" />
-                <span>Toronto, ON • Remote available</span>
+            <div className="space-y-4 font-mono text-sm text-gray-200">
+              <div>
+                <p className="text-primary-100/80">
+                  <span className="text-emerald-300">admin@cloudsecurecanada</span>
+                  <span className="text-primary-300">:~$</span> cat engagement-options
+                </p>
+                <p className="mt-2 text-gray-300">
+                  Flexible support for fast-moving security needs, from targeted assessments to long-term programs.
+                </p>
+              </div>
+
+              <div className="space-y-2 text-gray-200">
+                <p>
+                  <span className="text-emerald-300">[01]</span> Rapid incident response and recovery support
+                </p>
+                <p>
+                  <span className="text-emerald-300">[02]</span> Security assessments and penetration testing
+                </p>
+                <p>
+                  <span className="text-emerald-300">[03]</span> SIEM/SOC architecture, tuning, and automation
+                </p>
+              </div>
+
+              <div className="pt-2 text-primary-100/70">
+                <span className="text-emerald-300">admin@cloudsecurecanada</span>
+                <span className="text-primary-300">:~$</span> location --site "Toronto, ON • Remote available"
               </div>
             </div>
           </div>

@@ -106,12 +106,14 @@ const Testimonials = () => {
                   alt={`Portrait of ${testimonial.name}`}
                   className="w-12 h-12 rounded-full object-cover ring-2 ring-white/10"
                 />
-                <div className="text-sm text-gray-400">{testimonial.location}</div>
+                <div>
+                  <div className="text-white font-semibold text-sm">{testimonial.name}</div>
+                  <div className="text-gray-400 text-xs">{testimonial.role}</div>
+                </div>
               </div>
               <p className="text-gray-300 text-sm leading-relaxed">"{testimonial.quote}"</p>
               <div className="mt-5">
-                <div className="text-white font-semibold text-sm">{testimonial.name}</div>
-                <div className="text-gray-400 text-xs">{testimonial.role}</div>
+                <div className="text-gray-400 text-xs">{testimonial.location}</div>
               </div>
             </div>
           ))}

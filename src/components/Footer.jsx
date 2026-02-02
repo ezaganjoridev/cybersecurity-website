@@ -36,6 +36,20 @@ const Footer = () => {
             <p className="text-gray-400 mb-4 max-w-md">
               Toronto-based cyber security consultant delivering incident response, penetration testing, and SOC engineering.
             </p>
+            <a
+              href="mailto:info@clodusecurecanada.com"
+              className="text-primary-300 hover:text-primary-200 transition-colors text-sm"
+            >
+              info@clodusecurecanada.com
+            </a>
+            <div className="mt-3 text-sm text-gray-400">
+              <a
+                href="tel:+16476958277"
+                className="text-primary-300 hover:text-primary-200 transition-colors"
+              >
+                +1 (647)-695-8277
+              </a>
+            </div>
           </div>
 
           {/* Services */}
