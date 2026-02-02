@@ -52,8 +52,7 @@ const CoreServices = () => {
           </div>
           <h2 className="section-title leading-[1.1] pb-1">Cybersecurity consulting built for fast-moving teams</h2>
           <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-            Cloud Secure Canada is a Toronto-based cyber security consultant delivering hands-on execution and clear
-            remediation guidance across North America and other first-world countries.
+            Located in Toronto, ON, Canada with remote delivery globally.
           </p>
         </div>
 

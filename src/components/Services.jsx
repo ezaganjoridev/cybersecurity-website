@@ -208,9 +208,9 @@ const Services = () => {
         </div>
 
         <div className="bg-dark-900/70 border border-dark-700 rounded-2xl p-8 text-center">
-          <h3 className="text-2xl font-bold mb-3 text-white">Global Remote Delivery</h3>
+          <h3 className="text-2xl font-bold mb-3 text-white">Remote Delivery</h3>
           <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
-            Based in Toronto, ON, Canada with remote delivery across the United States of America, Canada, and other major first-world countries.
+            Based in Toronto, ON, Canada with remote delivery across the United States of America, Canada, and other countries globally.
           </p>
           <Link to="/#contact" className="inline-flex items-center justify-center px-8 py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-all duration-300">
             Request a Scope

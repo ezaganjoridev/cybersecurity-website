@@ -25,8 +25,8 @@ const HomeHighlights = () => {
     },
     {
       icon: <Globe className="w-6 h-6" />,
-      title: 'Global Remote Delivery',
-      description: 'Based in Toronto, ON, Canada with remote delivery across the United States of America, Canada, and other major first-world countries.'
+      title: 'Remote Delivery',
+      description: 'Based in Toronto, ON, Canada with remote delivery across the United States of America, Canada, and other countries globally.'
     },
     {
       icon: <Activity className="w-6 h-6" />,
