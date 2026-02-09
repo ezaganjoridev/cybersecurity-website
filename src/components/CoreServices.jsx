@@ -1,5 +1,6 @@
 import React from 'react';
 import { AlertTriangle, ShieldCheck, Radar, Cloud, Lock, Search, CheckCircle } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const CoreServices = () => {
   const services = [
@@ -41,34 +42,78 @@ const CoreServices = () => {
     }
   ];
 
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 }
+  };
+
   return (
     <section className="py-20 bg-dark-900 relative overflow-hidden">
       <div className="absolute inset-0 surface-glow opacity-60" />
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <div className="chip justify-center mb-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="chip justify-center mb-6"
+          >
             <ShieldCheck className="w-4 h-4" />
             <span>Core Services</span>
-          </div>
-          <h2 className="section-title leading-[1.1] pb-1">Cybersecurity consulting built for fast-moving teams</h2>
-          <p className="text-lg text-gray-400 max-w-3xl mx-auto">
+          </motion.div>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="section-title leading-[1.1] pb-1"
+          >
+            Cybersecurity consulting built for fast-moving teams
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-lg text-gray-400 max-w-3xl mx-auto"
+          >
             Located in Toronto, ON, Canada with remote delivery globally.
-          </p>
+          </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <motion.div 
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+        >
           {services.map((service, index) => (
-            <div
+            <motion.div
               key={service.title}
-              className="card animate-fade-up"
-              style={{ animationDelay: `${index * 0.08}s` }}
+              variants={item}
+              whileHover={{ 
+                y: -5, 
+                transition: { duration: 0.2 } 
+              }}
+              className="card group hover:border-primary-500/50 hover:bg-dark-800 transition-all duration-300"
             >
               <div className="flex items-start gap-3 mb-4 text-primary-400">
-                <div className="p-2 rounded-lg bg-primary-500/10 border border-primary-500/30">
+                <div className="p-2 rounded-lg bg-primary-500/10 border border-primary-500/30 group-hover:bg-primary-500/20 transition-colors">
                   {service.icon}
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-white">{service.title}</h3>
+                  <h3 className="text-xl font-semibold text-white group-hover:text-primary-100 transition-colors">{service.title}</h3>
                   <p className="text-gray-400 text-sm mt-1">{service.description}</p>
                 </div>
               </div>
@@ -80,9 +125,9 @@ const CoreServices = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

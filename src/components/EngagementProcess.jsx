@@ -1,5 +1,6 @@
 import React from 'react';
 import { Compass, ClipboardCheck, Target, Sparkles, GraduationCap } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const EngagementProcess = () => {
   const steps = [
@@ -31,34 +32,63 @@ const EngagementProcess = () => {
   ];
 
   return (
-    <section className="py-20 bg-dark-900 surface-grid">
+    <section className="py-20 bg-dark-900 surface-grid relative">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <div className="chip-accent justify-center mb-6">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="chip-accent justify-center mb-6"
+          >
             <Sparkles className="w-4 h-4" />
             <span>Engagement Flow</span>
-          </div>
-          <h2 className="section-title leading-[1.1] pb-1">How a typical engagement runs</h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          </motion.div>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="section-title leading-[1.1] pb-1"
+          >
+            How a typical engagement runs
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-lg text-gray-400 max-w-2xl mx-auto"
+          >
             A repeatable, transparent process built to move quickly without sacrificing quality or documentation.
-          </p>
+          </motion.p>
         </div>
 
         <div className="relative">
-          <div className="absolute left-5 top-0 bottom-0 w-px bg-dark-700" />
+          {/* Animated Line */}
+          <motion.div 
+            initial={{ height: 0 }}
+            whileInView={{ height: '100%' }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+            className="absolute left-5 top-0 bottom-0 w-px bg-gradient-to-b from-primary-500/50 via-primary-500/20 to-transparent"
+          />
+          
           <div className="space-y-8">
             {steps.map((step, index) => (
-              <div
+              <motion.div
                 key={step.title}
-                className="relative pl-14 animate-fade-up-slow"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: index * 0.2 }}
+                className="relative pl-14 group"
               >
-                <div className="absolute left-0 top-0 w-10 h-10 rounded-full bg-dark-800 border border-primary-500/40 text-primary-300 flex items-center justify-center">
+                <div className="absolute left-0 top-0 w-10 h-10 rounded-full bg-dark-800 border border-primary-500/40 text-primary-300 flex items-center justify-center group-hover:bg-primary-500/20 group-hover:text-primary-200 transition-all duration-300 z-10">
                   {step.icon}
                 </div>
-                <h3 className="text-lg font-semibold text-white">{step.title}</h3>
+                <h3 className="text-lg font-semibold text-white group-hover:text-primary-100 transition-colors">{step.title}</h3>
                 <p className="text-gray-400 text-sm mt-2">{step.description}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

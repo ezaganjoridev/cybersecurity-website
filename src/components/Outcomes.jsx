@@ -1,5 +1,6 @@
 import React from 'react';
 import { FileText, Shield, MapPin, Boxes } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Outcomes = () => {
   const deliverables = [
@@ -31,23 +32,63 @@ const Outcomes = () => {
     'On-site engagements when required'
   ];
 
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const item = {
+    hidden: { opacity: 0, scale: 0.95 },
+    show: { opacity: 1, scale: 1 }
+  };
+
   return (
     <section className="py-20 bg-dark-900 relative overflow-hidden">
       <div className="absolute inset-0 surface-glow opacity-50" />
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <div className="chip justify-center mb-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="chip justify-center mb-6"
+          >
             <Shield className="w-4 h-4" />
             <span>What You Receive</span>
-          </div>
-          <h2 className="section-title leading-[1.1] pb-1">Clear outcomes, not vague recommendations</h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          </motion.div>
+          <motion.h2 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="section-title leading-[1.1] pb-1"
+          >
+            Clear outcomes, not vague recommendations
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-lg text-gray-400 max-w-2xl mx-auto"
+          >
             Each engagement produces practical deliverables mapped to the frameworks your stakeholders care about.
-          </p>
+          </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="card">
+        <motion.div 
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+        >
+          <motion.div variants={item} className="card">
             <div className="flex items-center gap-3 text-primary-400 mb-4">
               <FileText className="w-5 h-5" />
               <h3 className="text-lg font-semibold text-white">Deliverables</h3>
@@ -60,9 +101,9 @@ const Outcomes = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
-          <div className="card">
+          <motion.div variants={item} className="card">
             <div className="flex items-center gap-3 text-primary-400 mb-4">
               <Shield className="w-5 h-5" />
               <h3 className="text-lg font-semibold text-white">Framework Alignment</h3>
@@ -75,9 +116,9 @@ const Outcomes = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
-          <div className="card">
+          <motion.div variants={item} className="card">
             <div className="flex items-center gap-3 text-primary-400 mb-4">
               <Boxes className="w-5 h-5" />
               <h3 className="text-lg font-semibold text-white">Industries & Environments</h3>
@@ -90,9 +131,9 @@ const Outcomes = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
-          <div className="card">
+          <motion.div variants={item} className="card">
             <div className="flex items-center gap-3 text-primary-400 mb-4">
               <MapPin className="w-5 h-5" />
               <h3 className="text-lg font-semibold text-white">Service Areas</h3>
@@ -105,8 +146,8 @@ const Outcomes = () => {
                 </li>
               ))}
             </ul>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

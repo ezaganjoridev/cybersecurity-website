@@ -1,5 +1,6 @@
 import React from 'react';
 import { Quote } from 'lucide-react';
+import { motion } from 'framer-motion';
 import avatar1 from '../assets/avatar-1.svg';
 import avatar2 from '../assets/avatar-2.svg';
 import avatar3 from '../assets/avatar-3.svg';
@@ -11,6 +12,21 @@ import avatar8 from '../assets/avatar-8.svg';
 import avatar9 from '../assets/avatar-9.svg';
 
 const Testimonials = () => {
+    const container = {
+        hidden: { opacity: 0 },
+        show: {
+          opacity: 1,
+          transition: {
+            staggerChildren: 0.1
+          }
+        }
+      };
+    
+      const item = {
+        hidden: { opacity: 0, y: 30 },
+        show: { opacity: 1, y: 0 }
+      };
+
   const testimonials = [
     {
       avatar: avatar1,
@@ -87,37 +103,78 @@ const Testimonials = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-20 bg-dark-900 surface-grid">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <div className="chip justify-center mb-6">
+    <section id="testimonials" className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-dark-900 surface-grid -z-10"></div>
+        
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-16">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="chip justify-center mb-6"
+          >
             <Quote className="w-4 h-4" />
             <span>Testimonials</span>
-          </div>
-          <h2 className="section-title leading-[1.1] pb-1">What clients say about our work</h2>
+          </motion.div>
+          <motion.h2 
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="section-title leading-[1.1] pb-1"
+          >
+            What clients say about our work
+          </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div 
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-50px" }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
           {testimonials.map((testimonial) => (
-            <div key={`${testimonial.name}-${testimonial.role}`} className="card">
-              <div className="flex items-center gap-3 mb-4">
-                <img
-                  src={testimonial.avatar}
-                  alt={`Portrait of ${testimonial.name}`}
-                  className="w-12 h-12 rounded-full object-cover ring-2 ring-white/10"
-                />
+            <motion.div 
+                key={`${testimonial.name}-${testimonial.role}`} 
+                variants={item}
+                whileHover={{ y: -8, borderColor: 'rgba(6, 182, 212, 0.4)' }}
+                className="card group hover:bg-dark-800/80 transition-all duration-300 flex flex-col h-full"
+            >
+              <div className="flex items-center gap-4 mb-5">
+                <div className="relative">
+                    <img
+                    src={testimonial.avatar}
+                    alt={`Portrait of ${testimonial.name}`}
+                    className="w-12 h-12 rounded-full object-cover ring-2 ring-dark-700 ml-1"
+                    />
+                    <div className="absolute -bottom-1 -right-1 bg-primary-900 rounded-full p-1 border border-dark-900">
+                        <Quote className="w-3 h-3 text-primary-400" />
+                    </div>
+                </div>
                 <div>
-                  <div className="text-white font-semibold text-sm">{testimonial.name}</div>
-                  <div className="text-gray-400 text-xs">{testimonial.role}</div>
+                  <div className="text-white font-bold text-sm tracking-wide group-hover:text-primary-400 transition-colors">
+                      {testimonial.name}
+                  </div>
+                  <div className="text-gray-500 text-xs uppercase font-medium tracking-wider">
+                      {testimonial.role}
+                  </div>
                 </div>
               </div>
-              <p className="text-gray-300 text-sm leading-relaxed">"{testimonial.quote}"</p>
-              <div className="mt-5">
-                <div className="text-gray-400 text-xs">{testimonial.location}</div>
+              
+              <div className="relative mb-6 flex-grow">
+                 <p className="text-gray-300 text-sm leading-relaxed italic relative z-10">
+                    "{testimonial.quote}"
+                 </p>
               </div>
-            </div>
+              
+              <div className="pt-4 border-t border-dark-700/50 flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-primary-500/50"></div>
+                <div className="text-gray-400 text-xs font-mono">{testimonial.location}</div>
+              </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -5,10 +5,12 @@ import CoreServices from '../components/CoreServices';
 import EngagementProcess from '../components/EngagementProcess';
 import Outcomes from '../components/Outcomes';
 import Contact from '../components/Contact';
+import SEO from '../components/SEO';
 
 const Home = () => {
   return (
     <>
+      <SEO />
       <Hero />
       <HomeHighlights />
       <CoreServices />

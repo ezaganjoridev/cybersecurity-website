@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, MapPin, Send, CheckCircle } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -100,10 +101,20 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-dark-900">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-20 bg-dark-900 relative overflow-hidden">
+       {/* Background Grid Animation */}
+       <div className="absolute inset-0 opacity-20 pointer-events-none">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <div className="chip mb-6">
               <Mail className="w-4 h-4" />
               <span>Contact</span>
@@ -116,20 +127,35 @@ const Contact = () => {
             <div className="space-y-3 text-gray-300">
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-primary-400" />
-                <span>Located in North America (Toronto, ON) with remote delivery Globally</span>
+                <span>Located in North America (Toronto, ON) with remote delivery globally</span>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="card">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="card backdrop-blur-sm bg-dark-800/80 border-primary-500/20"
+          >
             <h3 className="text-2xl font-bold mb-6 text-white">Request a consultation</h3>
 
-            {submitted && (
-              <div className="mb-6 p-4 bg-green-500/10 border border-green-500/30 rounded-lg flex items-center space-x-3">
-                <CheckCircle className="w-5 h-5 text-green-400" />
-                <span className="text-green-400">Message sent successfully!</span>
-              </div>
-            )}
+            <AnimatePresence>
+              {submitted && (
+                <motion.div 
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                  className="mb-6 overflow-hidden"
+                >
+                  <div className="p-4 bg-green-500/10 border border-green-500/30 rounded-lg flex items-center space-x-3">
+                    <CheckCircle className="w-5 h-5 text-green-400" />
+                    <span className="text-green-400">Message sent successfully!</span>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
 
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
@@ -143,7 +169,7 @@ const Contact = () => {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-white focus:outline-none focus:border-primary-500 transition-colors"
+                  className="w-full px-4 py-3 bg-dark-700/50 border border-dark-600 rounded-lg text-white focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all placeholder:text-gray-600"
                   placeholder="John Doe"
                 />
               </div>
@@ -159,7 +185,7 @@ const Contact = () => {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-white focus:outline-none focus:border-primary-500 transition-colors"
+                  className="w-full px-4 py-3 bg-dark-700/50 border border-dark-600 rounded-lg text-white focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all placeholder:text-gray-600"
                   placeholder="john@company.com"
                 />
               </div>
@@ -174,7 +200,7 @@ const Contact = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-white focus:outline-none focus:border-primary-500 transition-colors"
+                  className="w-full px-4 py-3 bg-dark-700/50 border border-dark-600 rounded-lg text-white focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all placeholder:text-gray-600"
                   placeholder="(416)-555-0123"
                 />
               </div>
@@ -189,7 +215,7 @@ const Contact = () => {
                   name="company"
                   value={formData.company}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-white focus:outline-none focus:border-primary-500 transition-colors"
+                  className="w-full px-4 py-3 bg-dark-700/50 border border-dark-600 rounded-lg text-white focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all placeholder:text-gray-600"
                   placeholder="Your Company"
                 />
               </div>
@@ -202,32 +228,31 @@ const Contact = () => {
                   {serviceOptions.map((service) => {
                     const isSelected = formData.services.includes(service);
                     return (
-                      <button
+                      <motion.button
                         key={service}
                         type="button"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
                         onClick={() => handleServiceToggle(service)}
                         className={`group relative overflow-hidden rounded-lg border px-3 py-3 text-left text-sm transition-all duration-200 ${
                           isSelected
-                            ? 'border-primary-500 text-primary-200'
-                            : 'border-dark-600 text-gray-300 hover:border-primary-500/50'
+                            ? 'border-primary-500 text-primary-200 bg-primary-500/10'
+                            : 'border-dark-600 text-gray-300 hover:border-primary-500/50 hover:bg-dark-700/50'
                         }`}
                       >
-                        <span
-                          className={`absolute inset-0 transition-all duration-300 ${
-                            isSelected
-                              ? 'bg-primary-500/15 opacity-100'
-                              : 'bg-primary-500/10 opacity-0 group-hover:opacity-100'
-                          }`}
-                        />
                         <span className="relative flex items-center">
                           <span className="leading-snug">{service}</span>
                         </span>
-                      </button>
+                      </motion.button>
                     );
                   })}
                 </div>
                 {formData.services.includes('Other') && (
-                  <div className="mt-4">
+                  <motion.div 
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    className="mt-4"
+                  >
                     <label htmlFor="otherService" className="block text-sm font-medium text-gray-300 mb-2">
                       Other (please describe)
                     </label>
@@ -237,10 +262,10 @@ const Contact = () => {
                       value={formData.otherService}
                       onChange={handleChange}
                       rows="2"
-                      className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-white focus:outline-none focus:border-primary-500 transition-colors resize-none"
+                      className="w-full px-4 py-3 bg-dark-700/50 border border-dark-600 rounded-lg text-white focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all resize-none"
                       placeholder="Describe the service you need..."
                     ></textarea>
-                  </div>
+                  </motion.div>
                 )}
               </div>
 
@@ -255,20 +280,22 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows="4"
-                  className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-white focus:outline-none focus:border-primary-500 transition-colors resize-none"
+                  className="w-full px-4 py-3 bg-dark-700/50 border border-dark-600 rounded-lg text-white focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all resize-none"
                   placeholder="Tell me about your security needs..."
                 ></textarea>
               </div>
 
-              <button
+              <motion.button
                 type="submit"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 className="w-full btn-primary flex items-center justify-center space-x-2"
               >
                 <span>Send Message</span>
                 <Send className="w-5 h-5" />
-              </button>
+              </motion.button>
             </form>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

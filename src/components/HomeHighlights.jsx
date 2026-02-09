@@ -1,5 +1,6 @@
 import React from 'react';
 import { ShieldCheck, Globe, Sparkles, Target, Lock, Activity } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const HomeHighlights = () => {
   const highlights = [
@@ -35,28 +36,79 @@ const HomeHighlights = () => {
     }
   ];
 
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const item = {
+    hidden: { opacity: 0, scale: 0.9 },
+    show: { opacity: 1, scale: 1 }
+  };
+
   return (
-    <section className="py-16 bg-dark-900">
+    <section className="py-16 bg-dark-900 border-b border-dark-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
-          <div className="chip-accent justify-center mb-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="chip-accent justify-center mb-6"
+          >
             <Sparkles className="w-4 h-4" />
             <span>Why Teams Choose Us</span>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">Serious Security. Practical Delivery.</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          </motion.div>
+          <motion.h2 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-3xl md:text-4xl font-bold text-white mb-3"
+          >
+            Serious Security. Practical Delivery.
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-gray-400 max-w-2xl mx-auto"
+          >
             A focused practice that blends cybersecurity depth with real IT operations experience.
-          </p>
+          </motion.p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {highlights.map((item, index) => (
-            <div key={index} className="card animate-fade-up" style={{ animationDelay: `${index * 0.06}s` }}>
-              <div className="text-primary-500 mb-3">{item.icon}</div>
-              <h3 className="text-lg font-semibold mb-2 text-white">{item.title}</h3>
-              <p className="text-gray-400 text-sm">{item.description}</p>
-            </div>
+        <motion.div 
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          {highlights.map((highlight, index) => (
+            <motion.div 
+              key={index} 
+              variants={item}
+              whileHover={{ 
+                y: -5,
+                boxShadow: "0 10px 30px -10px rgba(14, 165, 233, 0.2)",
+                borderColor: "rgba(14, 165, 233, 0.5)"
+              }}
+              className="card bg-dark-800/50 hover:bg-dark-800 transition-all duration-300"
+            >
+              <div className="p-3 bg-primary-500/10 rounded-lg w-fit mb-4 text-primary-400 group-hover:text-primary-300">
+                {highlight.icon}
+              </div>
+              <h3 className="text-lg font-semibold mb-2 text-white">{highlight.title}</h3>
+              <p className="text-gray-400 text-sm">{highlight.description}</p>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

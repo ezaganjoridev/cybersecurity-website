@@ -1,7 +1,14 @@
-import React from 'react';
-import { HelpCircle } from 'lucide-react';
+import React, { useState } from 'react';
+import { HelpCircle, ChevronDown, ChevronUp, Plus, Minus } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const FAQ = () => {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   const faqs = [
     {
       question: 'What types of organizations do you work with?',
@@ -13,7 +20,7 @@ const FAQ = () => {
     },
     {
       question: 'Do you offer remote and on-site engagements?',
-      answer: 'Yes. We’re based in Toronto, Ontario, Canada, and we deliver engagements remotely across Canada, the United States, and other countries such as the United Kingdom, Ireland, Australia, New Zealand, and Singapore. On-site support is available when needed. Contact us for more information regarding if we can provide services to you/your area.'
+      answer: 'Yes. We’re based in Toronto, Ontario, Canada, and we deliver engagements remotely across Canada, the United States, and other countries such as the United Kingdom, Ireland, Australia, New Zealand, and Singapore. On-site support is available when needed.'
     },
     {
       question: 'What cities have you supported?',
@@ -66,25 +73,78 @@ const FAQ = () => {
   ];
 
   return (
-    <section id="faq" className="py-20 bg-dark-900">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="faq" className="py-20 relative">
+       {/* Background */}
+       <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary-900/5 to-transparent pointer-events-none"></div>
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
-          <div className="chip justify-center mb-6">
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="chip justify-center mb-6"
+          >
             <HelpCircle className="w-4 h-4" />
             <span>FAQ</span>
-          </div>
-          <h2 className="section-title">Common Questions</h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          </motion.div>
+          
+          <motion.h2 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="section-title"
+          >
+            Common Questions
+          </motion.h2>
+          
+          <motion.p 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-lg text-gray-400 max-w-2xl mx-auto"
+          >
             Short answers to help you decide if we’re a fit.
-          </p>
+          </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div key={index} className="card">
-              <h3 className="text-lg font-semibold text-white mb-2">{faq.question}</h3>
-              <p className="text-gray-400 text-sm">{faq.answer}</p>
-            </div>
+            <motion.div 
+                key={index}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: index * 0.05 }}
+                className={`card transition-colors duration-300 cursor-pointer ${openIndex === index ? 'border-primary-500/50 bg-dark-800' : 'hover:border-primary-500/30'}`}
+                onClick={() => toggleFAQ(index)}
+            >
+              <div className="flex justify-between items-start gap-4">
+                <h3 className={`text-lg font-medium pr-8 transition-colors ${openIndex === index ? 'text-primary-400' : 'text-white'}`}>
+                    {faq.question}
+                </h3>
+                <div className={`mt-1 p-0.5 rounded-full transition-colors ${openIndex === index ? 'bg-primary-500/20 text-primary-400' : 'text-gray-500'}`}>
+                    {openIndex === index ? <Minus size={18} /> : <Plus size={18} />}
+                </div>
+              </div>
+              
+              <AnimatePresence>
+                {openIndex === index && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="overflow-hidden"
+                  >
+                    <p className="pt-4 text-gray-300 text-sm leading-relaxed border-t border-dark-700/50 mt-4">
+                        {faq.answer}
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
           ))}
         </div>
       </div>

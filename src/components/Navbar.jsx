@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, Shield } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = ({ scrolled }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,9 +37,10 @@ const Navbar = ({ scrolled }) => {
               <Link
                 key={link.name}
                 to={link.href}
-                className="text-gray-300 hover:text-primary-400 transition-colors font-medium"
+                className="text-gray-300 hover:text-primary-400 transition-colors font-medium relative group"
               >
                 {link.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all group-hover:w-full"></span>
               </Link>
             ))}
             <Link to="/#contact" className="btn-primary">
@@ -57,25 +59,33 @@ const Navbar = ({ scrolled }) => {
       </div>
 
       {/* Mobile Navigation */}
-      {isOpen && (
-        <div className="md:hidden bg-dark-800 border-t border-dark-700">
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.href}
-                onClick={() => setIsOpen(false)}
-                className="block px-3 py-2 text-gray-300 hover:text-primary-400 hover:bg-dark-700 rounded-md transition-colors"
-              >
-                {link.name}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div 
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden bg-dark-800 border-t border-dark-700 overflow-hidden"
+          >
+            <div className="px-2 pt-2 pb-3 space-y-1">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="block px-3 py-2 text-gray-300 hover:text-primary-400 hover:bg-dark-700 rounded-md transition-colors"
+                >
+                  {link.name}
+                </Link>
+              ))}
+              <Link to="/#contact" onClick={() => setIsOpen(false)} className="block px-3 py-2 text-center btn-primary mt-4">
+                Book a Call
               </Link>
-            ))}
-            <Link to="/#contact" onClick={() => setIsOpen(false)} className="block px-3 py-2 text-center btn-primary mt-4">
-              Book a Call
-            </Link>
-          </div>
-        </div>
-      )}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
