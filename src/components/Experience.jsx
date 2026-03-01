@@ -110,20 +110,20 @@ const Experience = () => {
             viewport={{ once: true, margin: "-50px" }}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12 sm:mb-16"
         >
-          {competencies.map((item, index) => (
+          {competencies.map((comp, index) => (
             <motion.div 
                 key={index}
                 variants={item}
-                whileHover={{ y: -8, borderColor: 'rgba(6, 182, 212, 0.4)' }}
+                whileHover={{ y: -8, borderColor: 'rgba(6, 182, 212, 0.4)', transition: { duration: 0.25, ease: 'easeOut' } }}
                 className="card group hover:bg-dark-800/80 transition-all duration-300 border-l-4 border-l-transparent hover:border-l-primary-500"
             >
               <div className="inline-flex p-3 bg-dark-800 rounded-lg group-hover:bg-primary-900/20 text-primary-500 mb-4 transition-colors">
-                  {item.icon}
+                  {comp.icon}
               </div>
               <h3 className="text-lg font-bold mb-3 text-white group-hover:text-primary-400 transition-colors">
-                  {item.title}
+                  {comp.title}
               </h3>
-              <p className="text-gray-400 text-sm leading-relaxed">{item.description}</p>
+              <p className="text-gray-400 text-sm leading-relaxed">{comp.description}</p>
             </motion.div>
           ))}
         </motion.div>

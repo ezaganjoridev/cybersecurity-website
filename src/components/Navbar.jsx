@@ -64,22 +64,40 @@ const Navbar = ({ scrolled }) => {
   ];
 
   // Smooth tween animations — no springs, GPU-friendly
+  const backdropVariants = {
+    closed: { opacity: 0 },
+    open: { opacity: 1, transition: { duration: 0.25, ease: [0.25, 0.1, 0.25, 1] } },
+    exit: { opacity: 0, transition: { duration: 0.2, ease: 'easeIn' } },
+  };
+
+  const panelVariants = {
+    closed: { clipPath: 'circle(0% at calc(100% - 2rem) 2rem)' },
+    open: {
+      clipPath: 'circle(150% at calc(100% - 2rem) 2rem)',
+      transition: { duration: 0.45, ease: [0.4, 0, 0.2, 1] },
+    },
+    exit: {
+      clipPath: 'circle(0% at calc(100% - 2rem) 2rem)',
+      transition: { duration: 0.3, ease: [0.4, 0, 1, 1] },
+    },
+  };
+
   const menuVariants = {
     closed: { opacity: 0 },
     open: {
       opacity: 1,
-      transition: { staggerChildren: 0.04, delayChildren: 0.05 },
+      transition: { staggerChildren: 0.06, delayChildren: 0.15 },
     },
     exit: {
       opacity: 0,
-      transition: { duration: 0.15 },
+      transition: { duration: 0.1 },
     },
   };
 
   const itemVariants = {
-    closed: { opacity: 0, y: 16 },
-    open: { opacity: 1, y: 0, transition: { duration: 0.22, ease: 'easeOut' } },
-    exit: { opacity: 0, transition: { duration: 0.1 } },
+    closed: { opacity: 0, x: -20 },
+    open: { opacity: 1, x: 0, transition: { duration: 0.3, ease: [0.25, 0.1, 0.25, 1] } },
+    exit: { opacity: 0, transition: { duration: 0.08 } },
   };
 
   return (
@@ -140,26 +158,38 @@ const Navbar = ({ scrolled }) => {
         </div>
       </div>
 
-      {/* Mobile Navigation — Full-screen frosted overlay */}
+      {/* Mobile Navigation — Full-screen overlay with clip-path reveal */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2, ease: 'easeOut' }}
-            className="md:hidden fixed inset-0 z-[55] bg-dark-900/95 backdrop-blur-md overflow-y-auto overscroll-contain"
-          >
-            {/* Decorative grid */}
-            <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[linear-gradient(to_right,#0ea5e9_1px,transparent_1px),linear-gradient(to_bottom,#0ea5e9_1px,transparent_1px)] bg-[size:40px_40px]" />
-
+          <>
+            {/* Dim backdrop — lightweight, no blur during animation */}
             <motion.div
-              variants={menuVariants}
+              variants={backdropVariants}
               initial="closed"
               animate="open"
               exit="exit"
-              className="relative flex flex-col justify-center min-h-full px-8 py-24"
+              className="md:hidden fixed inset-0 z-[54] bg-black/60"
+              onClick={closeMenu}
+            />
+
+            {/* Panel — clip-path reveal from hamburger position (GPU-composited) */}
+            <motion.div
+              variants={panelVariants}
+              initial="closed"
+              animate="open"
+              exit="exit"
+              className="md:hidden fixed inset-0 z-[55] bg-dark-900 will-change-[clip-path] overflow-y-auto overscroll-contain"
             >
+              {/* Decorative grid */}
+              <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[linear-gradient(to_right,#0ea5e9_1px,transparent_1px),linear-gradient(to_bottom,#0ea5e9_1px,transparent_1px)] bg-[size:40px_40px]" />
+
+              <motion.div
+                variants={menuVariants}
+                initial="closed"
+                animate="open"
+                exit="exit"
+                className="relative flex flex-col justify-center min-h-full px-8 py-24"
+              >
               {navLinks.map((link, i) => (
                 <motion.div key={link.name} variants={itemVariants} className="w-full">
                   <Link
@@ -187,8 +217,9 @@ const Navbar = ({ scrolled }) => {
                   Book a Call
                 </Link>
               </motion.div>
+              </motion.div>
             </motion.div>
-          </motion.div>
+          </>
         )}
       </AnimatePresence>
     </nav>

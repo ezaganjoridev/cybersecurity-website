@@ -290,8 +290,7 @@ const Contact = () => {
 
               <motion.button
                 type="submit"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                whileTap={{ scale: 0.97 }}
                 className="w-full btn-primary flex items-center justify-center space-x-2"
               >
                 <span>Send Message</span>

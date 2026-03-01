@@ -25,8 +25,8 @@ const Testimonials = () => {
       };
     
       const item = {
-        hidden: { opacity: 0, y: 30 },
-        show: { opacity: 1, y: 0 }
+        hidden: { opacity: 0, y: 16 },
+        show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.25, 0.1, 0.25, 1] } }
       };
 
   const testimonials = [
@@ -200,7 +200,7 @@ const Testimonials = () => {
             <motion.div 
                 key={`${testimonial.name}-${testimonial.role}`} 
                 variants={item}
-                whileHover={{ y: -8, borderColor: 'rgba(6, 182, 212, 0.4)' }}
+                whileHover={{ y: -6, borderColor: 'rgba(6, 182, 212, 0.4)', transition: { duration: 0.25, ease: 'easeOut' } }}
                 className="card group hover:bg-dark-800/80 transition-all duration-300 flex flex-col h-full"
             >
               <div className="flex items-center gap-4 mb-5">
