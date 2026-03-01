@@ -12,18 +12,42 @@ const Navbar = ({ scrolled }) => {
     setIsOpen(false);
   }, [location.pathname]);
 
+  // Close menu if viewport grows past mobile breakpoint (e.g. Chrome resize)
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 768px)');
+    const handler = (e) => { if (e.matches) setIsOpen(false); };
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+
   // Prevent body scroll when menu is open
   useEffect(() => {
     if (isOpen) {
+      // Save current scroll position
+      const scrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.left = '0';
+      document.body.style.right = '0';
       document.body.style.overflow = 'hidden';
-      document.body.style.touchAction = 'none';
     } else {
+      const top = document.body.style.top;
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
       document.body.style.overflow = '';
-      document.body.style.touchAction = '';
+      // Restore scroll position
+      if (top) window.scrollTo(0, parseInt(top || '0', 10) * -1);
     }
     return () => {
+      const top = document.body.style.top;
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
       document.body.style.overflow = '';
-      document.body.style.touchAction = '';
+      if (top) window.scrollTo(0, parseInt(top || '0', 10) * -1);
     };
   }, [isOpen]);
 
@@ -39,7 +63,7 @@ const Navbar = ({ scrolled }) => {
     { name: 'FAQ', href: '/faq' },
   ];
 
-  // Simple tween-based animations (no springs — much smoother on mobile GPUs)
+  // Smooth tween animations — no springs, GPU-friendly
   const menuVariants = {
     closed: { opacity: 0 },
     open: {
@@ -53,8 +77,8 @@ const Navbar = ({ scrolled }) => {
   };
 
   const itemVariants = {
-    closed: { opacity: 0, y: 12 },
-    open: { opacity: 1, y: 0, transition: { duration: 0.2, ease: 'easeOut' } },
+    closed: { opacity: 0, y: 16 },
+    open: { opacity: 1, y: 0, transition: { duration: 0.22, ease: 'easeOut' } },
     exit: { opacity: 0, transition: { duration: 0.1 } },
   };
 
@@ -101,10 +125,10 @@ const Navbar = ({ scrolled }) => {
             </Link>
           </div>
 
-          {/* Mobile menu button — plain button, no nested AnimatePresence */}
+          {/* Mobile menu button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden relative z-50 text-gray-300 hover:text-primary-400 p-2 active:scale-90 transition-transform duration-100"
+            className="md:hidden relative z-[60] text-gray-300 hover:text-primary-400 p-2 active:scale-90 transition-transform duration-100"
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
           >
             {isOpen ? <X size={26} /> : <Menu size={26} />}
@@ -112,7 +136,7 @@ const Navbar = ({ scrolled }) => {
         </div>
       </div>
 
-      {/* Mobile Navigation — Full-screen overlay */}
+      {/* Mobile Navigation — Full-screen frosted overlay */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -120,18 +144,17 @@ const Navbar = ({ scrolled }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2, ease: 'easeOut' }}
-            className="md:hidden fixed inset-0 z-40 bg-dark-900 will-change-[opacity]"
-            style={{ contain: 'strict' }}
+            className="md:hidden fixed inset-0 z-[55] bg-dark-900/95 backdrop-blur-md overflow-y-auto overscroll-contain"
           >
-            {/* Lightweight decorative grid (no blur) */}
-            <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#0ea5e9_1px,transparent_1px),linear-gradient(to_bottom,#0ea5e9_1px,transparent_1px)] bg-[size:40px_40px]" />
+            {/* Decorative grid */}
+            <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[linear-gradient(to_right,#0ea5e9_1px,transparent_1px),linear-gradient(to_bottom,#0ea5e9_1px,transparent_1px)] bg-[size:40px_40px]" />
 
             <motion.div
               variants={menuVariants}
               initial="closed"
               animate="open"
               exit="exit"
-              className="relative flex flex-col justify-center items-start h-full px-8 pb-20"
+              className="relative flex flex-col justify-center min-h-full px-8 py-24"
             >
               {navLinks.map((link, i) => (
                 <motion.div key={link.name} variants={itemVariants} className="w-full">
