@@ -99,6 +99,7 @@ const HomeHighlights = () => {
                 boxShadow: "0 10px 30px -10px rgba(14, 165, 233, 0.2)",
                 borderColor: "rgba(14, 165, 233, 0.5)"
               }}
+              whileTap={{ scale: 0.98 }}
               className="card bg-dark-800/50 hover:bg-dark-800 transition-all duration-300"
             >
               <div className="p-3 bg-primary-500/10 rounded-lg w-fit mb-4 text-primary-400 group-hover:text-primary-300">

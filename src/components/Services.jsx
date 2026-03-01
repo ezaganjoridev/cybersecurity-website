@@ -189,12 +189,13 @@ const Services = () => {
             <h3 className="text-2xl font-bold text-white">Cybersecurity Services</h3>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             {cyberServices.map((service, index) => (
               <motion.div 
                 key={index} 
                 variants={item}
                 whileHover={{ y: -5, borderColor: 'rgba(6, 182, 212, 0.4)' }}
+                whileTap={{ scale: 0.98 }}
                 className="card group hover:bg-dark-800/80 transition-all duration-300"
               >
                 <div className="flex items-start gap-4">
@@ -226,12 +227,13 @@ const Services = () => {
             <h3 className="text-2xl font-bold text-white">IT & Operational Services</h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             {itServices.map((service, index) => (
               <motion.div 
                 key={index} 
                 variants={item}
                 whileHover={{ y: -5, borderColor: 'rgba(6, 182, 212, 0.4)' }}
+                whileTap={{ scale: 0.98 }}
                 className="card group hover:bg-dark-800/80 transition-all duration-300"
               >
                <div className="flex items-start gap-4">
@@ -394,7 +396,7 @@ const Services = () => {
             </p>
             <Link 
                 to="/#contact" 
-                className="inline-flex items-center justify-center px-8 py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-500 transition-all duration-300 shadow-lg shadow-primary-900/50 group-hover:scale-105"
+                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-500 transition-all duration-300 shadow-lg shadow-primary-900/50 active:scale-95 sm:group-hover:scale-105 text-sm sm:text-base"
             >
                 Request a Scope <ArrowRight className="w-5 h-5 ml-2" />
             </Link>

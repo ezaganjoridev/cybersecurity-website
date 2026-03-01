@@ -10,7 +10,7 @@ const TestimonialsPage = () => {
         description="See what our clients say about our cybersecurity services, from Incident Response to Penetration Testing."
         keywords="cybersecurity testimonials, client reviews, case studies, trusted partner"
       />
-      <div className="pt-24 min-h-screen bg-dark-900 surface-grid">
+      <div className="pt-20 md:pt-24 min-h-screen bg-dark-900 surface-grid">
         <Testimonials />
       </div>
     </>

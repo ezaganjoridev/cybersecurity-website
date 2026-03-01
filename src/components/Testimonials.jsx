@@ -1,5 +1,5 @@
-import React from 'react';
-import { Quote } from 'lucide-react';
+import React, { useRef } from 'react';
+import { Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import avatar1 from '../assets/avatar-1.svg';
 import avatar2 from '../assets/avatar-2.svg';
@@ -12,6 +12,8 @@ import avatar8 from '../assets/avatar-8.svg';
 import avatar9 from '../assets/avatar-9.svg';
 
 const Testimonials = () => {
+    const scrollRef = useRef(null);
+
     const container = {
         hidden: { opacity: 0 },
         show: {
@@ -127,12 +129,61 @@ const Testimonials = () => {
           </motion.h2>
         </div>
 
+        {/* Mobile: horizontal scroll | Desktop: grid */}
+        <div className="md:hidden relative">
+          <div
+            ref={scrollRef}
+            className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 -mx-4 px-4 scrollbar-hide"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
+          >
+            {testimonials.map((testimonial) => (
+              <motion.div
+                key={`mobile-${testimonial.name}-${testimonial.role}`}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="card group snap-center flex-shrink-0 w-[85vw] max-w-sm flex flex-col"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="relative">
+                    <img
+                      src={testimonial.avatar}
+                      alt={`Portrait of ${testimonial.name}`}
+                      className="w-10 h-10 rounded-full object-cover ring-2 ring-dark-700"
+                      loading="lazy"
+                    />
+                    <div className="absolute -bottom-1 -right-1 bg-primary-900 rounded-full p-0.5 border border-dark-900">
+                      <Quote className="w-2.5 h-2.5 text-primary-400" />
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-white font-bold text-sm">{testimonial.name}</div>
+                    <div className="text-gray-500 text-xs uppercase tracking-wider">{testimonial.role}</div>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm leading-relaxed italic flex-grow">
+                  "{testimonial.quote}"
+                </p>
+                <div className="pt-3 mt-3 border-t border-dark-700/50 flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary-500/50" />
+                  <div className="text-gray-400 text-xs font-mono">{testimonial.location}</div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          {/* Scroll hint */}
+          <div className="flex justify-center gap-1 mt-2">
+            <span className="text-xs text-gray-500">← swipe →</span>
+          </div>
+        </div>
+
+        {/* Desktop: original grid */}
         <motion.div 
             variants={container}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "-50px" }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {testimonials.map((testimonial) => (
             <motion.div 
@@ -147,6 +198,7 @@ const Testimonials = () => {
                     src={testimonial.avatar}
                     alt={`Portrait of ${testimonial.name}`}
                     className="w-12 h-12 rounded-full object-cover ring-2 ring-dark-700 ml-1"
+                    loading="lazy"
                     />
                     <div className="absolute -bottom-1 -right-1 bg-primary-900 rounded-full p-1 border border-dark-900">
                         <Quote className="w-3 h-3 text-primary-400" />

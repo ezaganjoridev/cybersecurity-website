@@ -9,7 +9,7 @@ const FAQPage = () => {
         title="FAQ | ZedGar Solutions"
         description="Find answers about our engagement models, cybersecurity services, remote delivery capabilities, and pricing."
       />
-      <div className="pt-24 min-h-screen bg-dark-900 surface-grid">
+      <div className="pt-20 md:pt-24 min-h-screen bg-dark-900 surface-grid">
         <FAQ />
       </div>
     </>

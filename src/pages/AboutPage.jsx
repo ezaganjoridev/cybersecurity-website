@@ -4,7 +4,7 @@ import SEO from '../components/SEO';
 
 const AboutPage = () => {
   return (
-    <div className="pt-24">
+    <div className="pt-20 md:pt-24">
       <SEO 
         title="About Us"
         description="SANS-certified experts delivering personalized cyber security consulting, incident response, and penetration testing in Toronto and globally."

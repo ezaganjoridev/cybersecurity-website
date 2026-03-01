@@ -70,24 +70,24 @@ const EngagementProcess = () => {
             whileInView={{ height: '100%' }}
             viewport={{ once: true }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
-            className="absolute left-5 top-0 bottom-0 w-px bg-gradient-to-b from-primary-500/50 via-primary-500/20 to-transparent"
+            className="absolute left-[18px] sm:left-5 top-0 bottom-0 w-px bg-gradient-to-b from-primary-500/50 via-primary-500/20 to-transparent"
           />
           
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {steps.map((step, index) => (
               <motion.div
                 key={step.title}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: index * 0.2 }}
-                className="relative pl-14 group"
+                transition={{ delay: index * 0.15 }}
+                className="relative pl-12 sm:pl-14 group"
               >
-                <div className="absolute left-0 top-0 w-10 h-10 rounded-full bg-dark-800 border border-primary-500/40 text-primary-300 flex items-center justify-center group-hover:bg-primary-500/20 group-hover:text-primary-200 transition-all duration-300 z-10">
+                <div className="absolute left-0 top-0 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-dark-800 border border-primary-500/40 text-primary-300 flex items-center justify-center group-hover:bg-primary-500/20 group-hover:text-primary-200 transition-all duration-300 z-10">
                   {step.icon}
                 </div>
-                <h3 className="text-lg font-semibold text-white group-hover:text-primary-100 transition-colors">{step.title}</h3>
-                <p className="text-gray-400 text-sm mt-2">{step.description}</p>
+                <h3 className="text-base sm:text-lg font-semibold text-white group-hover:text-primary-100 transition-colors">{step.title}</h3>
+                <p className="text-gray-400 text-sm mt-1.5 sm:mt-2">{step.description}</p>
               </motion.div>
             ))}
           </div>

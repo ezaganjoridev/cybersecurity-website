@@ -23,13 +23,13 @@ const Footer = () => {
 
   return (
     <footer className="bg-dark-800 border-t border-dark-700">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
-          <div className="col-span-1 md:col-span-2">
+          <div className="col-span-2">
             <Link to="/" className="flex items-center space-x-2 mb-4">
-              <Shield className="w-8 h-8 text-primary-500" />
-              <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent">
+              <Shield className="w-7 h-7 sm:w-8 sm:h-8 text-primary-500" />
+              <span className="text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent">
                 Cloud Secure Canada
               </span>
             </Link>

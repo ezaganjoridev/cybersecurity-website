@@ -224,17 +224,16 @@ const Contact = () => {
                 <label className="block text-sm font-medium text-gray-300 mb-3">
                   Services Interested In *
                 </label>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                   {serviceOptions.map((service) => {
                     const isSelected = formData.services.includes(service);
                     return (
                       <motion.button
                         key={service}
                         type="button"
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
+                        whileTap={{ scale: 0.97 }}
                         onClick={() => handleServiceToggle(service)}
-                        className={`group relative overflow-hidden rounded-lg border px-3 py-3 text-left text-sm transition-all duration-200 ${
+                        className={`group relative overflow-hidden rounded-lg border px-3 py-3 text-left text-sm transition-all duration-200 active:scale-[0.97] ${
                           isSelected
                             ? 'border-primary-500 text-primary-200 bg-primary-500/10'
                             : 'border-dark-600 text-gray-300 hover:border-primary-500/50 hover:bg-dark-700/50'

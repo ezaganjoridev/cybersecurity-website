@@ -2,11 +2,15 @@ import React from 'react';
 import { Shield, ArrowRight, CheckCircle, Mail, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import MobileTerminal from './MobileTerminal';
+import CyberGrid from './CyberGrid';
 
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900">
+        {/* Cyber grid canvas — auto-pauses off-screen */}
+        <CyberGrid />
         <div className="absolute inset-0 opacity-20">
           <motion.div 
             animate={{ 
@@ -19,7 +23,7 @@ const Hero = () => {
               repeat: Infinity,
               ease: "linear" 
             }}
-            className="absolute top-1/4 left-1/4 w-80 h-80 bg-primary-500 rounded-full blur-3xl"
+            className="absolute top-1/4 left-1/4 w-80 h-80 bg-primary-500 rounded-full blur-3xl will-change-transform"
           />
           <motion.div 
              animate={{ 
@@ -32,13 +36,13 @@ const Hero = () => {
               repeat: Infinity,
               ease: "linear" 
             }}
-            className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary-700 rounded-full blur-3xl"
+            className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary-700 rounded-full blur-3xl will-change-transform"
           />
         </div>
       </div>
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -59,7 +63,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
+              className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 leading-tight"
             >
               Cybersecurity consulting that
               <span className="block bg-gradient-to-r from-primary-300 to-primary-500 bg-clip-text text-transparent">
@@ -113,6 +117,9 @@ const Hero = () => {
                 View Services
               </Link>
             </motion.div>
+
+            {/* Mobile Terminal — visible only on small screens */}
+            <MobileTerminal />
           </motion.div>
 
           <motion.div 

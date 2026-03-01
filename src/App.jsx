@@ -1,14 +1,44 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
-import Home from './pages/Home';
-import ServicesPage from './pages/ServicesPage';
-import AboutPage from './pages/AboutPage';
-import ExperiencePage from './pages/ExperiencePage';
-import FAQPage from './pages/FAQPage';
-import TestimonialsPage from './pages/TestimonialsPage';
+import ScrollProgress from './components/ScrollProgress';
+import MobileCTA from './components/MobileCTA';
+import PageTransition from './components/PageTransition';
+
+// Lazy-load pages for better initial load performance
+const Home = lazy(() => import('./pages/Home'));
+const ServicesPage = lazy(() => import('./pages/ServicesPage'));
+const AboutPage = lazy(() => import('./pages/AboutPage'));
+const ExperiencePage = lazy(() => import('./pages/ExperiencePage'));
+const FAQPage = lazy(() => import('./pages/FAQPage'));
+const TestimonialsPage = lazy(() => import('./pages/TestimonialsPage'));
+
+const PageFallback = () => (
+  <div className="min-h-screen flex items-center justify-center bg-dark-900">
+    <div className="w-8 h-8 border-2 border-primary-500 border-t-transparent rounded-full animate-spin" />
+  </div>
+);
+
+function AnimatedRoutes() {
+  const location = useLocation();
+
+  return (
+    <PageTransition locationKey={location.pathname}>
+      <Suspense fallback={<PageFallback />}>
+        <Routes location={location}>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/experience" element={<ExperiencePage />} />
+          <Route path="/faq" element={<FAQPage />} />
+          <Route path="/testimonials" element={<TestimonialsPage />} />
+        </Routes>
+      </Suspense>
+    </PageTransition>
+  );
+}
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -17,24 +47,19 @@ function App() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <Router>
       <ScrollToTop />
+      <ScrollProgress />
       <div className="min-h-screen bg-dark-900">
         <Navbar scrolled={scrolled} />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/experience" element={<ExperiencePage />} />
-          <Route path="/faq" element={<FAQPage />} />
-          <Route path="/testimonials" element={<TestimonialsPage />} />
-        </Routes>
+        <AnimatedRoutes />
         <Footer />
+        <MobileCTA />
       </div>
     </Router>
   );

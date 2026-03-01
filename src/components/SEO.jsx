@@ -7,7 +7,8 @@ const SEO = ({
   canonical, 
   type = 'website',
   name = 'Cloud Secure Canada',
-  image = 'https://cloudsecurecanada.com/shield.svg'
+  image = 'https://cloudsecurecanada.com/shield.svg',
+  breadcrumbs = null
 }) => {
   const siteTitle = 'Cloud Secure Canada | Cyber Security Consultant in Toronto';
   const fullTitle = title ? `${title} | ${name}` : siteTitle;
@@ -15,6 +16,17 @@ const SEO = ({
   const metaDescription = description || defaultDescription;
   const siteUrl = 'https://cloudsecurecanada.com';
   const canonicalUrl = canonical || siteUrl;
+
+  const breadcrumbSchema = breadcrumbs ? {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": breadcrumbs.map((crumb, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": crumb.name,
+      "item": crumb.url
+    }))
+  } : null;
 
   return (
     <Helmet>
@@ -36,6 +48,13 @@ const SEO = ({
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={metaDescription} />
       <meta name="twitter:image" content={image} />
+
+      {/* BreadcrumbList Structured Data */}
+      {breadcrumbSchema && (
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
+      )}
     </Helmet>
   );
 };

@@ -14,6 +14,8 @@
 
   body {
     @apply bg-dark-900 text-gray-100 font-body;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4 {
@@ -24,18 +26,22 @@
 @layer components {
   .btn-primary {
     @apply px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-all duration-300;
+    /* smooth tap highlight on mobile */
+    -webkit-tap-highlight-color: transparent;
   }
   
   .btn-secondary {
     @apply px-6 py-3 bg-transparent border-2 border-primary-500 hover:bg-primary-500/10 text-primary-400 font-semibold rounded-lg transition-all duration-300;
+    -webkit-tap-highlight-color: transparent;
   }
   
   .section-title {
-    @apply text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary-300 to-primary-500 bg-clip-text text-transparent;
+    @apply text-3xl sm:text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary-300 to-primary-500 bg-clip-text text-transparent;
   }
   
   .card {
-    @apply bg-dark-800/90 rounded-2xl p-6 border border-dark-700 hover:border-primary-500 transition-all duration-300;
+    @apply bg-dark-800/90 rounded-2xl p-5 sm:p-6 border border-dark-700 hover:border-primary-500 transition-all duration-300;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .chip {
@@ -66,6 +72,8 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ─── Keyframes ─── */
+
 @keyframes fade-up {
   from {
     opacity: 0;
@@ -78,24 +86,19 @@ html {
 }
 
 @keyframes float-slow {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
-  100% {
-    transform: translateY(0);
-  }
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
 }
 
 @keyframes scanline {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(100%);
-  }
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
 }
 
 .animate-scanline {
@@ -104,9 +107,10 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, transparent, rgba(14, 165, 233, 0.1), transparent);
+  background: linear-gradient(to bottom, transparent, rgba(14, 165, 233, 0.08), transparent);
   animation: scanline 3s linear infinite;
   pointer-events: none;
+  will-change: transform;
 }
 
 .animate-fade-up {
@@ -121,9 +125,51 @@ html {
   animation: float-slow 8s ease-in-out infinite;
 }
 
-/* Custom scrollbar */
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* ─── Reduced Motion ─── */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-scanline,
+  .animate-float-slow {
+    animation: none !important;
+  }
+}
+
+/* ─── Mobile-specific ─── */
+
+@media (max-width: 767px) {
+  /* Reduce heavy background effects on mobile */
+  .surface-grid {
+    background-size: auto, auto, 40px 40px, 40px 40px;
+  }
+
+  /* Prevent horizontal overflow */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Better touch targets */
+  .card {
+    min-height: 44px;
+  }
+}
+
+/* ─── Scrollbar ─── */
+
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -132,11 +178,19 @@ html {
 
 ::-webkit-scrollbar-thumb {
   background: #0369a1;
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #0284c7;
+}
+
+/* Hide scrollbar on mobile for cleaner look */
+@media (max-width: 767px) {
+  ::-webkit-scrollbar {
+    width: 0;
+    display: none;
+  }
 }
 
 ::selection {

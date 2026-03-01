@@ -123,13 +123,13 @@ const About = () => {
           </div>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="mt-8 sm:mt-12 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="bg-dark-800 rounded-2xl p-8 border border-dark-700 hover:border-primary-500/30 transition-colors relative overflow-hidden"
+            className="bg-dark-800 rounded-2xl p-5 sm:p-8 border border-dark-700 hover:border-primary-500/30 transition-colors relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 p-4 opacity-10">
               <Award className="w-24 h-24 text-primary-500" />
@@ -150,9 +150,9 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="bg-dark-800 rounded-2xl p-8 border border-dark-700 hover:border-primary-500/30 transition-colors relative overflow-hidden"
+            className="bg-dark-800 rounded-2xl p-5 sm:p-8 border border-dark-700 hover:border-primary-500/30 transition-colors relative overflow-hidden"
           >
-             <div className="absolute top-0 right-0 p-4 opacity-10">
+             <div className="absolute top-0 right-0 p-4 opacity-10 hidden sm:block">
               <Shield className="w-24 h-24 text-primary-500" />
             </div>
             <h3 className="text-xl font-bold mb-4 text-white relative">Core Skills</h3>
