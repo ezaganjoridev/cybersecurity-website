@@ -105,11 +105,11 @@ const Testimonials = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-20 relative overflow-hidden">
+    <section id="testimonials" className="py-16 sm:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-dark-900 surface-grid -z-10"></div>
         
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
+        <header className="text-center mb-12 sm:mb-16">
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -117,7 +117,7 @@ const Testimonials = () => {
             className="chip justify-center mb-6"
           >
             <Quote className="w-4 h-4" />
-            <span>Testimonials</span>
+            <span>Client Testimonials</span>
           </motion.div>
           <motion.h2 
             initial={{ opacity: 0, y: -20 }}
@@ -125,9 +125,20 @@ const Testimonials = () => {
             viewport={{ once: true }}
             className="section-title leading-[1.1] pb-1"
           >
-            What clients say about our work
+            What Clients Say About Our{' '}
+            <span className="text-primary-400">Cybersecurity Consulting</span>
           </motion.h2>
-        </div>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.15 }}
+            className="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto mt-4"
+          >
+            Feedback from CISOs, security architects, and engineering leaders who have engaged Cloud Secure Canada 
+            for incident response, penetration testing, SOC engineering, and risk assessments.
+          </motion.p>
+        </header>
 
         {/* Mobile: horizontal scroll | Desktop: grid */}
         <div className="md:hidden relative">

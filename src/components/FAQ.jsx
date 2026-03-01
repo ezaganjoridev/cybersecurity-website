@@ -89,14 +89,14 @@ const FAQ = () => {
             <span>FAQ</span>
           </motion.div>
           
-          <motion.h2 
+          <motion.h1 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             className="section-title"
           >
-            Common Questions
-          </motion.h2>
+            Cybersecurity Consulting FAQ
+          </motion.h1>
           
           <motion.p 
             initial={{ opacity: 0 }}

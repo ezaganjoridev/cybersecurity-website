@@ -125,10 +125,14 @@ const Navbar = ({ scrolled }) => {
             </Link>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile menu button — fixed position when open so it stays above the overlay */}
           <button
             onClick={toggleMenu}
-            className="md:hidden relative z-[60] text-gray-300 hover:text-primary-400 p-2 active:scale-90 transition-transform duration-100"
+            className={`md:hidden p-2 active:scale-90 transition-transform duration-100 ${
+              isOpen
+                ? 'fixed top-4 right-4 z-[60] text-white hover:text-primary-400'
+                : 'relative z-[60] text-gray-300 hover:text-primary-400'
+            }`}
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
           >
             {isOpen ? <X size={26} /> : <Menu size={26} />}

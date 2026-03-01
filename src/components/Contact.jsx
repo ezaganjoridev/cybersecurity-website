@@ -139,7 +139,11 @@ const Contact = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="card backdrop-blur-sm bg-dark-800/80 border-primary-500/20"
           >
-            <h3 className="text-2xl font-bold mb-6 text-white">Request a consultation</h3>
+            <h3 className="text-2xl font-bold mb-2 text-white">Request a consultation</h3>
+            <p className="text-sm text-primary-400 mb-6 flex items-center gap-1.5">
+              <CheckCircle className="w-3.5 h-3.5" />
+              Typical response time: same business day
+            </p>
 
             <AnimatePresence>
               {submitted && (

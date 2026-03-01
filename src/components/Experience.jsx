@@ -83,14 +83,14 @@ const Experience = () => {
             <span>Experience</span>
           </motion.div>
           
-          <motion.h2 
+          <motion.h1 
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="section-title"
           >
-            Expanded Skill Coverage
-          </motion.h2>
+            Cybersecurity Experience &amp; Skill Coverage
+          </motion.h1>
           
           <motion.p 
             initial={{ opacity: 0 }}

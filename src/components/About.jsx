@@ -55,15 +55,15 @@ const About = () => {
             <Shield className="w-4 h-4" />
             <span>About</span>
           </motion.div>
-          <motion.h2 
+          <motion.h1 
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="section-title"
           >
-            Results-Driven
-          </motion.h2>
+            Results-Driven Cybersecurity Consulting
+          </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}

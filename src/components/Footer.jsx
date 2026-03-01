@@ -7,10 +7,10 @@ const Footer = () => {
 
   const footerLinks = {
     services: [
-      { name: 'Cybersecurity Services', href: '/services' },
-      { name: 'IT Operations Support', href: '/services' },
-      { name: 'Penetration Testing', href: '/services' },
-      { name: 'SIEM/SOC Engineering', href: '/services' }
+      { name: 'Cybersecurity Services', href: '/services#penetration-testing' },
+      { name: 'IT Operations Support', href: '/services#it-asset-management' },
+      { name: 'Penetration Testing', href: '/services#penetration-testing' },
+      { name: 'SIEM/SOC Engineering', href: '/services#siem-soc-engineering' }
     ],
     company: [
       { name: 'About', href: '/about' },
@@ -37,10 +37,10 @@ const Footer = () => {
               Toronto-based cyber security consultant delivering incident response, penetration testing, and SOC engineering.
             </p>
             <a
-              href="mailto:info@clodusecurecanada.com"
+              href="mailto:info@cloudsecurecanada.com"
               className="text-primary-300 hover:text-primary-200 transition-colors text-sm"
             >
-              info@clodusecurecanada.com
+              info@cloudsecurecanada.com
             </a>
             <div className="mt-3 text-sm text-gray-400">
               <a

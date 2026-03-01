@@ -103,6 +103,15 @@ const Hero = () => {
               </div>
             </motion.div>
 
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.55 }}
+              className="text-sm text-gray-500 italic mb-2"
+            >
+              Trusted by security leaders at financial services, SaaS, and healthcare organizations across North America
+            </motion.p>
+
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
