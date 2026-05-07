@@ -27,3 +27,11 @@ dist-ssr
 .env
 .env.local
 .env.production
+
+# AI Prompts and Configs
+.cursorrules
+.copilot-*
+copilot-instructions.md
+prompt.md
+.agents.md
+.windsurfrules
