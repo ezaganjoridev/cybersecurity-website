@@ -102,9 +102,9 @@ const HomeHighlights = () => {
                 borderColor: "rgba(34, 197, 94, 0.4)",
                 transition: { duration: 0.2, ease: 'easeOut' }
               }}
-              className="card bg-dark-800/50 hover:bg-dark-800 transition-colors duration-200 will-change-transform transform-gpu"
+              className="card bg-dark-800/50 hover:bg-dark-800 transition-colors duration-200"
             >
-              <div className="p-3 bg-primary-500/10 rounded-xl w-fit mb-4 text-primary-400 group-hover:text-primary-300">
+              <div className="p-3 bg-primary-500/10 rounded-none w-fit mb-4 text-primary-400 group-hover:text-primary-300">
                 {highlight.icon}
               </div>
               <h3 className="text-lg font-semibold mb-2 text-white">{highlight.title}</h3>

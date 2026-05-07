@@ -109,7 +109,7 @@ const CoreServices = () => {
               className="card group hover:border-primary-500/50 hover:bg-dark-800 transition-colors duration-200"
             >
               <div className="flex items-start gap-3 mb-4 text-primary-400">
-                <div className="p-2 rounded-xl bg-primary-500/10 border border-primary-500/30 group-hover:bg-primary-500/20 transition-colors">
+                <div className="p-2 rounded-none bg-primary-500/10 border border-primary-500/30 group-hover:bg-primary-500/20 transition-colors">
                   {service.icon}
                 </div>
                 <div>

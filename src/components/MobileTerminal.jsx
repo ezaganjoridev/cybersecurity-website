@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback, memo } from 'react';
+import React, { useState, useEffect, useRef, memo } from 'react';
 import { motion } from 'framer-motion';
 
 const LINES = [
@@ -68,7 +68,6 @@ TerminalLine.displayName = 'TerminalLine';
 
 const MobileTerminal = () => {
   const [visibleLines, setVisibleLines] = useState(0);
-  const [cursorVisible, setCursorVisible] = useState(true);
   const timerRef = useRef(null);
 
   useEffect(() => {
@@ -81,12 +80,6 @@ const MobileTerminal = () => {
     return () => clearTimeout(timerRef.current);
   }, [visibleLines]);
 
-  // Blink cursor
-  useEffect(() => {
-    const id = setInterval(() => setCursorVisible((v) => !v), 530);
-    return () => clearInterval(id);
-  }, []);
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
@@ -94,7 +87,7 @@ const MobileTerminal = () => {
       transition={{ delay: 0.6, duration: 0.5 }}
       className="lg:hidden mt-8 mx-auto max-w-sm"
     >
-      <div className="relative rounded-xl border border-primary-500/25 bg-dark-900/95 backdrop-blur-md shadow-2xl shadow-primary-500/5 overflow-hidden">
+      <div className="relative rounded-none border border-primary-500/25 bg-dark-900/95 backdrop-blur-md shadow-2xl shadow-primary-500/5 overflow-hidden">
         {/* Scanline overlay */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="animate-scanline" />
@@ -121,11 +114,7 @@ const MobileTerminal = () => {
             <div className="flex items-center gap-1 mt-1">
               <span className="text-emerald-400 text-xs">admin@csc</span>
               <span className="text-primary-300 text-xs">:~$</span>
-              <span
-                className={`inline-block w-1.5 h-3 bg-primary-400 transition-opacity duration-100 ${
-                  cursorVisible ? 'opacity-100' : 'opacity-0'
-                }`}
-              />
+              <span className="inline-block w-1.5 h-3 bg-primary-400 animate-terminal-cursor" />
             </div>
           )}
         </div>

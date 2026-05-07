@@ -16,8 +16,14 @@ const Navbar = ({ scrolled }) => {
   useEffect(() => {
     const mq = window.matchMedia('(min-width: 768px)');
     const handler = (e) => { if (e.matches) setIsOpen(false); };
-    mq.addEventListener('change', handler);
-    return () => mq.removeEventListener('change', handler);
+
+    if (mq.addEventListener) {
+      mq.addEventListener('change', handler);
+      return () => mq.removeEventListener('change', handler);
+    }
+
+    mq.addListener(handler);
+    return () => mq.removeListener(handler);
   }, []);
 
   // Prevent body scroll when menu is open
@@ -71,14 +77,16 @@ const Navbar = ({ scrolled }) => {
   };
 
   const panelVariants = {
-    closed: { clipPath: 'circle(0% at calc(100% - 2rem) 2rem)' },
+    closed: { opacity: 0, x: '100%' },
     open: {
-      clipPath: 'circle(150% at calc(100% - 2rem) 2rem)',
-      transition: { duration: 0.45, ease: [0.4, 0, 0.2, 1] },
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.32, ease: [0.4, 0, 0.2, 1] },
     },
     exit: {
-      clipPath: 'circle(0% at calc(100% - 2rem) 2rem)',
-      transition: { duration: 0.3, ease: [0.4, 0, 1, 1] },
+      opacity: 0,
+      x: '100%',
+      transition: { duration: 0.22, ease: [0.4, 0, 1, 1] },
     },
   };
 
@@ -158,7 +166,7 @@ const Navbar = ({ scrolled }) => {
         </div>
       </div>
 
-      {/* Mobile Navigation: Full-screen overlay with clip-path reveal */}
+      {/* Mobile Navigation */}
       <AnimatePresence>
         {isOpen && (
           <>
@@ -172,13 +180,13 @@ const Navbar = ({ scrolled }) => {
               onClick={closeMenu}
             />
 
-            {/* Panel: clip-path reveal from hamburger position (GPU-composited) */}
+            {/* Panel: transform-based animation is smoother on mobile Safari */}
             <motion.div
               variants={panelVariants}
               initial="closed"
               animate="open"
               exit="exit"
-              className="md:hidden fixed inset-0 z-[55] bg-dark-900 will-change-[clip-path] overflow-y-auto overscroll-contain"
+              className="md:hidden fixed inset-0 z-[55] bg-dark-900 will-change-transform overflow-y-auto overscroll-contain"
             >
               {/* Decorative grid */}
               <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[linear-gradient(to_right,#22c55e_1px,transparent_1px),linear-gradient(to_bottom,#22c55e_1px,transparent_1px)] bg-[size:40px_40px]" />

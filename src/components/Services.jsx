@@ -198,7 +198,7 @@ const Services = () => {
                 className="card group hover:bg-dark-800/80 transition-colors duration-200"
               >
                 <div className="flex items-start gap-4">
-                    <div className="p-3 bg-dark-800 rounded-xl group-hover:bg-primary-900/20 text-primary-500 transition-colors">
+                    <div className="p-3 bg-dark-800 rounded-none group-hover:bg-primary-900/20 text-primary-500 transition-colors">
                         {service.icon}
                     </div>
                     <div>
@@ -235,7 +235,7 @@ const Services = () => {
                 className="card group hover:bg-dark-800/80 transition-colors duration-200"
               >
                <div className="flex items-start gap-4">
-                    <div className="p-3 bg-dark-800 rounded-xl group-hover:bg-primary-900/20 text-primary-500 transition-colors">
+                    <div className="p-3 bg-dark-800 rounded-none group-hover:bg-primary-900/20 text-primary-500 transition-colors">
                         {service.icon}
                     </div>
                     <div>
@@ -271,7 +271,7 @@ const Services = () => {
                 className="card group hover:bg-dark-800/80 transition-colors duration-200"
               >
                <div className="flex items-start gap-4">
-                    <div className="p-3 bg-dark-800 rounded-xl group-hover:bg-primary-900/20 text-primary-500 transition-colors">
+                    <div className="p-3 bg-dark-800 rounded-none group-hover:bg-primary-900/20 text-primary-500 transition-colors">
                         {service.icon}
                     </div>
                     <div>
@@ -309,7 +309,7 @@ const Services = () => {
                 whileHover={{ y: -5, borderColor: 'rgba(6, 182, 212, 0.4)', transition: { duration: 0.25, ease: 'easeOut' } }}
                 className="card group text-center hover:bg-dark-800/80"
               >
-                <div className="inline-flex p-4 bg-dark-800 rounded-full mb-4 group-hover:bg-primary-900/20 text-primary-500 transition-colors duration-200 group-hover:scale-110">
+                <div className="inline-flex p-4 bg-dark-800 rounded-none mb-4 group-hover:bg-primary-900/20 text-primary-500 transition-colors duration-200 group-hover:scale-110">
                     {model.icon}
                 </div>
                 <h4 className="text-lg font-semibold mb-2 text-white group-hover:text-primary-400 transition-colors">
@@ -340,7 +340,7 @@ const Services = () => {
                     initial={{ opacity: 0, x: -10 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.1 }}
-                    className="flex items-start gap-3 p-2 rounded hover:bg-dark-700/50 transition-colors"
+                    className="flex items-start gap-3 p-2 rounded-none hover:bg-dark-700/50 transition-colors"
                 >
                   <span className="text-primary-400 mt-0.5">•</span>
                   <span>{item}</span>
@@ -366,7 +366,7 @@ const Services = () => {
                     initial={{ opacity: 0, x: 10 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.1 }}
-                    className="flex items-start gap-3 p-2 rounded hover:bg-dark-700/50 transition-colors"
+                    className="flex items-start gap-3 p-2 rounded-none hover:bg-dark-700/50 transition-colors"
                 >
                   <span className="text-primary-400 mt-0.5">•</span>
                   <span>{item}</span>
@@ -381,12 +381,12 @@ const Services = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-zinc-900/90 border border-dark-600 rounded-xl p-10 text-center relative overflow-hidden group"
+            className="bg-zinc-900/90 border border-dark-600 rounded-none p-10 text-center relative overflow-hidden group"
         >
           <div className="absolute inset-0 bg-primary-900/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
           
           <div className="relative z-10">
-            <div className="inline-flex p-3 bg-dark-800 rounded-full mb-6 border border-dark-600">
+            <div className="inline-flex p-3 bg-dark-800 rounded-none mb-6 border border-dark-600">
                 <Radar className="w-8 h-8 text-primary-400 animate-pulse" />
             </div>
             
@@ -396,7 +396,7 @@ const Services = () => {
             </p>
             <Link 
                 to="/#contact" 
-                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-primary-600 text-white font-semibold rounded-xl hover:bg-primary-500 transition-colors duration-200 shadow-lg shadow-primary-900/50 active:scale-95 sm:group-hover:scale-[1.02] text-sm sm:text-base"
+                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-primary-600 text-white font-semibold rounded-none hover:bg-primary-500 transition-colors duration-200 shadow-lg shadow-primary-900/50 active:scale-95 sm:group-hover:scale-[1.02] text-sm sm:text-base"
             >
                 Request a Scope <ArrowRight className="w-5 h-5 ml-2" />
             </Link>

@@ -3,15 +3,21 @@ import { useLocation } from 'react-router-dom';
 
 const ScrollToTop = () => {
   const { pathname, hash, key } = useLocation();
-  const prevKey = useRef(key);
+  const scrollAttemptRef = useRef(0);
 
   useEffect(() => {
     if (hash) {
       const id = hash.replace('#', '');
+      const attemptId = scrollAttemptRef.current + 1;
+      scrollAttemptRef.current = attemptId;
+      let frame = null;
+      let timeout = null;
+      let observer = null;
+      const startedAt = performance.now();
 
-      // Attempt to scroll immediately, then retry after a short delay
-      // to handle lazy-loaded pages where the target isn't mounted yet
       const scrollToId = () => {
+        if (scrollAttemptRef.current !== attemptId) return true;
+
         const el = document.getElementById(id);
         if (el) {
           el.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -20,17 +26,27 @@ const ScrollToTop = () => {
         return false;
       };
 
-      if (!scrollToId()) {
-        // Retry after page has had time to render
-        const timer = setTimeout(scrollToId, 150);
-        const timer2 = setTimeout(scrollToId, 400);
-        return () => { clearTimeout(timer); clearTimeout(timer2); };
-      }
+      const retry = () => {
+        if (scrollToId()) return;
+        if (performance.now() - startedAt > 2500) return;
+        timeout = window.setTimeout(() => {
+          frame = window.requestAnimationFrame(retry);
+        }, 100);
+      };
+
+      observer = new MutationObserver(scrollToId);
+      observer.observe(document.body, { childList: true, subtree: true });
+      retry();
+
+      return () => {
+        if (frame !== null) window.cancelAnimationFrame(frame);
+        if (timeout !== null) window.clearTimeout(timeout);
+        observer?.disconnect();
+      };
     } else {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    prevKey.current = key;
-  }, [pathname, hash, key]);  // `key` changes on every navigation, even same-route
+  }, [pathname, hash, key]);
 
   return null;
 };

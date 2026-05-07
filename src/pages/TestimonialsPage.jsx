@@ -51,9 +51,9 @@ const TestimonialsPage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
-                  className="text-center p-4 rounded-xl bg-dark-800/50 border border-dark-700 hover:border-primary-500/30 transition-colors"
+                  className="text-center p-4 rounded-none bg-dark-800/50 border border-dark-700 hover:border-primary-500/30 transition-colors"
                 >
-                  <div className="inline-flex p-2 rounded-xl bg-primary-500/10 text-primary-400 mb-3">
+                  <div className="inline-flex p-2 rounded-none bg-primary-500/10 text-primary-400 mb-3">
                     {signal.icon}
                   </div>
                   <div className="text-white text-sm font-semibold mb-1">{signal.label}</div>
@@ -71,7 +71,7 @@ const TestimonialsPage = () => {
             >
               <Link
                 to="/#contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 text-white font-semibold rounded-xl hover:bg-primary-500 transition-colors duration-200 shadow-lg shadow-primary-900/50 active:scale-95 text-sm sm:text-base"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 text-white font-semibold rounded-none hover:bg-primary-500 transition-colors duration-200 shadow-lg shadow-primary-900/50 active:scale-95 text-sm sm:text-base"
               >
                 <ShieldCheck className="w-5 h-5" />
                 Start Your Engagement

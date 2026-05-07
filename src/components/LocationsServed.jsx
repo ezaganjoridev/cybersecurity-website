@@ -84,7 +84,7 @@ const LocationsServed = () => {
             className="card bg-dark-800/60 border-primary-900/40"
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-2.5 rounded-xl bg-primary-500/10 text-primary-400">
+              <div className="p-2.5 rounded-none bg-primary-500/10 text-primary-400">
                 <MapPin className="w-5 h-5" />
               </div>
               <h3 className="text-lg font-semibold text-white">Greater Toronto Area</h3>
@@ -110,7 +110,7 @@ const LocationsServed = () => {
             className="card bg-dark-800/60 border-primary-900/40"
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-2.5 rounded-xl bg-primary-500/10 text-primary-400">
+              <div className="p-2.5 rounded-none bg-primary-500/10 text-primary-400">
                 <Globe2 className="w-5 h-5" />
               </div>
               <h3 className="text-lg font-semibold text-white">Across Canada</h3>
@@ -137,7 +137,7 @@ const LocationsServed = () => {
             className="card bg-dark-800/60 border-primary-900/40"
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-2.5 rounded-xl bg-primary-500/10 text-primary-400">
+              <div className="p-2.5 rounded-none bg-primary-500/10 text-primary-400">
                 <Plane className="w-5 h-5" />
               </div>
               <h3 className="text-lg font-semibold text-white">United States, UK, and Global</h3>

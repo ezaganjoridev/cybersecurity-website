@@ -11,12 +11,13 @@ const CyberGrid = ({ className = '' }) => {
   const animRef = useRef(null);
   const visibleRef = useRef(true);
   const dotsRef = useRef([]);
+  const useStaticGrid =
+    typeof window !== 'undefined' &&
+    (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ||
+      window.matchMedia?.('(max-width: 767px)').matches);
 
   const GRID = 40;
   const DOT_COUNT = 12;
-  const prefersReducedMotion =
-    typeof window !== 'undefined' &&
-    window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
 
   const initDots = useCallback((w, h) => {
     dotsRef.current = Array.from({ length: DOT_COUNT }, () => ({
@@ -30,40 +31,36 @@ const CyberGrid = ({ className = '' }) => {
   }, []);
 
   useEffect(() => {
-    if (prefersReducedMotion) return;
+    if (useStaticGrid) return;
 
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    let resizeFrame = null;
 
     const resize = () => {
-      const { clientWidth: w, clientHeight: h } = canvas.parentElement;
-      canvas.width = w * dpr;
-      canvas.height = h * dpr;
-      canvas.style.width = `${w}px`;
-      canvas.style.height = `${h}px`;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      initDots(w, h);
+      if (resizeFrame !== null) return;
+
+      resizeFrame = window.requestAnimationFrame(() => {
+        resizeFrame = null;
+        const { clientWidth: w, clientHeight: h } = canvas.parentElement;
+        if (!w || !h) return;
+
+        canvas.width = w * dpr;
+        canvas.height = h * dpr;
+        canvas.style.width = `${w}px`;
+        canvas.style.height = `${h}px`;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        initDots(w, h);
+      });
     };
 
     resize();
     window.addEventListener('resize', resize, { passive: true });
 
-    // Intersection observer to pause off-screen
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        visibleRef.current = entry.isIntersecting;
-      },
-      { threshold: 0 }
-    );
-    observer.observe(canvas);
-
     const draw = () => {
-      if (!visibleRef.current) {
-        animRef.current = requestAnimationFrame(draw);
-        return;
-      }
+      if (!visibleRef.current) return;
 
       const w = canvas.width / dpr;
       const h = canvas.height / dpr;
@@ -95,8 +92,7 @@ const CyberGrid = ({ className = '' }) => {
 
         ctx.beginPath();
         ctx.arc(dot.x, dot.y, dot.r, 0, Math.PI * 2);
-        // Sometimes draw purple dots for variation
-        const isPurple = dot.speed > 0.35; 
+        const isPurple = dot.speed > 0.35;
         ctx.fillStyle = isPurple ? `rgba(168, 85, 247, ${dot.alpha})` : `rgba(34, 197, 94, ${dot.alpha})`;
         ctx.fill();
       });
@@ -104,16 +100,46 @@ const CyberGrid = ({ className = '' }) => {
       animRef.current = requestAnimationFrame(draw);
     };
 
-    animRef.current = requestAnimationFrame(draw);
+    const start = () => {
+      if (animRef.current === null) {
+        animRef.current = requestAnimationFrame(draw);
+      }
+    };
+
+    const stop = () => {
+      if (animRef.current !== null) {
+        cancelAnimationFrame(animRef.current);
+        animRef.current = null;
+      }
+    };
+
+    // Intersection observer to pause off-screen
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        visibleRef.current = entry.isIntersecting;
+        if (entry.isIntersecting) {
+          start();
+        } else {
+          stop();
+        }
+      },
+      { threshold: 0 }
+    );
+    observer.observe(canvas);
+
+    start();
 
     return () => {
-      cancelAnimationFrame(animRef.current);
+      stop();
+      if (resizeFrame !== null) {
+        window.cancelAnimationFrame(resizeFrame);
+      }
       window.removeEventListener('resize', resize);
       observer.disconnect();
     };
-  }, [prefersReducedMotion, initDots]);
+  }, [useStaticGrid, initDots]);
 
-  if (prefersReducedMotion) {
+  if (useStaticGrid) {
     return (
       <div
         className={`absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(to_right,#22c55e_1px,transparent_1px),linear-gradient(to_bottom,#22c55e_1px,transparent_1px)] bg-[size:40px_40px] ${className}`}

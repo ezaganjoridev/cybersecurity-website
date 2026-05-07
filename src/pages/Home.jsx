@@ -1,15 +1,10 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { Shield, Clock, Globe, Award } from 'lucide-react';
 import Hero from '../components/Hero';
-import HomeHighlights from '../components/HomeHighlights';
-import CoreServices from '../components/CoreServices';
-import IndustriesServed from '../components/IndustriesServed';
-import LocationsServed from '../components/LocationsServed';
-import EngagementProcess from '../components/EngagementProcess';
-import Outcomes from '../components/Outcomes';
-import Contact from '../components/Contact';
 import SEO from '../components/SEO';
+
+const HomeSections = lazy(() => import('../components/HomeSections'));
 
 const stats = [
   { icon: Shield, value: '200+', label: 'Engagements delivered' },
@@ -46,13 +41,9 @@ const Home = () => {
         </div>
       </section>
 
-      <HomeHighlights />
-      <CoreServices />
-      <IndustriesServed />
-      <EngagementProcess />
-      <LocationsServed />
-      <Outcomes />
-      <Contact />
+      <Suspense fallback={null}>
+        <HomeSections />
+      </Suspense>
     </>
   );
 };

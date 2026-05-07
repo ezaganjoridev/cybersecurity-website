@@ -23,10 +23,10 @@ const itemVariants = {
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-dark-900 border-b border-white/5">
+    <section id="home" className="relative min-h-screen min-h-[100svh] flex items-center overflow-hidden bg-dark-900 border-b border-white/5">
       <div className="absolute inset-0 bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900">
         <CyberGrid />
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-20 hidden md:block">
           <motion.div 
             animate={{ x: [0, 50, 0], y: [0, 30, 0], scale: [1, 1.1, 1] }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
@@ -79,7 +79,7 @@ const Hero = () => {
                 { icon: Lock, text: 'SIEM & SOC Engineering (Splunk, Sentinel)' },
               ].map((item, idx) => (
                 <motion.div key={idx} variants={itemVariants} className="flex items-center justify-center lg:justify-start gap-4 group">
-                  <div className="w-10 h-10 rounded-xl bg-dark-700/50 flex items-center justify-center border border-white/5 group-hover:bg-primary-500/10 group-hover:border-primary-500/30 transition-colors duration-200">
+                  <div className="w-10 h-10 rounded-none bg-dark-700/50 flex items-center justify-center border border-white/5 group-hover:bg-primary-500/10 group-hover:border-primary-500/30 transition-colors duration-200">
                     <item.icon className="w-5 h-5 text-primary-400 group-hover:text-primary-300" />
                   </div>
                   <span className="font-semibold text-gray-200 tracking-wide text-sm md:text-base">{item.text}</span>
@@ -106,8 +106,8 @@ const Hero = () => {
             transition={{ delay: 0.4, duration: 0.8, type: "spring", stiffness: 50 }}
             className="relative hidden lg:block z-10"
           >
-             <div className="absolute -inset-1 bg-gradient-to-r from-primary-500 to-accent-500 rounded-xl blur opacity-25 animate-pulse"></div>
-              <div className="relative overflow-hidden rounded-xl border border-white/10 bg-dark-900/80 p-6 text-left shadow-2xl backdrop-blur-2xl">
+             <div className="absolute -inset-1 bg-gradient-to-r from-primary-500 to-accent-500 rounded-none blur opacity-25 animate-pulse"></div>
+              <div className="relative overflow-hidden rounded-none border border-white/10 bg-dark-900/80 p-6 text-left shadow-2xl backdrop-blur-2xl">
                 <div className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-gray-400 mb-5 border-b border-white/10 pb-4">
                   <div className="flex gap-2 mr-auto">
                     <span className="h-2.5 w-2.5 rounded-full bg-red-500/80" />

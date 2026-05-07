@@ -124,7 +124,7 @@ const FAQ = () => {
                 <h3 className={`text-lg font-medium pr-8 transition-colors ${openIndex === index ? 'text-primary-400' : 'text-white'}`}>
                     {faq.question}
                 </h3>
-                <div className={`mt-1 p-0.5 rounded-full transition-colors ${openIndex === index ? 'bg-primary-500/20 text-primary-400' : 'text-gray-500'}`}>
+                <div className={`mt-1 p-0.5 rounded-none transition-colors ${openIndex === index ? 'bg-primary-500/20 text-primary-400' : 'text-gray-500'}`}>
                     {openIndex === index ? <Minus size={18} /> : <Plus size={18} />}
                 </div>
               </div>
