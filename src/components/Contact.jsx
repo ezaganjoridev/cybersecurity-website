@@ -153,7 +153,7 @@ const Contact = () => {
                   exit={{ opacity: 0, height: 0 }}
                   className="mb-6 overflow-hidden"
                 >
-                  <div className="p-4 bg-green-500/10 border border-green-500/30 rounded-lg flex items-center space-x-3">
+                  <div className="p-4 bg-green-500/10 border border-green-500/30 rounded-xl flex items-center space-x-3">
                     <CheckCircle className="w-5 h-5 text-green-400" />
                     <span className="text-green-400">Message sent successfully!</span>
                   </div>
@@ -173,7 +173,7 @@ const Contact = () => {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-dark-700/50 border border-dark-600 rounded-lg text-white focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all placeholder:text-gray-600"
+                  className="w-full px-4 py-3 bg-dark-700/50 border border-dark-600 rounded-xl text-white focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors placeholder:text-gray-600"
                   placeholder="John Doe"
                 />
               </div>
@@ -189,7 +189,7 @@ const Contact = () => {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-dark-700/50 border border-dark-600 rounded-lg text-white focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all placeholder:text-gray-600"
+                  className="w-full px-4 py-3 bg-dark-700/50 border border-dark-600 rounded-xl text-white focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors placeholder:text-gray-600"
                   placeholder="john@company.com"
                 />
               </div>
@@ -204,7 +204,7 @@ const Contact = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-dark-700/50 border border-dark-600 rounded-lg text-white focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all placeholder:text-gray-600"
+                  className="w-full px-4 py-3 bg-dark-700/50 border border-dark-600 rounded-xl text-white focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors placeholder:text-gray-600"
                   placeholder="(416)-555-0123"
                 />
               </div>
@@ -219,7 +219,7 @@ const Contact = () => {
                   name="company"
                   value={formData.company}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-dark-700/50 border border-dark-600 rounded-lg text-white focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all placeholder:text-gray-600"
+                  className="w-full px-4 py-3 bg-dark-700/50 border border-dark-600 rounded-xl text-white focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors placeholder:text-gray-600"
                   placeholder="Your Company"
                 />
               </div>
@@ -237,7 +237,7 @@ const Contact = () => {
                         type="button"
                         whileTap={{ scale: 0.97 }}
                         onClick={() => handleServiceToggle(service)}
-                        className={`group relative overflow-hidden rounded-lg border px-3 py-3 text-left text-sm transition-all duration-200 active:scale-[0.97] ${
+                        className={`group relative overflow-hidden rounded-xl border px-3 py-3 text-left text-sm transition-colors duration-200 active:scale-[0.97] ${
                           isSelected
                             ? 'border-primary-500 text-primary-200 bg-primary-500/10'
                             : 'border-dark-600 text-gray-300 hover:border-primary-500/50 hover:bg-dark-700/50'
@@ -265,7 +265,7 @@ const Contact = () => {
                       value={formData.otherService}
                       onChange={handleChange}
                       rows="2"
-                      className="w-full px-4 py-3 bg-dark-700/50 border border-dark-600 rounded-lg text-white focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all resize-none"
+                      className="w-full px-4 py-3 bg-dark-700/50 border border-dark-600 rounded-xl text-white focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors resize-none"
                       placeholder="Describe the service you need..."
                     ></textarea>
                   </motion.div>
@@ -283,7 +283,7 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows="4"
-                  className="w-full px-4 py-3 bg-dark-700/50 border border-dark-600 rounded-lg text-white focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all resize-none"
+                  className="w-full px-4 py-3 bg-dark-700/50 border border-dark-600 rounded-xl text-white focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors resize-none"
                   placeholder="Tell me about your security needs..."
                 ></textarea>
               </div>

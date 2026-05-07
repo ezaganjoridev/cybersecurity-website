@@ -4,6 +4,8 @@ import { Shield, Clock, Globe, Award } from 'lucide-react';
 import Hero from '../components/Hero';
 import HomeHighlights from '../components/HomeHighlights';
 import CoreServices from '../components/CoreServices';
+import IndustriesServed from '../components/IndustriesServed';
+import LocationsServed from '../components/LocationsServed';
 import EngagementProcess from '../components/EngagementProcess';
 import Outcomes from '../components/Outcomes';
 import Contact from '../components/Contact';
@@ -46,7 +48,9 @@ const Home = () => {
 
       <HomeHighlights />
       <CoreServices />
+      <IndustriesServed />
       <EngagementProcess />
+      <LocationsServed />
       <Outcomes />
       <Contact />
     </>

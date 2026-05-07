@@ -63,7 +63,7 @@ const Navbar = ({ scrolled }) => {
     { name: 'FAQ', href: '/faq' },
   ];
 
-  // Smooth tween animations — no springs, GPU-friendly
+  // Smooth tween animations: no springs, GPU friendly
   const backdropVariants = {
     closed: { opacity: 0 },
     open: { opacity: 1, transition: { duration: 0.25, ease: [0.25, 0.1, 0.25, 1] } },
@@ -102,7 +102,7 @@ const Navbar = ({ scrolled }) => {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
+      className={`fixed w-full z-50 transition-colors duration-200 ${
         scrolled
           ? 'bg-dark-900/95 backdrop-blur-md shadow-lg shadow-black/20'
           : 'bg-transparent'
@@ -132,7 +132,7 @@ const Navbar = ({ scrolled }) => {
               >
                 {link.name}
                 <span
-                  className={`absolute -bottom-1 left-0 h-0.5 bg-primary-500 transition-all ${
+                  className={`absolute -bottom-1 left-0 h-0.5 bg-primary-500 transition-colors ${
                     location.pathname === link.href ? 'w-full' : 'w-0 group-hover:w-full'
                   }`}
                 />
@@ -143,7 +143,7 @@ const Navbar = ({ scrolled }) => {
             </Link>
           </div>
 
-          {/* Mobile menu button — fixed position when open so it stays above the overlay */}
+          {/* Mobile menu button: fixed position when open so it stays above the overlay */}
           <button
             onClick={toggleMenu}
             className={`md:hidden p-2 active:scale-90 transition-transform duration-100 ${
@@ -158,11 +158,11 @@ const Navbar = ({ scrolled }) => {
         </div>
       </div>
 
-      {/* Mobile Navigation — Full-screen overlay with clip-path reveal */}
+      {/* Mobile Navigation: Full-screen overlay with clip-path reveal */}
       <AnimatePresence>
         {isOpen && (
           <>
-            {/* Dim backdrop — lightweight, no blur during animation */}
+            {/* Dim backdrop: lightweight, no blur during animation */}
             <motion.div
               variants={backdropVariants}
               initial="closed"
@@ -172,7 +172,7 @@ const Navbar = ({ scrolled }) => {
               onClick={closeMenu}
             />
 
-            {/* Panel — clip-path reveal from hamburger position (GPU-composited) */}
+            {/* Panel: clip-path reveal from hamburger position (GPU-composited) */}
             <motion.div
               variants={panelVariants}
               initial="closed"
@@ -181,7 +181,7 @@ const Navbar = ({ scrolled }) => {
               className="md:hidden fixed inset-0 z-[55] bg-dark-900 will-change-[clip-path] overflow-y-auto overscroll-contain"
             >
               {/* Decorative grid */}
-              <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[linear-gradient(to_right,#0ea5e9_1px,transparent_1px),linear-gradient(to_bottom,#0ea5e9_1px,transparent_1px)] bg-[size:40px_40px]" />
+              <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[linear-gradient(to_right,#22c55e_1px,transparent_1px),linear-gradient(to_bottom,#22c55e_1px,transparent_1px)] bg-[size:40px_40px]" />
 
               <motion.div
                 variants={menuVariants}

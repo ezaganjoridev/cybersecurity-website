@@ -83,7 +83,7 @@ const EngagementProcess = () => {
                 transition={{ delay: index * 0.15 }}
                 className="relative pl-12 sm:pl-14 group"
               >
-                <div className="absolute left-0 top-0 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-dark-800 border border-primary-500/40 text-primary-300 flex items-center justify-center group-hover:bg-primary-500/20 group-hover:text-primary-200 transition-all duration-300 z-10">
+                <div className="absolute left-0 top-0 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-dark-800 border border-primary-500/40 text-primary-300 flex items-center justify-center group-hover:bg-primary-500/20 group-hover:text-primary-200 transition-colors duration-200 z-10">
                   {step.icon}
                 </div>
                 <h3 className="text-base sm:text-lg font-semibold text-white group-hover:text-primary-100 transition-colors">{step.title}</h3>

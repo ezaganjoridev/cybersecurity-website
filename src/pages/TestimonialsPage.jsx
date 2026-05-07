@@ -15,9 +15,9 @@ const trustSignals = [
 const TestimonialsPage = () => {
   return (
     <>
-      <SEO 
-        title="Client Testimonials — Cybersecurity Consulting Reviews"
-        description="Read what CISOs, VPs of Engineering, and security leaders say about Cloud Secure Canada's cybersecurity consulting — incident response, penetration testing, SOC build-out, SIEM engineering, and GRC compliance."
+      <SEO
+        title="Client Testimonials | Cybersecurity Consulting Reviews"
+        description="What CISOs, VPs of Engineering, and security leaders say about Cloud Secure Canada. Real reviews of incident response, penetration testing, SOC build out, SIEM engineering, and GRC compliance engagements."
         canonical="https://cloudsecurecanada.com/testimonials"
         breadcrumbs={[
           { name: 'Home', url: 'https://cloudsecurecanada.com/' },
@@ -53,7 +53,7 @@ const TestimonialsPage = () => {
                   transition={{ delay: i * 0.05 }}
                   className="text-center p-4 rounded-xl bg-dark-800/50 border border-dark-700 hover:border-primary-500/30 transition-colors"
                 >
-                  <div className="inline-flex p-2 rounded-lg bg-primary-500/10 text-primary-400 mb-3">
+                  <div className="inline-flex p-2 rounded-xl bg-primary-500/10 text-primary-400 mb-3">
                     {signal.icon}
                   </div>
                   <div className="text-white text-sm font-semibold mb-1">{signal.label}</div>
@@ -71,13 +71,13 @@ const TestimonialsPage = () => {
             >
               <Link
                 to="/#contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-500 transition-all duration-300 shadow-lg shadow-primary-900/50 active:scale-95 text-sm sm:text-base"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 text-white font-semibold rounded-xl hover:bg-primary-500 transition-colors duration-200 shadow-lg shadow-primary-900/50 active:scale-95 text-sm sm:text-base"
               >
                 <ShieldCheck className="w-5 h-5" />
                 Start Your Engagement
                 <ArrowRight className="w-4 h-4" />
               </Link>
-              <p className="text-gray-500 text-xs mt-3">No commitment needed — we'll scope your requirements on a short call.</p>
+              <p className="text-gray-500 text-xs mt-3">No commitment needed. We'll scope your requirements on a short call.</p>
             </motion.div>
           </div>
         </section>

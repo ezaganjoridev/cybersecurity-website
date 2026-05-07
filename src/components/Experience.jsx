@@ -115,9 +115,9 @@ const Experience = () => {
                 key={index}
                 variants={item}
                 whileHover={{ y: -8, borderColor: 'rgba(6, 182, 212, 0.4)', transition: { duration: 0.25, ease: 'easeOut' } }}
-                className="card group hover:bg-dark-800/80 transition-all duration-300 border-l-4 border-l-transparent hover:border-l-primary-500"
+                className="card group hover:bg-dark-800/80 transition-colors duration-200 border-l-4 border-l-transparent hover:border-l-primary-500"
             >
-              <div className="inline-flex p-3 bg-dark-800 rounded-lg group-hover:bg-primary-900/20 text-primary-500 mb-4 transition-colors">
+              <div className="inline-flex p-3 bg-dark-800 rounded-xl group-hover:bg-primary-900/20 text-primary-500 mb-4 transition-colors">
                   {comp.icon}
               </div>
               <h3 className="text-lg font-bold mb-3 text-white group-hover:text-primary-400 transition-colors">

@@ -17,7 +17,7 @@ const HomeHighlights = () => {
     {
       icon: <Lock className="w-6 h-6" />,
       title: 'Trusted, Not Transactional',
-      description: 'Boutique delivery with direct access to a senior consultant — no upsell pressure.'
+      description: 'Boutique delivery with direct access to a senior consultant. No upsell pressure.'
     },
     {
       icon: <Sparkles className="w-6 h-6" />,
@@ -64,23 +64,25 @@ const HomeHighlights = () => {
             <Sparkles className="w-4 h-4" />
             <span>Why Teams Choose Us</span>
           </motion.div>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="text-3xl md:text-4xl font-bold text-white mb-3"
           >
-            Serious Security. Practical Delivery.
+            Why Toronto Teams Choose Cloud Secure Canada
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
             className="text-gray-400 max-w-2xl mx-auto"
           >
-            A focused practice that blends cybersecurity depth with real IT operations experience.
+            A focused boutique cybersecurity practice that blends deep security expertise with real
+            IT operations experience. Delivered by a senior consultant from the GTA, not handed off
+            to junior staff.
           </motion.p>
         </div>
         <motion.div 
@@ -95,14 +97,14 @@ const HomeHighlights = () => {
               key={index} 
               variants={item}
               whileHover={{ 
-                y: -5,
-                boxShadow: "0 10px 30px -10px rgba(14, 165, 233, 0.2)",
-                borderColor: "rgba(14, 165, 233, 0.5)",
-                transition: { duration: 0.25, ease: 'easeOut' }
+                y: -4,
+                boxShadow: "0 8px 24px -8px rgba(34, 197, 94, 0.15)",
+                borderColor: "rgba(34, 197, 94, 0.4)",
+                transition: { duration: 0.2, ease: 'easeOut' }
               }}
-              className="card bg-dark-800/50 hover:bg-dark-800 transition-all duration-300"
+              className="card bg-dark-800/50 hover:bg-dark-800 transition-colors duration-200 will-change-transform transform-gpu"
             >
-              <div className="p-3 bg-primary-500/10 rounded-lg w-fit mb-4 text-primary-400 group-hover:text-primary-300">
+              <div className="p-3 bg-primary-500/10 rounded-xl w-fit mb-4 text-primary-400 group-hover:text-primary-300">
                 {highlight.icon}
               </div>
               <h3 className="text-lg font-semibold mb-2 text-white">{highlight.title}</h3>

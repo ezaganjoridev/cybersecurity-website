@@ -201,7 +201,7 @@ const Testimonials = () => {
                 key={`${testimonial.name}-${testimonial.role}`} 
                 variants={item}
                 whileHover={{ y: -6, borderColor: 'rgba(6, 182, 212, 0.4)', transition: { duration: 0.25, ease: 'easeOut' } }}
-                className="card group hover:bg-dark-800/80 transition-all duration-300 flex flex-col h-full"
+                className="card group hover:bg-dark-800/80 transition-colors duration-200 flex flex-col h-full"
             >
               <div className="flex items-center gap-4 mb-5">
                 <div className="relative">

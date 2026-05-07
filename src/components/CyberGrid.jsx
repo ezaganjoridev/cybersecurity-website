@@ -71,7 +71,7 @@ const CyberGrid = ({ className = '' }) => {
       ctx.clearRect(0, 0, w, h);
 
       // Grid lines
-      ctx.strokeStyle = 'rgba(14, 165, 233, 0.04)';
+      ctx.strokeStyle = 'rgba(34, 197, 94, 0.05)';
       ctx.lineWidth = 0.5;
       ctx.beginPath();
       for (let x = 0; x < w; x += GRID) {
@@ -95,7 +95,9 @@ const CyberGrid = ({ className = '' }) => {
 
         ctx.beginPath();
         ctx.arc(dot.x, dot.y, dot.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(14, 165, 233, ${dot.alpha})`;
+        // Sometimes draw purple dots for variation
+        const isPurple = dot.speed > 0.35; 
+        ctx.fillStyle = isPurple ? `rgba(168, 85, 247, ${dot.alpha})` : `rgba(34, 197, 94, ${dot.alpha})`;
         ctx.fill();
       });
 
@@ -114,7 +116,7 @@ const CyberGrid = ({ className = '' }) => {
   if (prefersReducedMotion) {
     return (
       <div
-        className={`absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(to_right,#0ea5e9_1px,transparent_1px),linear-gradient(to_bottom,#0ea5e9_1px,transparent_1px)] bg-[size:40px_40px] ${className}`}
+        className={`absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(to_right,#22c55e_1px,transparent_1px),linear-gradient(to_bottom,#22c55e_1px,transparent_1px)] bg-[size:40px_40px] ${className}`}
       />
     );
   }

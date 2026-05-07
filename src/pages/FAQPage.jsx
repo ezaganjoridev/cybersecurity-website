@@ -5,9 +5,9 @@ import SEO from '../components/SEO';
 const FAQPage = () => {
   return (
     <>
-      <SEO 
-        title="FAQ — Cybersecurity Consulting Questions Answered"
-        description="Answers to common questions about Cloud Secure Canada's cybersecurity consulting: engagement models, remote delivery, pricing, SOC support, Splunk & Sentinel, compliance readiness, and team training."
+      <SEO
+        title="Cybersecurity Consulting FAQ | Engagements, SOC, Pen Testing, Compliance"
+        description="Answers to common questions about cybersecurity consulting from Cloud Secure Canada: engagement models, remote delivery, pricing, SOC and SIEM support (Splunk, Microsoft Sentinel), penetration testing, compliance readiness (NIST CSF, SOC 2, ISO 27001, PCI DSS), and team training."
         canonical="https://cloudsecurecanada.com/faq"
         breadcrumbs={[
           { name: 'Home', url: 'https://cloudsecurecanada.com/' },

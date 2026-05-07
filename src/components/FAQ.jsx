@@ -24,7 +24,7 @@ const FAQ = () => {
     },
     {
       question: 'What cities have you supported?',
-      answer: 'Recent delivery locations include: New York (NY, US), Los Angeles (CA, US), London (England, UK), Chicago (IL, US), Washington–Baltimore (DC/MD/VA, US), Boston–Providence (MA/RI, US), Dallas–Fort Worth (TX, US), Houston (TX, US), Toronto (ON, CA), and San Francisco (CA, US).'
+      answer: 'Recent delivery locations include: New York (NY, US), Los Angeles (CA, US), London (England, UK), Chicago (IL, US), Washington and Baltimore (DC/MD/VA, US), Boston and Providence (MA/RI, US), Dallas and Fort Worth (TX, US), Houston (TX, US), Toronto (ON, CA), and San Francisco (CA, US).'
     },
     {
       question: 'Do you only offer cybersecurity services?',
@@ -117,7 +117,7 @@ const FAQ = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ delay: index * 0.05 }}
-                className={`card transition-colors duration-300 cursor-pointer ${openIndex === index ? 'border-primary-500/50 bg-dark-800' : 'hover:border-primary-500/30'}`}
+                className={`card transition-colors duration-200 cursor-pointer ${openIndex === index ? 'border-primary-500/50 bg-dark-800' : 'hover:border-primary-500/30'}`}
                 onClick={() => toggleFAQ(index)}
             >
               <div className="flex justify-between items-start gap-4">

@@ -55,23 +55,34 @@ const About = () => {
             <Shield className="w-4 h-4" />
             <span>About</span>
           </motion.div>
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="section-title"
           >
-            Results-Driven Cybersecurity Consulting
+            About Cloud Secure Canada
           </motion.h1>
-          <motion.p 
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.15 }}
+            className="text-base md:text-lg text-primary-300/90 font-semibold mb-3 tracking-wide"
+          >
+            Senior SANS GIAC Certified Cybersecurity Consultant in Toronto, Ontario
+          </motion.p>
+          <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
             className="text-lg text-gray-400 max-w-2xl mx-auto"
           >
-            A senior consultant leads every engagement, balancing technical depth with practical outcomes.
+            A senior consultant with 10+ years of incident response, penetration testing, SIEM
+            engineering, and GRC experience leads every engagement personally, balancing technical
+            depth with practical outcomes.
           </motion.p>
         </div>
 
@@ -83,7 +94,7 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="space-y-5 text-gray-400 leading-relaxed"
           >
-            <div className="bg-dark-800 border border-dark-700 rounded-2xl p-6 relative overflow-hidden group hover:border-primary-500/30 transition-colors">
+            <div className="bg-dark-800 border border-dark-700 rounded-xl p-6 relative overflow-hidden group hover:border-primary-500/30 transition-colors">
               <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="flex items-center gap-2 text-primary-400 mb-3 relative">
                 <Heart className="w-5 h-5" />
@@ -129,7 +140,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="bg-dark-800 rounded-2xl p-5 sm:p-8 border border-dark-700 hover:border-primary-500/30 transition-colors relative overflow-hidden"
+            className="bg-dark-800 rounded-xl p-5 sm:p-8 border border-dark-700 hover:border-primary-500/30 transition-colors relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 p-4 opacity-10">
               <Award className="w-24 h-24 text-primary-500" />
@@ -150,7 +161,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="bg-dark-800 rounded-2xl p-5 sm:p-8 border border-dark-700 hover:border-primary-500/30 transition-colors relative overflow-hidden"
+            className="bg-dark-800 rounded-xl p-5 sm:p-8 border border-dark-700 hover:border-primary-500/30 transition-colors relative overflow-hidden"
           >
              <div className="absolute top-0 right-0 p-4 opacity-10 hidden sm:block">
               <Shield className="w-24 h-24 text-primary-500" />
