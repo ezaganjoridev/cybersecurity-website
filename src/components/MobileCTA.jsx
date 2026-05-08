@@ -24,9 +24,11 @@ const MobileCTA = () => {
       const contactTop = contactEl
         ? contactEl.getBoundingClientRect().top
         : Infinity;
+      const viewportHeight = window.visualViewport?.height || window.innerHeight;
 
-      // Show after scrolling past hero, hide when contact is near
-      const nextVisible = window.scrollY > heroEnd && contactTop > window.innerHeight * 0.5;
+      // Show after scrolling past hero, but get out of the way before
+      // the contact section scrolls under the fixed mobile bar.
+      const nextVisible = window.scrollY > heroEnd && contactTop > viewportHeight + 16;
       if (nextVisible !== visibleRef.current) {
         visibleRef.current = nextVisible;
         setVisible(nextVisible);
@@ -44,8 +46,12 @@ const MobileCTA = () => {
 
     updateVisibility();
     window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll);
+    window.visualViewport?.addEventListener('resize', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+      window.visualViewport?.removeEventListener('resize', handleScroll);
       if (frameRef.current !== null) {
         window.cancelAnimationFrame(frameRef.current);
         frameRef.current = null;
@@ -64,7 +70,7 @@ const MobileCTA = () => {
             duration: prefersReducedMotion ? 0.12 : 0.28,
             ease: [0.22, 1, 0.36, 1],
           }}
-          className="fixed inset-x-0 bottom-0 z-50 md:hidden transform-gpu will-change-transform bg-dark-900/95 border-t border-primary-500/20 shadow-2xl shadow-black/45 backdrop-blur-lg"
+          className="fixed inset-x-0 bottom-0 z-50 md:hidden transform-gpu will-change-transform overflow-hidden bg-dark-900/95 border-t border-primary-500/20 shadow-2xl shadow-black/45 backdrop-blur-lg"
         >
           <div className="flex items-center gap-3 px-3 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))]">
             <Link
