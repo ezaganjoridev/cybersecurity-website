@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, memo } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 
 /**
  * A sticky bottom CTA bar visible only on mobile after the user scrolls
@@ -11,6 +11,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const MobileCTA = () => {
   const [visible, setVisible] = useState(false);
   const [dismissed, setDismissed] = useState(false);
+  const prefersReducedMotion = useReducedMotion();
   const visibleRef = useRef(false);
   const frameRef = useRef(null);
 
@@ -56,14 +57,16 @@ const MobileCTA = () => {
     <AnimatePresence>
       {visible && !dismissed && (
         <motion.div
-          initial={{ y: 80, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: 80, opacity: 0 }}
-          transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-          className="fixed bottom-0 left-0 right-0 z-50 md:hidden"
-          style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
+          initial={prefersReducedMotion ? false : { y: '100%' }}
+          animate={{ y: 0 }}
+          exit={prefersReducedMotion ? { opacity: 0 } : { y: '100%' }}
+          transition={{
+            duration: prefersReducedMotion ? 0.12 : 0.28,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="fixed inset-x-0 bottom-0 z-50 md:hidden transform-gpu will-change-transform bg-dark-900/95 border-t border-primary-500/20 shadow-2xl shadow-black/45 backdrop-blur-lg"
         >
-          <div className="mx-3 mb-3 flex items-center gap-3 rounded-none border border-primary-500/20 bg-dark-900/95 backdrop-blur-lg px-4 py-3 shadow-2xl shadow-black/40">
+          <div className="flex items-center gap-3 px-3 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))]">
             <Link
               to="/#contact"
               className="btn-primary flex-1 flex items-center justify-center gap-2 text-sm py-2.5"
