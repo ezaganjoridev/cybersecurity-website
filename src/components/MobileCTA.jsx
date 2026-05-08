@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, memo } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 
@@ -72,7 +72,15 @@ const MobileCTA = () => {
           }}
           className="fixed inset-x-0 bottom-0 z-50 md:hidden transform-gpu will-change-transform overflow-hidden bg-dark-900/95 border-t border-primary-500/20 shadow-2xl shadow-black/45 backdrop-blur-lg"
         >
-          <div className="flex items-center gap-3 px-3 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))]">
+          <div className="flex items-center gap-2 px-3 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))]">
+            <a
+              href="tel:+16476958277"
+              className="flex-1 flex items-center justify-center gap-1.5 text-sm font-semibold text-primary-300 border border-primary-500/40 bg-primary-500/5 hover:bg-primary-500/10 py-2.5 transition-colors duration-200"
+              aria-label="Call +1 (647) 695-8277"
+            >
+              <Phone className="w-4 h-4" />
+              <span>Call</span>
+            </a>
             <Link
               to="/#contact"
               className="btn-primary flex-1 flex items-center justify-center gap-2 text-sm py-2.5"
