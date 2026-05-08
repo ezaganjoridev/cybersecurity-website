@@ -75,7 +75,7 @@ const MobileCTA = () => {
           <div className="flex items-center gap-2 px-3 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))]">
             <a
               href="tel:+16476958277"
-              className="flex-1 flex items-center justify-center gap-1.5 text-sm font-semibold text-primary-300 border border-primary-500/40 bg-primary-500/5 hover:bg-primary-500/10 py-2.5 transition-colors duration-200"
+              className="[flex:35] h-11 flex items-center justify-center gap-1.5 text-sm font-semibold text-primary-300 border border-primary-500/40 bg-primary-500/5 hover:bg-primary-500/10 transition-colors duration-200"
               aria-label="Call +1 (647) 695-8277"
             >
               <Phone className="w-4 h-4" />
@@ -83,7 +83,7 @@ const MobileCTA = () => {
             </a>
             <Link
               to="/#contact"
-              className="btn-primary flex-1 flex items-center justify-center gap-2 text-sm py-2.5"
+              className="btn-primary [flex:65] h-11 flex items-center justify-center gap-2 text-sm"
               onClick={() => setDismissed(true)}
             >
               <span>Book a Consultation</span>
