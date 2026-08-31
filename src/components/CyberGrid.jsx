@@ -64,11 +64,20 @@ const CyberGrid = ({ className = '' }) => {
 
       const w = canvas.width / dpr;
       const h = canvas.height / dpr;
+      // Pull the live brand colours out of the theme rather than hardcoding
+      // them, so the canvas follows any future palette change automatically.
+      const css = getComputedStyle(document.documentElement);
+      const token = (name, fallback) => (css.getPropertyValue(name).trim() || fallback);
+      const primary = token('--color-primary-500', '59 130 246');
+      const accent = token('--color-accent-500', '99 102 241');
+      const lightTheme = document.documentElement.dataset.theme === 'light';
+      // The grid needs slightly more presence on a light canvas to register.
+      const gridAlpha = lightTheme ? 0.10 : 0.05;
 
       ctx.clearRect(0, 0, w, h);
 
       // Grid lines
-      ctx.strokeStyle = 'rgba(34, 197, 94, 0.05)';
+      ctx.strokeStyle = `rgb(${primary} / ${gridAlpha})`;
       ctx.lineWidth = 0.5;
       ctx.beginPath();
       for (let x = 0; x < w; x += GRID) {
@@ -92,8 +101,8 @@ const CyberGrid = ({ className = '' }) => {
 
         ctx.beginPath();
         ctx.arc(dot.x, dot.y, dot.r, 0, Math.PI * 2);
-        const isPurple = dot.speed > 0.35;
-        ctx.fillStyle = isPurple ? `rgba(168, 85, 247, ${dot.alpha})` : `rgba(34, 197, 94, ${dot.alpha})`;
+        const isAccent = dot.speed > 0.35;
+        ctx.fillStyle = `rgb(${isAccent ? accent : primary} / ${dot.alpha})`;
         ctx.fill();
       });
 
@@ -142,7 +151,7 @@ const CyberGrid = ({ className = '' }) => {
   if (useStaticGrid) {
     return (
       <div
-        className={`absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(to_right,#22c55e_1px,transparent_1px),linear-gradient(to_bottom,#22c55e_1px,transparent_1px)] bg-[size:40px_40px] ${className}`}
+        className={`cyber-grid-static absolute inset-0 pointer-events-none opacity-[0.08] ${className}`}
       />
     );
   }

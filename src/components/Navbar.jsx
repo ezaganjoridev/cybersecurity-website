@@ -1,11 +1,15 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Shield } from 'lucide-react';
+import { Menu, X, Phone, ArrowRight, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import LogoMark from './LogoMark';
+import { useTheme } from '../hooks/useTheme';
 
-const Navbar = ({ scrolled }) => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { theme, toggleTheme } = useTheme();
+  const isLight = theme === 'light';
 
   // Close menu on route change
   useEffect(() => {
@@ -14,7 +18,7 @@ const Navbar = ({ scrolled }) => {
 
   // Close menu if viewport grows past mobile breakpoint (e.g. Chrome resize)
   useEffect(() => {
-    const mq = window.matchMedia('(min-width: 768px)');
+    const mq = window.matchMedia('(min-width: 1024px)');
     const handler = (e) => { if (e.matches) setIsOpen(false); };
 
     if (mq.addEventListener) {
@@ -62,10 +66,10 @@ const Navbar = ({ scrolled }) => {
 
   const navLinks = [
     { name: 'Home', href: '/' },
+    { name: 'Field Notes', href: '/blog' },
     { name: 'Services', href: '/services' },
-    { name: 'About', href: '/about' },
     { name: 'Experience', href: '/experience' },
-    { name: 'Testimonials', href: '/testimonials' },
+    { name: 'About', href: '/about' },
     { name: 'FAQ', href: '/faq' },
   ];
 
@@ -109,25 +113,19 @@ const Navbar = ({ scrolled }) => {
   };
 
   return (
-    <nav
-      className={`fixed w-full z-50 transition-colors duration-200 ${
-        scrolled
-          ? 'bg-dark-900/95 backdrop-blur-md shadow-lg shadow-black/20'
-          : 'bg-transparent'
-      }`}
-    >
+    <nav className="nav-solid fixed top-0 w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
-            <Shield className="w-7 h-7 md:w-8 md:h-8 text-primary-500 group-hover:text-primary-400 transition-colors" />
-            <span className="text-lg md:text-2xl font-bold bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent">
+            <LogoMark className="h-7 w-7 transition-transform duration-200 group-hover:scale-105 md:h-8 md:w-8" />
+            <span className="brand-wordmark text-lg font-bold md:text-2xl">
               Cloud Secure Canada
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden items-center gap-5 lg:flex xl:gap-7">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -146,15 +144,33 @@ const Navbar = ({ scrolled }) => {
                 />
               </Link>
             ))}
-            <Link to="/#contact" className="btn-primary text-sm">
-              Book a Call
+            <button
+              type="button"
+              onClick={toggleTheme}
+              className="flex h-10 w-10 shrink-0 items-center justify-center border border-primary-500/30 bg-primary-500/5 text-primary-400 transition-colors hover:border-primary-500/60 hover:bg-primary-500/10 hover:text-primary-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-300"
+              aria-label={`Switch to ${isLight ? 'dark' : 'light'} theme`}
+              title={`Switch to ${isLight ? 'dark' : 'light'} theme`}
+            >
+              {isLight ? <Moon className="h-5 w-5" aria-hidden="true" /> : <Sun className="h-5 w-5" aria-hidden="true" />}
+            </button>
+            <Link
+              to="/#contact"
+              className="btn-cta text-sm group/cta"
+              data-cta="navbar-book-a-call"
+            >
+              <Phone className="w-4 h-4" aria-hidden="true" />
+              <span>Book a Call</span>
+              <ArrowRight
+                className="w-4 h-4 -ml-0.5 transition-transform duration-200 group-hover/cta:translate-x-0.5"
+                aria-hidden="true"
+              />
             </Link>
           </div>
 
           {/* Mobile menu button: fixed position when open so it stays above the overlay */}
           <button
             onClick={toggleMenu}
-            className={`md:hidden p-2 active:scale-90 transition-transform duration-100 ${
+            className={`p-2 active:scale-90 transition-transform duration-100 lg:hidden ${
               isOpen
                 ? 'fixed top-4 right-4 z-[60] text-white hover:text-primary-400'
                 : 'relative z-[60] text-gray-300 hover:text-primary-400'
@@ -176,7 +192,7 @@ const Navbar = ({ scrolled }) => {
               initial="closed"
               animate="open"
               exit="exit"
-              className="md:hidden fixed inset-0 z-[54] bg-black/60"
+              className="fixed inset-0 z-[54] bg-black/60 lg:hidden"
               onClick={closeMenu}
             />
 
@@ -186,10 +202,10 @@ const Navbar = ({ scrolled }) => {
               initial="closed"
               animate="open"
               exit="exit"
-              className="md:hidden fixed inset-0 z-[55] bg-dark-900 will-change-transform overflow-y-auto overscroll-contain"
+              className="fixed inset-0 z-[55] overflow-y-auto overscroll-contain bg-dark-900 will-change-transform lg:hidden"
             >
               {/* Decorative grid */}
-              <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[linear-gradient(to_right,#22c55e_1px,transparent_1px),linear-gradient(to_bottom,#22c55e_1px,transparent_1px)] bg-[size:40px_40px]" />
+              <div className="nav-mobile-grid pointer-events-none absolute inset-0 opacity-[0.08]" />
 
               <motion.div
                 variants={menuVariants}
@@ -216,13 +232,24 @@ const Navbar = ({ scrolled }) => {
                   </Link>
                 </motion.div>
               ))}
-              <motion.div variants={itemVariants} className="w-full mt-8">
+              <motion.div variants={itemVariants} className="mt-8 w-full">
+                <button
+                  type="button"
+                  onClick={toggleTheme}
+                  className="mb-3 flex h-12 w-full items-center justify-center gap-3 border border-primary-500/30 bg-primary-500/5 font-semibold text-primary-300 transition-colors hover:bg-primary-500/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-300"
+                  aria-label={`Switch to ${isLight ? 'dark' : 'light'} theme`}
+                >
+                  {isLight ? <Moon className="h-5 w-5" aria-hidden="true" /> : <Sun className="h-5 w-5" aria-hidden="true" />}
+                  <span>Use {isLight ? 'dark' : 'light'} theme</span>
+                </button>
                 <Link
                   to="/#contact"
                   onClick={closeMenu}
-                  className="btn-primary block text-center text-lg py-4"
+                  className="btn-cta w-full justify-center text-lg py-4"
+                  data-cta="mobile-menu-book-a-call"
                 >
-                  Book a Call
+                  <Phone className="w-5 h-5" aria-hidden="true" />
+                  <span>Book a Call</span>
                 </Link>
               </motion.div>
               </motion.div>

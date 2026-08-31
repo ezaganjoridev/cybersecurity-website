@@ -1,0 +1,131 @@
+{
+  "source": "CISA Known Exploited Vulnerabilities Catalog, dated via NVD",
+  "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+  "ordering": "disclosure",
+  "catalogVersion": "2026.08.27",
+  "dateReleased": "2026-08-27T17:00:36.6632Z",
+  "totalInCatalog": 1685,
+  "fetchedAt": "2026-08-29T21:38:12.935Z",
+  "items": [
+    {
+      "id": "CVE-2026-60004",
+      "vendor": "Gitea",
+      "product": "Gitea",
+      "name": "Gitea Code Injection Vulnerability",
+      "published": "2026-08-26",
+      "added": "2026-08-25",
+      "due": "2026-08-28",
+      "score": 9.8,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-72530",
+      "vendor": "TrueConf",
+      "product": "Server",
+      "name": "TrueConf Server Code Injection Vulnerability",
+      "published": "2026-08-19",
+      "added": "2026-08-20",
+      "due": "2026-09-03",
+      "score": 9.5,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-72529",
+      "vendor": "TrueConf",
+      "product": "Server",
+      "name": "TrueConf Server Missing Authentication for Critical Function Vulnerability",
+      "published": "2026-08-19",
+      "added": "2026-08-20",
+      "due": "2026-08-23",
+      "score": 9.3,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-64849",
+      "vendor": "MLflow",
+      "product": "MLflow",
+      "name": "MLflow Server-Side Request Forgery Vulnerability",
+      "published": "2026-08-17",
+      "added": "2026-08-19",
+      "due": "2026-09-02",
+      "score": 9.3,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-73570",
+      "vendor": "Synacor",
+      "product": "Zimbra Collaboration Suite (ZCS)",
+      "name": "Zimbra Collaboration Suite (ZCS) OS Command Injection Vulnerability",
+      "published": "2026-08-13",
+      "added": "2026-08-21",
+      "due": "2026-08-24",
+      "score": 8.9,
+      "severity": "HIGH",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-66384",
+      "vendor": "JFrog",
+      "product": "Artifactory",
+      "name": "JFrog Artifactory Improper Limitation of a Pathname to a Restricted Directory Vulnerability",
+      "published": "2026-08-12",
+      "added": "2026-08-27",
+      "due": "2026-09-10",
+      "score": 5.3,
+      "severity": "MEDIUM",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-68820",
+      "vendor": "Microsoft",
+      "product": "Windows Ancillary Function Driver for WinSock",
+      "name": "Microsoft Windows Ancillary Function Driver for WinSock Use-After-Free Vulnerability",
+      "published": "2026-08-11",
+      "added": "2026-08-11",
+      "due": "2026-08-25",
+      "score": 7,
+      "severity": "HIGH",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-20349",
+      "vendor": "Cisco",
+      "product": "Secure Firewall Adaptive Security Appliance (ASA) and Secure Firewall Threat Defense (FTD)",
+      "name": "Cisco Secure Firewall Adaptive Security Appliance (ASA) and Secure Firewall Threat Defense (FTD) Heap Inspection Vulnerability",
+      "published": "2026-08-11",
+      "added": "2026-08-11",
+      "due": "2026-08-14",
+      "score": 8.6,
+      "severity": "HIGH",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-72898",
+      "vendor": "Metabase",
+      "product": "Metabase",
+      "name": "Metabase SQL Injection Vulnerability",
+      "published": "2026-08-10",
+      "added": "2026-08-11",
+      "due": "2026-08-14",
+      "score": 10,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-65400",
+      "vendor": "Apple",
+      "product": "macOS",
+      "name": "Apple macOS Improper Authentication Vulnerability",
+      "published": "2026-08-06",
+      "added": "2026-08-18",
+      "due": "2026-08-21",
+      "score": 9.8,
+      "severity": "CRITICAL",
+      "ransomware": false
+    }
+  ]
+}

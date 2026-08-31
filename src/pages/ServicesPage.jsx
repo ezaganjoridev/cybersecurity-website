@@ -29,7 +29,7 @@ const servicesJsonLd = [
     "@id": "https://cloudsecurecanada.com/services#penetration-testing",
     "name": "Penetration Testing Services in Toronto",
     "serviceType": "Penetration Testing",
-    "description": "GIAC GPEN/GCPN certified penetration testing across external/internal networks, web applications (OWASP Top 10), cloud environments (AWS, Azure, GCP), and APIs. Evidence-backed findings with retest verification. Delivered remotely or on-site across the Greater Toronto Area.",
+    "description": "GIAC GPEN/GCPN/GXPN certified penetration testing across external/internal networks, web applications (OWASP Top 10), cloud environments (AWS, Azure, GCP), and APIs. Evidence-backed findings with retest verification. Delivered remotely or on-site across the Greater Toronto Area.",
     "provider": { "@id": "https://cloudsecurecanada.com/#organization" },
     "areaServed": [
       { "@type": "AdministrativeArea", "name": "Greater Toronto Area" },
@@ -68,10 +68,10 @@ const servicesJsonLd = [
 
 const ServicesPage = () => {
   return (
-    <div className="pt-20 md:pt-24">
+    <div className="page-top">
       <SEO
-        title="Cybersecurity Services in Toronto | SOC, Pen Testing, GRC, SOAR"
-        description="Boutique cybersecurity consulting services in Toronto and the GTA. SOC build out and SIEM engineering (Splunk, Microsoft Sentinel, QRadar), penetration testing (GPEN/GCPN), GRC and compliance readiness (SOC 2, ISO 27001, PCI DSS, NIST CSF), security automation and SOAR, alert tuning, threat hunting, and incident response. Remote delivery across Canada, the US, the UK, and globally."
+        title="Cybersecurity Services"
+        description="Toronto cybersecurity consulting: penetration testing, SOC and SIEM engineering, incident response, cloud security and SOC 2 readiness."
         canonical="https://cloudsecurecanada.com/services"
         breadcrumbs={[
           { name: 'Home', url: 'https://cloudsecurecanada.com/' },

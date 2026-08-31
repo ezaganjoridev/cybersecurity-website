@@ -2,8 +2,36 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/shield.svg" />
+    <link id="site-favicon" rel="icon" type="image/svg+xml" sizes="any" href="/shield.svg?v=3" />
+    <link id="site-mask-icon" rel="mask-icon" href="/shield.svg?v=3" color="#60a5fa" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <meta id="site-theme-color" name="theme-color" content="#0b101b" />
+    <script>
+      (function () {
+        var theme = 'dark';
+        try {
+          var saved = window.localStorage.getItem('csc.theme');
+          theme = saved === 'light' || saved === 'dark'
+            ? saved
+            : (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        } catch (error) {
+          theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        }
+
+        document.documentElement.dataset.theme = theme;
+        // Must follow the theme, not be pinned to dark, or light mode renders
+        // dark scrollbars and native controls over a light page.
+        document.documentElement.style.colorScheme = theme;
+
+        if (theme === 'light') {
+          document.querySelector('#site-favicon').setAttribute('href', '/shield-light.svg?v=2');
+          document.querySelector('#site-mask-icon').setAttribute('href', '/shield-light.svg?v=2');
+          document.querySelector('#site-mask-icon').setAttribute('color', '#2563eb');
+          document.querySelector('#site-theme-color').setAttribute('content', '#f4f7fb');
+        }
+      })();
+    </script>
 
     <!-- Resource hints: faster paint, better Core Web Vitals -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -15,25 +43,21 @@
     />
 
     <!-- Primary Meta Tags -->
-    <title>Cybersecurity Consultant in Toronto | Cloud Secure Canada | SOC, Pen Testing, GRC</title>
-    <meta name="title" content="Cybersecurity Consultant in Toronto | Cloud Secure Canada | SOC, Pen Testing, GRC" />
-    <meta name="description" content="Boutique cybersecurity consulting in Toronto and the GTA. SANS GIAC certified senior consultant for SOC build out and SIEM engineering (Splunk, Microsoft Sentinel, QRadar), penetration testing, GRC and compliance readiness (NIST CSF, SOC 2, ISO 27001, PCI DSS), security automation and SOAR, alert tuning, and incident response. Remote delivery across Canada, the United States, the United Kingdom, and globally." />
+    <title>Toronto Cybersecurity Consulting · Cloud Secure Canada</title>
+    <meta name="title" content="Toronto Cybersecurity Consultant | Cloud Secure Canada" />
+    <meta name="description" content="Boutique Toronto cybersecurity consultants. SANS GIAC certified penetration testing, SOC 2 readiness, SIEM engineering and incident response." />
     <meta name="author" content="Cloud Secure Canada" />
     <meta name="publisher" content="Cloud Secure Canada" />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1" />
     <meta name="bingbot" content="index, follow" />
     <meta name="language" content="English" />
-    <link rel="canonical" href="https://cloudsecurecanada.com/" />
     <link rel="alternate" hreflang="en-CA" href="https://cloudsecurecanada.com/" />
     <link rel="alternate" hreflang="en-US" href="https://cloudsecurecanada.com/" />
     <link rel="alternate" hreflang="en-GB" href="https://cloudsecurecanada.com/" />
     <link rel="alternate" hreflang="en" href="https://cloudsecurecanada.com/" />
     <link rel="alternate" hreflang="x-default" href="https://cloudsecurecanada.com/" />
-    <meta name="theme-color" content="#0f172a" />
-    <meta name="keywords" content="cybersecurity consultant Toronto, cybersecurity consulting Toronto, cybersecurity consultant Canada, GTA cybersecurity consulting, boutique cybersecurity consulting, SANS GIAC consultant, fractional CISO Toronto, SOC build, SIEM engineering, penetration testing Toronto, pen testing Canada, GRC consulting, compliance readiness, security automation, SOAR, alert tuning, incident response Toronto, DFIR, vulnerability management, Splunk consultant Toronto, Microsoft Sentinel consultant, QRadar consultant, security assessments, cloud security consulting, Zero Trust architecture, MITRE ATT&amp;CK, NIST CSF, SOC 2 readiness, ISO 27001 consultant, PCI DSS, ransomware readiness, threat hunting, EDR, XDR, CrowdStrike, SentinelOne, Defender for Endpoint" />
 
-    <!-- SPA GitHub Pages redirect support -->
+    <!-- Restores the original path after a static-host deep-link redirect -->
     <script type="text/javascript">
       (function (l) {
         if (l.search && l.search[1] === '/') {
@@ -48,8 +72,8 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://cloudsecurecanada.com/" />
-    <meta property="og:title" content="Cybersecurity Consultant in Toronto | Cloud Secure Canada" />
-    <meta property="og:description" content="Boutique SANS GIAC certified cybersecurity consulting from Toronto. SOC build out, SIEM engineering, penetration testing, GRC and compliance readiness, security automation, and incident response. Remote delivery across the GTA, Canada, the United States, the United Kingdom, and globally." />
+    <meta property="og:title" content="Toronto Cybersecurity Consultant | Cloud Secure Canada" />
+    <meta property="og:description" content="Boutique Toronto cybersecurity consultants. SANS GIAC certified penetration testing, SOC 2 readiness, SIEM engineering and incident response." />
     <meta property="og:image" content="https://cloudsecurecanada.com/shield.svg" />
     <meta property="og:image:alt" content="Cloud Secure Canada shield logo" />
     <meta property="og:image:type" content="image/svg+xml" />
@@ -61,8 +85,8 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://cloudsecurecanada.com/" />
-    <meta name="twitter:title" content="Cybersecurity Consultant in Toronto | Cloud Secure Canada" />
-    <meta name="twitter:description" content="Boutique SANS GIAC certified cybersecurity consulting from Toronto. SOC, pen testing, GRC, SOAR, and incident response. Remote delivery across the GTA, Canada, US, UK, and globally." />
+    <meta name="twitter:title" content="Toronto Cybersecurity Consultant | Cloud Secure Canada" />
+    <meta name="twitter:description" content="Boutique Toronto cybersecurity consultants. SANS GIAC certified penetration testing, SOC 2 readiness, SIEM engineering and incident response." />
     <meta name="twitter:image" content="https://cloudsecurecanada.com/shield.svg" />
     <meta name="twitter:image:alt" content="Cloud Secure Canada shield logo" />
 
@@ -87,7 +111,9 @@
           "url": "https://cloudsecurecanada.com/",
           "name": "Cloud Secure Canada",
           "description": "Boutique SANS GIAC certified cybersecurity consulting in Toronto. SOC build, pen testing, GRC, SOAR, and incident response.",
-          "publisher": { "@id": "https://cloudsecurecanada.com/#organization" },
+          "publisher": {
+            "@id": "https://cloudsecurecanada.com/#organization"
+          },
           "inLanguage": "en-CA",
           "potentialAction": {
             "@type": "SearchAction",
@@ -99,10 +125,17 @@
           }
         },
         {
-          "@type": ["ProfessionalService", "LocalBusiness", "Organization"],
+          "@type": [
+            "ProfessionalService",
+            "LocalBusiness",
+            "Organization"
+          ],
           "@id": "https://cloudsecurecanada.com/#organization",
           "name": "Cloud Secure Canada",
-          "alternateName": ["Cloud Secure Canada Cybersecurity Consulting", "CSC"],
+          "alternateName": [
+            "Cloud Secure Canada Cybersecurity Consulting",
+            "CSC"
+          ],
           "description": "Boutique SANS GIAC certified cybersecurity consultancy based in Toronto, Ontario, Canada. Specializing in SOC build out and SIEM engineering (Splunk, Microsoft Sentinel, QRadar), penetration testing, GRC and compliance readiness (NIST CSF, SOC 2, ISO 27001, PCI DSS), security automation and SOAR, alert tuning, threat hunting, and incident response. Remote delivery across the GTA, Canada, the United States, the United Kingdom, and globally.",
           "url": "https://cloudsecurecanada.com",
           "logo": {
@@ -113,10 +146,12 @@
             "caption": "Cloud Secure Canada",
             "inLanguage": "en-CA"
           },
-          "image": { "@id": "https://cloudsecurecanada.com/#logo" },
+          "image": {
+            "@id": "https://cloudsecurecanada.com/#logo"
+          },
           "telephone": "+1-647-695-8277",
           "email": "info@cloudsecurecanada.com",
-          "priceRange": "$$",
+          "priceRange": "$$$",
           "currenciesAccepted": "CAD, USD",
           "paymentAccepted": "Invoice, Bank Transfer, Credit Card",
           "address": {
@@ -142,66 +177,212 @@
           "openingHoursSpecification": [
             {
               "@type": "OpeningHoursSpecification",
-              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-              "opens": "09:00",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ],
+              "opens": "08:00",
               "closes": "18:00"
             }
           ],
-          "founder": { "@id": "https://cloudsecurecanada.com/#founder" },
+          "founder": {
+            "@id": "https://cloudsecurecanada.com/#founder"
+          },
           "contactPoint": [
             {
               "@type": "ContactPoint",
               "contactType": "sales",
               "email": "info@cloudsecurecanada.com",
               "telephone": "+1-647-695-8277",
-              "areaServed": ["CA", "US", "GB"],
-              "availableLanguage": ["English"]
+              "areaServed": [
+                "CA",
+                "US",
+                "GB"
+              ],
+              "availableLanguage": [
+                "English"
+              ]
             },
             {
               "@type": "ContactPoint",
               "contactType": "emergency",
               "email": "info@cloudsecurecanada.com",
               "telephone": "+1-647-695-8277",
-              "areaServed": ["CA", "US", "GB"],
-              "availableLanguage": ["English"],
+              "areaServed": [
+                "CA",
+                "US",
+                "GB"
+              ],
+              "availableLanguage": [
+                "English"
+              ],
               "description": "Incident response and breach support"
             }
           ],
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5.0",
-            "reviewCount": "9",
-            "bestRating": "5",
-            "worstRating": "1"
-          },
           "areaServed": [
-            { "@type": "City", "name": "Toronto", "containedInPlace": { "@type": "AdministrativeArea", "name": "Ontario" } },
-            { "@type": "City", "name": "Mississauga", "containedInPlace": { "@type": "AdministrativeArea", "name": "Ontario" } },
-            { "@type": "City", "name": "Brampton", "containedInPlace": { "@type": "AdministrativeArea", "name": "Ontario" } },
-            { "@type": "City", "name": "Markham", "containedInPlace": { "@type": "AdministrativeArea", "name": "Ontario" } },
-            { "@type": "City", "name": "Vaughan", "containedInPlace": { "@type": "AdministrativeArea", "name": "Ontario" } },
-            { "@type": "City", "name": "Oakville", "containedInPlace": { "@type": "AdministrativeArea", "name": "Ontario" } },
-            { "@type": "City", "name": "Burlington", "containedInPlace": { "@type": "AdministrativeArea", "name": "Ontario" } },
-            { "@type": "City", "name": "Hamilton", "containedInPlace": { "@type": "AdministrativeArea", "name": "Ontario" } },
-            { "@type": "City", "name": "Richmond Hill", "containedInPlace": { "@type": "AdministrativeArea", "name": "Ontario" } },
-            { "@type": "City", "name": "Pickering", "containedInPlace": { "@type": "AdministrativeArea", "name": "Ontario" } },
-            { "@type": "City", "name": "Ajax", "containedInPlace": { "@type": "AdministrativeArea", "name": "Ontario" } },
-            { "@type": "City", "name": "Whitby", "containedInPlace": { "@type": "AdministrativeArea", "name": "Ontario" } },
-            { "@type": "City", "name": "Oshawa", "containedInPlace": { "@type": "AdministrativeArea", "name": "Ontario" } },
-            { "@type": "AdministrativeArea", "name": "Greater Toronto Area" },
-            { "@type": "AdministrativeArea", "name": "Ontario" },
-            { "@type": "Country", "name": "Canada" },
-            { "@type": "Country", "name": "United States of America" },
-            { "@type": "Country", "name": "United Kingdom" },
-            { "@type": "Country", "name": "Australia" },
-            { "@type": "Country", "name": "New Zealand" },
-            { "@type": "Country", "name": "Ireland" },
-            { "@type": "Country", "name": "Germany" },
-            { "@type": "Country", "name": "France" },
-            { "@type": "Country", "name": "Netherlands" },
-            { "@type": "Country", "name": "Sweden" },
-            { "@type": "Country", "name": "Singapore" },
-            { "@type": "Country", "name": "Japan" }
+            {
+              "@type": "City",
+              "name": "Toronto",
+              "containedInPlace": {
+                "@type": "AdministrativeArea",
+                "name": "Ontario"
+              }
+            },
+            {
+              "@type": "City",
+              "name": "Mississauga",
+              "containedInPlace": {
+                "@type": "AdministrativeArea",
+                "name": "Ontario"
+              }
+            },
+            {
+              "@type": "City",
+              "name": "Brampton",
+              "containedInPlace": {
+                "@type": "AdministrativeArea",
+                "name": "Ontario"
+              }
+            },
+            {
+              "@type": "City",
+              "name": "Markham",
+              "containedInPlace": {
+                "@type": "AdministrativeArea",
+                "name": "Ontario"
+              }
+            },
+            {
+              "@type": "City",
+              "name": "Vaughan",
+              "containedInPlace": {
+                "@type": "AdministrativeArea",
+                "name": "Ontario"
+              }
+            },
+            {
+              "@type": "City",
+              "name": "Oakville",
+              "containedInPlace": {
+                "@type": "AdministrativeArea",
+                "name": "Ontario"
+              }
+            },
+            {
+              "@type": "City",
+              "name": "Burlington",
+              "containedInPlace": {
+                "@type": "AdministrativeArea",
+                "name": "Ontario"
+              }
+            },
+            {
+              "@type": "City",
+              "name": "Hamilton",
+              "containedInPlace": {
+                "@type": "AdministrativeArea",
+                "name": "Ontario"
+              }
+            },
+            {
+              "@type": "City",
+              "name": "Richmond Hill",
+              "containedInPlace": {
+                "@type": "AdministrativeArea",
+                "name": "Ontario"
+              }
+            },
+            {
+              "@type": "City",
+              "name": "Pickering",
+              "containedInPlace": {
+                "@type": "AdministrativeArea",
+                "name": "Ontario"
+              }
+            },
+            {
+              "@type": "City",
+              "name": "Ajax",
+              "containedInPlace": {
+                "@type": "AdministrativeArea",
+                "name": "Ontario"
+              }
+            },
+            {
+              "@type": "City",
+              "name": "Whitby",
+              "containedInPlace": {
+                "@type": "AdministrativeArea",
+                "name": "Ontario"
+              }
+            },
+            {
+              "@type": "City",
+              "name": "Oshawa",
+              "containedInPlace": {
+                "@type": "AdministrativeArea",
+                "name": "Ontario"
+              }
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "Greater Toronto Area"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "Ontario"
+            },
+            {
+              "@type": "Country",
+              "name": "Canada"
+            },
+            {
+              "@type": "Country",
+              "name": "United States of America"
+            },
+            {
+              "@type": "Country",
+              "name": "United Kingdom"
+            },
+            {
+              "@type": "Country",
+              "name": "Australia"
+            },
+            {
+              "@type": "Country",
+              "name": "New Zealand"
+            },
+            {
+              "@type": "Country",
+              "name": "Ireland"
+            },
+            {
+              "@type": "Country",
+              "name": "Germany"
+            },
+            {
+              "@type": "Country",
+              "name": "France"
+            },
+            {
+              "@type": "Country",
+              "name": "Netherlands"
+            },
+            {
+              "@type": "Country",
+              "name": "Sweden"
+            },
+            {
+              "@type": "Country",
+              "name": "Singapore"
+            },
+            {
+              "@type": "Country",
+              "name": "Japan"
+            }
           ],
           "serviceType": [
             "Cybersecurity Consulting",
@@ -272,9 +453,257 @@
             "Endpoint Hardening",
             "CIS Benchmarks"
           ],
-          "knowsLanguage": ["English"],
+          "knowsLanguage": [
+            "English"
+          ],
           "slogan": "Adversaries move fast. We move faster.",
-          "sameAs": []
+          "sameAs": [
+            "https://www.google.com/search?kgmid=/g/11m_45qlc2&q=Cloud+Secure+Canada"
+          ],
+          "openingHours": "Mo-Fr 08:00-18:00",
+          "audience": {
+            "@type": "BusinessAudience",
+            "audienceType": "Higher Education, Financial Services, SaaS, FinTech, Healthcare, Professional Services"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "@id": "https://cloudsecurecanada.com/#service-catalog",
+            "name": "Cybersecurity Consulting Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://cloudsecurecanada.com/services#incident-response",
+                  "name": "Incident Response",
+                  "serviceType": "Incident Response",
+                  "description": "Rapid breach containment, digital forensics, root cause analysis, and recovery planning. Evidence preservation, attacker TTP mapping to MITRE ATT&CK, and post-incident hardening roadmaps.",
+                  "provider": {
+                    "@id": "https://cloudsecurecanada.com/#organization"
+                  },
+                  "areaServed": [
+                    {
+                      "@type": "AdministrativeArea",
+                      "name": "Greater Toronto Area"
+                    },
+                    {
+                      "@type": "Country",
+                      "name": "Canada"
+                    },
+                    {
+                      "@type": "Country",
+                      "name": "United States"
+                    },
+                    {
+                      "@type": "Country",
+                      "name": "United Kingdom"
+                    }
+                  ]
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://cloudsecurecanada.com/services#penetration-testing",
+                  "name": "Penetration Testing",
+                  "serviceType": "Penetration Testing",
+                  "description": "Manual penetration testing across external and internal networks, web applications (OWASP Top 10), APIs, and cloud environments. GPEN, GCPN, and GXPN certified testing with proof-of-concept evidence and retest verification.",
+                  "provider": {
+                    "@id": "https://cloudsecurecanada.com/#organization"
+                  },
+                  "areaServed": [
+                    {
+                      "@type": "AdministrativeArea",
+                      "name": "Greater Toronto Area"
+                    },
+                    {
+                      "@type": "Country",
+                      "name": "Canada"
+                    },
+                    {
+                      "@type": "Country",
+                      "name": "United States"
+                    },
+                    {
+                      "@type": "Country",
+                      "name": "United Kingdom"
+                    }
+                  ]
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://cloudsecurecanada.com/services#siem-soc-engineering",
+                  "name": "SIEM & SOC Engineering",
+                  "serviceType": "SIEM Engineering",
+                  "description": "End-to-end Security Operations Center architecture and SIEM engineering. Platform deployment for Splunk, Microsoft Sentinel, and QRadar, MITRE ATT&CK detection rules, alert tuning, SOAR playbooks, and SOC operating model design.",
+                  "provider": {
+                    "@id": "https://cloudsecurecanada.com/#organization"
+                  },
+                  "areaServed": [
+                    {
+                      "@type": "AdministrativeArea",
+                      "name": "Greater Toronto Area"
+                    },
+                    {
+                      "@type": "Country",
+                      "name": "Canada"
+                    },
+                    {
+                      "@type": "Country",
+                      "name": "United States"
+                    },
+                    {
+                      "@type": "Country",
+                      "name": "United Kingdom"
+                    }
+                  ]
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://cloudsecurecanada.com/services#cloud-security",
+                  "name": "Cloud Security",
+                  "serviceType": "Cloud Security",
+                  "description": "Identity-first Zero Trust architecture for Microsoft 365, Azure, AWS, and GCP. Conditional access policy design, MFA rollout, CIS Benchmark baselines, and least-privilege access enforcement.",
+                  "provider": {
+                    "@id": "https://cloudsecurecanada.com/#organization"
+                  },
+                  "areaServed": [
+                    {
+                      "@type": "AdministrativeArea",
+                      "name": "Greater Toronto Area"
+                    },
+                    {
+                      "@type": "Country",
+                      "name": "Canada"
+                    },
+                    {
+                      "@type": "Country",
+                      "name": "United States"
+                    },
+                    {
+                      "@type": "Country",
+                      "name": "United Kingdom"
+                    }
+                  ]
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://cloudsecurecanada.com/services#soc-2-readiness",
+                  "name": "SOC 2 Readiness",
+                  "serviceType": "Compliance Readiness",
+                  "description": "SOC 2 Type I and Type II readiness for Canadian and US organizations. Trust Services Criteria gap assessment, policy development, control implementation, evidence preparation, and auditor liaison.",
+                  "provider": {
+                    "@id": "https://cloudsecurecanada.com/#organization"
+                  },
+                  "areaServed": [
+                    {
+                      "@type": "AdministrativeArea",
+                      "name": "Greater Toronto Area"
+                    },
+                    {
+                      "@type": "Country",
+                      "name": "Canada"
+                    },
+                    {
+                      "@type": "Country",
+                      "name": "United States"
+                    },
+                    {
+                      "@type": "Country",
+                      "name": "United Kingdom"
+                    }
+                  ]
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Security Assessments & Risk Reviews",
+                  "description": "Comprehensive security assessments aligned to NIST CSF, CIS Controls, ISO 27001, SOC 2, and PCI DSS. Gap analysis mapped to real-world attack paths with prioritized remediation roadmaps.",
+                  "provider": {
+                    "@id": "https://cloudsecurecanada.com/#organization"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "EDR/XDR Strategy & Deployment",
+                  "description": "Endpoint detection and response platform selection, deployment, policy tuning, and response optimization. Support for Microsoft Defender, CrowdStrike, SentinelOne, and Cortex XDR.",
+                  "provider": {
+                    "@id": "https://cloudsecurecanada.com/#organization"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Threat Hunting & Detection Coverage",
+                  "description": "Hypothesis-driven threat hunts mapped to MITRE ATT&CK. Detection coverage gap analysis for SIEM and EDR with implementation-ready rule recommendations.",
+                  "provider": {
+                    "@id": "https://cloudsecurecanada.com/#organization"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Ransomware Readiness & Tabletop Exercises",
+                  "description": "Ransomware preparedness assessments, executive and technical tabletop exercise facilitation, response playbooks, communication templates, and backup recovery validation.",
+                  "provider": {
+                    "@id": "https://cloudsecurecanada.com/#organization"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Vulnerability Management Program",
+                  "description": "Risk-based vulnerability management with scanner deployment (Nessus, Tenable, Rapid7, Qualys), prioritization by CVSS/EPSS, SLA tracking, executive reporting, and ticketing integration.",
+                  "provider": {
+                    "@id": "https://cloudsecurecanada.com/#organization"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Security Automation & SOAR",
+                  "description": "Design and implement security orchestration and automated response. Playbook development for Splunk SOAR, Cortex XSOAR, and Microsoft Sentinel Logic Apps. Alert enrichment, automated triage, and endpoint isolation workflows.",
+                  "provider": {
+                    "@id": "https://cloudsecurecanada.com/#organization"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Network Security Monitoring & Tooling",
+                  "description": "Deploy and optimize Zeek, Corelight, Suricata IDS/IPS, and Argus for network traffic visibility, protocol logging, and anomaly detection.",
+                  "provider": {
+                    "@id": "https://cloudsecurecanada.com/#organization"
+                  }
+                }
+              }
+            ]
+          }
         },
         {
           "@type": "Person",
@@ -284,7 +713,9 @@
           "jobTitle": "Senior Cybersecurity Consultant",
           "image": "https://cloudsecurecanada.com/shield.svg",
           "url": "https://cloudsecurecanada.com/about",
-          "worksFor": { "@id": "https://cloudsecurecanada.com/#organization" },
+          "worksFor": {
+            "@id": "https://cloudsecurecanada.com/#organization"
+          },
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Toronto",
@@ -315,152 +746,57 @@
               "@type": "EducationalOccupationalCredential",
               "name": "GIAC Penetration Tester (GPEN)",
               "credentialCategory": "Professional Certification",
-              "recognizedBy": { "@type": "Organization", "name": "SANS Institute / GIAC" }
+              "recognizedBy": {
+                "@type": "Organization",
+                "name": "SANS Institute / GIAC"
+              }
             },
             {
               "@type": "EducationalOccupationalCredential",
               "name": "GIAC Certified Incident Handler (GCIH)",
               "credentialCategory": "Professional Certification",
-              "recognizedBy": { "@type": "Organization", "name": "SANS Institute / GIAC" }
+              "recognizedBy": {
+                "@type": "Organization",
+                "name": "SANS Institute / GIAC"
+              }
             },
             {
               "@type": "EducationalOccupationalCredential",
               "name": "GIAC Defensible Security Architect (GDSA)",
               "credentialCategory": "Professional Certification",
-              "recognizedBy": { "@type": "Organization", "name": "SANS Institute / GIAC" }
+              "recognizedBy": {
+                "@type": "Organization",
+                "name": "SANS Institute / GIAC"
+              }
             },
             {
               "@type": "EducationalOccupationalCredential",
               "name": "GIAC Certified Enterprise Defender (GCED)",
               "credentialCategory": "Professional Certification",
-              "recognizedBy": { "@type": "Organization", "name": "SANS Institute / GIAC" }
+              "recognizedBy": {
+                "@type": "Organization",
+                "name": "SANS Institute / GIAC"
+              }
             },
             {
               "@type": "EducationalOccupationalCredential",
               "name": "GIAC Cloud Penetration Tester (GCPN)",
               "credentialCategory": "Professional Certification",
-              "recognizedBy": { "@type": "Organization", "name": "SANS Institute / GIAC" }
+              "recognizedBy": {
+                "@type": "Organization",
+                "name": "SANS Institute / GIAC"
+              }
+            },
+            {
+              "@type": "EducationalOccupationalCredential",
+              "name": "GIAC Exploit Researcher and Advanced Penetration Tester (GXPN)",
+              "credentialCategory": "Professional Certification",
+              "recognizedBy": {
+                "@type": "Organization",
+                "name": "SANS Institute / GIAC"
+              }
             }
           ]
-        },
-        {
-          "@type": "Service",
-          "@id": "https://cloudsecurecanada.com/#service-catalog",
-          "serviceType": "Cybersecurity Consulting",
-          "name": "Cybersecurity Consulting Services",
-          "provider": { "@id": "https://cloudsecurecanada.com/#organization" },
-          "areaServed": [
-            { "@type": "AdministrativeArea", "name": "Greater Toronto Area" },
-            { "@type": "Country", "name": "Canada" },
-            { "@type": "Country", "name": "United States of America" },
-            { "@type": "Country", "name": "United Kingdom" }
-          ],
-          "audience": {
-            "@type": "BusinessAudience",
-            "audienceType": "Higher Education, Financial Services, SaaS, FinTech, Healthcare, Professional Services"
-          },
-          "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Cybersecurity Consulting Services",
-            "itemListElement": [
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Incident Response & Digital Forensics (DFIR)",
-                  "description": "Rapid breach containment, forensic investigation, root cause analysis, and recovery planning. Evidence preservation, attacker TTP mapping to MITRE ATT&CK, and post-incident hardening roadmaps."
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Penetration Testing Services",
-                  "description": "Manual penetration testing across external/internal networks, web applications (OWASP Top 10), cloud environments (AWS, Azure, GCP), and APIs. GPEN/GCPN certified testers with proof-of-concept evidence and retest verification."
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Security Assessments & Risk Reviews",
-                  "description": "Comprehensive security assessments aligned to NIST CSF, CIS Controls, ISO 27001, SOC 2, and PCI DSS. Gap analysis mapped to real-world attack paths with prioritized remediation roadmaps."
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "SOC Build & SIEM Engineering",
-                  "description": "End-to-end Security Operations Center architecture and SIEM engineering. Platform deployment (Splunk, Microsoft Sentinel, QRadar), MITRE ATT&CK detection rules, alert tuning, SOAR automation playbooks, and SOC operating model design."
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "EDR/XDR Strategy & Deployment",
-                  "description": "Endpoint detection and response platform selection, deployment, policy tuning, and response optimization. Support for Microsoft Defender, CrowdStrike, SentinelOne, and Cortex XDR."
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Threat Hunting & Detection Coverage",
-                  "description": "Hypothesis-driven threat hunts mapped to MITRE ATT&CK. Detection coverage gap analysis for SIEM and EDR with implementation-ready rule recommendations."
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Ransomware Readiness & Tabletop Exercises",
-                  "description": "Ransomware preparedness assessments, executive and technical tabletop exercise facilitation, response playbooks, communication templates, and backup recovery validation."
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Cloud Security & Identity Hardening",
-                  "description": "Identity-first Zero Trust architecture for Microsoft 365, Azure, AWS, GCP. Conditional access policies, MFA configuration, CIS Benchmark cloud security baselines, and least-privilege access enforcement."
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Vulnerability Management Program",
-                  "description": "Risk-based vulnerability management with scanner deployment (Nessus, Tenable, Rapid7, Qualys), prioritization by CVSS/EPSS, SLA tracking, executive reporting, and ticketing integration."
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "GRC & Compliance Readiness",
-                  "description": "Governance, risk, and compliance consulting: NIST CSF, ISO 27001, SOC 2 Type I/II, PCI DSS, HIPAA, PIPEDA alignment. Policy development, audit readiness, evidence preparation, and risk register management."
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Security Automation & SOAR",
-                  "description": "Design and implement security orchestration and automated response. Playbook development for Splunk SOAR, Cortex XSOAR, and Microsoft Sentinel Logic Apps. Alert enrichment, automated triage, and endpoint isolation workflows."
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Network Security Monitoring & Tooling",
-                  "description": "Deploy and optimize Zeek, Corelight, Suricata IDS/IPS, and Argus for network traffic visibility, protocol logging, and anomaly detection."
-                }
-              }
-            ]
-          }
         },
         {
           "@type": "FAQPage",
@@ -500,10 +836,10 @@
             },
             {
               "@type": "Question",
-              "name": "What cities have you supported?",
+              "name": "What locations do you cover?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Recent delivery locations include: Toronto, Mississauga, Markham, Vaughan, Oakville, Hamilton (ON, CA), New York (NY, US), Los Angeles (CA, US), London (England, UK), Chicago (IL, US), Washington and Baltimore (DC/MD/VA, US), Boston and Providence (MA/RI, US), Dallas and Fort Worth (TX, US), Houston (TX, US), and San Francisco (CA, US)."
+                "text": "Delivery is remote-first from Toronto, Ontario. On-site work is available across the Greater Toronto Area, and remote engagements are available coast to coast in Canada, across the United States, and in the United Kingdom and Ireland. If your city is not listed on the site, ask — remote delivery rarely depends on location."
               }
             },
             {
@@ -600,12 +936,36 @@
           "@type": "BreadcrumbList",
           "@id": "https://cloudsecurecanada.com/#breadcrumb",
           "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cloudsecurecanada.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Cybersecurity Services", "item": "https://cloudsecurecanada.com/services" },
-            { "@type": "ListItem", "position": 3, "name": "About", "item": "https://cloudsecurecanada.com/about" },
-            { "@type": "ListItem", "position": 4, "name": "Experience", "item": "https://cloudsecurecanada.com/experience" },
-            { "@type": "ListItem", "position": 5, "name": "FAQ", "item": "https://cloudsecurecanada.com/faq" },
-            { "@type": "ListItem", "position": 6, "name": "Testimonials", "item": "https://cloudsecurecanada.com/testimonials" }
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://cloudsecurecanada.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Cybersecurity Services",
+              "item": "https://cloudsecurecanada.com/services"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Experience",
+              "item": "https://cloudsecurecanada.com/experience"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "About",
+              "item": "https://cloudsecurecanada.com/about"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "FAQ",
+              "item": "https://cloudsecurecanada.com/faq"
+            }
           ]
         }
       ]

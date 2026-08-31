@@ -23,8 +23,8 @@ const FAQ = () => {
       answer: 'Yes. We’re based in Toronto, Ontario, Canada, and we deliver engagements remotely across Canada, the United States, and other countries such as the United Kingdom, Ireland, Australia, New Zealand, and Singapore. On-site support is available when needed.'
     },
     {
-      question: 'What cities have you supported?',
-      answer: 'Recent delivery locations include: New York (NY, US), Los Angeles (CA, US), London (England, UK), Chicago (IL, US), Washington and Baltimore (DC/MD/VA, US), Boston and Providence (MA/RI, US), Dallas and Fort Worth (TX, US), Houston (TX, US), Toronto (ON, CA), and San Francisco (CA, US).'
+      question: 'What locations do you cover?',
+      answer: 'Delivery is remote-first from Toronto, Ontario. On-site work is available across the Greater Toronto Area, and remote engagements are available coast to coast in Canada, across the United States, and in the United Kingdom and Ireland. If your city is not listed on the site, ask — remote delivery rarely depends on location.'
     },
     {
       question: 'Do you only offer cybersecurity services?',

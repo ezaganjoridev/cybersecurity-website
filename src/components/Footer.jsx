@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Shield } from 'lucide-react';
+import LogoMark from './LogoMark';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -13,11 +13,11 @@ const Footer = () => {
       { name: 'SIEM/SOC Engineering', href: '/services#siem-soc-engineering' }
     ],
     company: [
-      { name: 'About', href: '/about' },
       { name: 'Experience', href: '/experience' },
-      { name: 'Testimonials', href: '/testimonials' },
+      { name: 'About', href: '/about' },
       { name: 'FAQ', href: '/faq' },
-      { name: 'Contact', href: '/#contact' }
+      { name: 'Contact', href: '/#contact' },
+      { name: 'Privacy & Terms', href: '/privacy' }
     ]
   };
 
@@ -28,8 +28,8 @@ const Footer = () => {
           {/* Brand */}
           <div className="col-span-2">
             <Link to="/" className="flex items-center space-x-2 mb-4">
-              <Shield className="w-7 h-7 sm:w-8 sm:h-8 text-primary-500" />
-              <span className="text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent">
+              <LogoMark className="h-7 w-7 sm:h-8 sm:w-8" />
+              <span className="brand-wordmark text-lg font-bold sm:text-xl md:text-2xl">
                 Cloud Secure Canada
               </span>
             </Link>

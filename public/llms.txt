@@ -8,16 +8,16 @@ Cloud Secure Canada is a single-consultant cybersecurity practice. Not an MSP, n
 
 - Senior consultant based in Toronto, Ontario, Canada
 - 10+ years across higher education, financial services, and technology
-- SANS GIAC certifications: GPEN, GCIH, GDSA, GCED, GCPN
-- 200+ engagements delivered across 6 countries
+- SANS GIAC certifications: GPEN, GCIH, GDSA, GCED, GCPN, GXPN
+- Based in Toronto, Ontario; remote delivery across Canada, the US, and the UK
 
 ## Core Services
 
 - [Cybersecurity Services](https://cloudsecurecanada.com/services): Incident response, penetration testing, security assessments, SIEM and SOC engineering, EDR/XDR strategy, threat hunting, ransomware readiness, cloud and identity security, vulnerability management, GRC and compliance readiness, security automation and SOAR.
-- [About](https://cloudsecurecanada.com/about): Founder background, certifications, and core skills.
 - [Experience](https://cloudsecurecanada.com/experience): Engagement history and delivery track record.
-- [Testimonials](https://cloudsecurecanada.com/testimonials): Client feedback and references.
+- [About](https://cloudsecurecanada.com/about): Founder background, certifications, and core skills.
 - [FAQ](https://cloudsecurecanada.com/faq): Engagement model, pricing, geographic coverage, and platform support.
+- [Privacy & Terms](https://cloudsecurecanada.com/privacy): Privacy notice, data handling, and content disclaimer.
 
 ## Platforms Supported
 

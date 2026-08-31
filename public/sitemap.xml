@@ -6,7 +6,7 @@
 
   <url>
     <loc>https://cloudsecurecanada.com/</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en-CA" href="https://cloudsecurecanada.com/" />
@@ -22,7 +22,7 @@
 
   <url>
     <loc>https://cloudsecurecanada.com/services</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <xhtml:link rel="alternate" hreflang="en-CA" href="https://cloudsecurecanada.com/services" />
@@ -33,7 +33,7 @@
 
   <url>
     <loc>https://cloudsecurecanada.com/about</loc>
-    <lastmod>2026-05-01</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en-CA" href="https://cloudsecurecanada.com/about" />
@@ -43,7 +43,7 @@
 
   <url>
     <loc>https://cloudsecurecanada.com/experience</loc>
-    <lastmod>2026-04-22</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en-CA" href="https://cloudsecurecanada.com/experience" />
@@ -53,7 +53,7 @@
 
   <url>
     <loc>https://cloudsecurecanada.com/faq</loc>
-    <lastmod>2026-04-15</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="en-CA" href="https://cloudsecurecanada.com/faq" />
@@ -62,13 +62,173 @@
   </url>
 
   <url>
-    <loc>https://cloudsecurecanada.com/testimonials</loc>
-    <lastmod>2026-04-30</lastmod>
+    <loc>https://cloudsecurecanada.com/privacy</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://cloudsecurecanada.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://cloudsecurecanada.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cloudsecurecanada.com/privacy" />
+  </url>
+
+
+  <url>
+    <loc>https://cloudsecurecanada.com/blog</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://cloudsecurecanada.com/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cloudsecurecanada.com/blog" />
+  </url>
+
+  <url>
+    <loc>https://cloudsecurecanada.com/blog/top-10-detection-rules-2026</loc>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://cloudsecurecanada.com/blog/top-10-detection-rules-2026" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://cloudsecurecanada.com/blog/top-10-detection-rules-2026" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cloudsecurecanada.com/blog/top-10-detection-rules-2026" />
+  </url>
+
+  <url>
+    <loc>https://cloudsecurecanada.com/blog/baseline-hardening-macos-windows-linux</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://cloudsecurecanada.com/blog/baseline-hardening-macos-windows-linux" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://cloudsecurecanada.com/blog/baseline-hardening-macos-windows-linux" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cloudsecurecanada.com/blog/baseline-hardening-macos-windows-linux" />
+  </url>
+
+  <url>
+    <loc>https://cloudsecurecanada.com/blog/using-ai-to-strengthen-security-posture</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://cloudsecurecanada.com/blog/using-ai-to-strengthen-security-posture" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://cloudsecurecanada.com/blog/using-ai-to-strengthen-security-posture" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cloudsecurecanada.com/blog/using-ai-to-strengthen-security-posture" />
+  </url>
+
+  <url>
+    <loc>https://cloudsecurecanada.com/blog/firewall-became-the-front-door</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en-CA" href="https://cloudsecurecanada.com/testimonials" />
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://cloudsecurecanada.com/testimonials" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://cloudsecurecanada.com/testimonials" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://cloudsecurecanada.com/blog/firewall-became-the-front-door" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cloudsecurecanada.com/blog/firewall-became-the-front-door" />
+    <image:image>
+      <image:loc>https://cloudsecurecanada.com/images/blog/edge-appliance-review-1600.jpg</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://cloudsecurecanada.com/blog/infostealers-session-hijacking-mfa-bypass</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://cloudsecurecanada.com/blog/infostealers-session-hijacking-mfa-bypass" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cloudsecurecanada.com/blog/infostealers-session-hijacking-mfa-bypass" />
+    <image:image>
+      <image:loc>https://cloudsecurecanada.com/images/blog/session-token-hijack-1600.jpg</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://cloudsecurecanada.com/blog/telus-breach-extortion-without-encryption</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://cloudsecurecanada.com/blog/telus-breach-extortion-without-encryption" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cloudsecurecanada.com/blog/telus-breach-extortion-without-encryption" />
+    <image:image>
+      <image:loc>https://cloudsecurecanada.com/images/blog/telecom-data-extortion-1600.jpg</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://cloudsecurecanada.com/blog/ai-agents-prompt-injection-mcp</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://cloudsecurecanada.com/blog/ai-agents-prompt-injection-mcp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cloudsecurecanada.com/blog/ai-agents-prompt-injection-mcp" />
+    <image:image>
+      <image:loc>https://cloudsecurecanada.com/images/blog/ai-agent-permission-path-1600.jpg</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://cloudsecurecanada.com/blog/ransomware-2025-new-baseline</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://cloudsecurecanada.com/blog/ransomware-2025-new-baseline" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cloudsecurecanada.com/blog/ransomware-2025-new-baseline" />
+    <image:image>
+      <image:loc>https://cloudsecurecanada.com/images/blog/ransomware-response-baseline-1600.jpg</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://cloudsecurecanada.com/blog/bill-c-8-canadian-critical-infrastructure</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://cloudsecurecanada.com/blog/bill-c-8-canadian-critical-infrastructure" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cloudsecurecanada.com/blog/bill-c-8-canadian-critical-infrastructure" />
+    <image:image>
+      <image:loc>https://cloudsecurecanada.com/images/blog/canadian-critical-infrastructure-1600.jpg</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://cloudsecurecanada.com/blog/salesloft-drift-oauth-supply-chain</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://cloudsecurecanada.com/blog/salesloft-drift-oauth-supply-chain" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cloudsecurecanada.com/blog/salesloft-drift-oauth-supply-chain" />
+    <image:image>
+      <image:loc>https://cloudsecurecanada.com/images/blog/oauth-supply-chain-1600.jpg</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://cloudsecurecanada.com/blog/soc-2-type-ii-observation-window</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://cloudsecurecanada.com/blog/soc-2-type-ii-observation-window" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cloudsecurecanada.com/blog/soc-2-type-ii-observation-window" />
+    <image:image>
+      <image:loc>https://cloudsecurecanada.com/images/blog/soc2-evidence-window-1600.jpg</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://cloudsecurecanada.com/blog/help-desk-is-your-weakest-authentication-factor</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://cloudsecurecanada.com/blog/help-desk-is-your-weakest-authentication-factor" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cloudsecurecanada.com/blog/help-desk-is-your-weakest-authentication-factor" />
+    <image:image>
+      <image:loc>https://cloudsecurecanada.com/images/blog/help-desk-identity-verification-1600.jpg</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://cloudsecurecanada.com/blog/pci-dss-4-0-1-grace-period-over</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://cloudsecurecanada.com/blog/pci-dss-4-0-1-grace-period-over" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cloudsecurecanada.com/blog/pci-dss-4-0-1-grace-period-over" />
+    <image:image>
+      <image:loc>https://cloudsecurecanada.com/images/blog/pci-dss-payment-page-1600.jpg</image:loc>
+    </image:image>
   </url>
 
 </urlset>

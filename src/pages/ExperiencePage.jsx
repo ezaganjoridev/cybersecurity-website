@@ -6,15 +6,15 @@ const ExperiencePage = () => {
   return (
     <>
       <SEO
-        title="Cybersecurity Experience | Incident Response, SIEM, Penetration Testing"
-        description="A decade of cybersecurity consulting experience covering incident response, penetration testing, SIEM and SOC engineering, security architecture, GRC alignment, and IT operations. SANS GIAC certified (GPEN, GCIH, GDSA, GCED, GCPN)."
+        title="Experience"
+        description="A decade of security consulting: incident response, penetration testing, SIEM and SOC engineering, and compliance across regulated industries."
         canonical="https://cloudsecurecanada.com/experience"
         breadcrumbs={[
           { name: 'Home', url: 'https://cloudsecurecanada.com/' },
           { name: 'Experience', url: 'https://cloudsecurecanada.com/experience' }
         ]}
       />
-      <div className="pt-20 md:pt-24 bg-dark-900 surface-grid">
+      <div className="page-top bg-dark-900 surface-grid">
         <Experience />
       </div>
     </>

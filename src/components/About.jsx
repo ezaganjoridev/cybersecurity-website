@@ -7,7 +7,7 @@ const About = () => {
     {
       icon: <Award className="w-6 h-6" />,
       title: 'SANS GIAC Certified',
-      description: 'GCED, GCIH, GDSA, GPEN, and GCPN certified with deep technical coverage.'
+      description: 'GCED, GCIH, GDSA, GPEN, GCPN, and GXPN certified with deep technical coverage.'
     },
     {
       icon: <Users className="w-6 h-6" />,
@@ -26,7 +26,8 @@ const About = () => {
     'GIAC Certified Incident Handler (GCIH)',
     'GIAC Defensible Security Architect (GDSA)',
     'GIAC Penetration Tester (GPEN)',
-    'GIAC Cloud Penetration Tester (GCPN)'
+    'GIAC Cloud Penetration Tester (GCPN)',
+    'GIAC Exploit Researcher and Advanced Penetration Tester (GXPN)'
   ];
 
   const skills = [

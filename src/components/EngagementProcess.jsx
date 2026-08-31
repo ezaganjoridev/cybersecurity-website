@@ -1,6 +1,7 @@
 import React from 'react';
 import { Compass, ClipboardCheck, Target, Sparkles, GraduationCap } from 'lucide-react';
 import { motion } from 'framer-motion';
+import EditorialImage from './EditorialImage';
 
 const EngagementProcess = () => {
   const steps = [
@@ -63,34 +64,61 @@ const EngagementProcess = () => {
           </motion.p>
         </div>
 
-        <div className="relative">
-          {/* Animated Line */}
-          <motion.div 
-            initial={{ height: 0 }}
-            whileInView={{ height: '100%' }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
-            className="absolute left-[18px] sm:left-5 top-0 bottom-0 w-px bg-gradient-to-b from-primary-500/50 via-primary-500/20 to-transparent"
-          />
-          
-          <div className="space-y-6 sm:space-y-8">
-            {steps.map((step, index) => (
-              <motion.div
-                key={step.title}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: index * 0.15 }}
-                className="relative pl-12 sm:pl-14 group"
-              >
-                <div className="absolute left-0 top-0 w-9 h-9 sm:w-10 sm:h-10 rounded-none bg-dark-800 border border-primary-500/40 text-primary-300 flex items-center justify-center group-hover:bg-primary-500/20 group-hover:text-primary-200 transition-colors duration-200 z-10">
-                  {step.icon}
-                </div>
-                <h3 className="text-base sm:text-lg font-semibold text-white group-hover:text-primary-100 transition-colors">{step.title}</h3>
-                <p className="text-gray-400 text-sm mt-1.5 sm:mt-2">{step.description}</p>
-              </motion.div>
-            ))}
+        <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.82fr)] lg:gap-12">
+          <div className="relative">
+            {/* Animated Line */}
+            <motion.div
+              initial={{ height: 0 }}
+              whileInView={{ height: '100%' }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+              className="absolute left-[18px] sm:left-5 top-0 bottom-0 w-px bg-gradient-to-b from-primary-500/50 via-primary-500/20 to-transparent"
+            />
+
+            <div className="space-y-6 sm:space-y-8">
+              {steps.map((step, index) => (
+                <motion.div
+                  key={step.title}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ delay: index * 0.15 }}
+                  className="relative pl-12 sm:pl-14 group"
+                >
+                  <div className="absolute left-0 top-0 w-9 h-9 sm:w-10 sm:h-10 rounded-none bg-dark-800 border border-primary-500/40 text-primary-300 flex items-center justify-center group-hover:bg-primary-500/20 group-hover:text-primary-200 transition-colors duration-200 z-10">
+                    {step.icon}
+                  </div>
+                  <h3 className="text-base sm:text-lg font-semibold text-white group-hover:text-primary-100 transition-colors">{step.title}</h3>
+                  <p className="text-gray-400 text-sm mt-1.5 sm:mt-2">{step.description}</p>
+                </motion.div>
+              ))}
+            </div>
           </div>
+
+          <motion.figure
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.55 }}
+            className="overflow-hidden border border-dark-700 bg-dark-800/75 lg:sticky lg:top-32"
+          >
+            <EditorialImage
+              base="/images/engagements/senior-led-delivery"
+              alt="Close-up of an enterprise server chassis showing cooling modules and cabling."
+              sizes="(min-width: 1024px) 390px, 100vw"
+              className="block aspect-[4/3]"
+              imageClassName="w-full h-full object-cover"
+            />
+            <figcaption className="border-t border-dark-700 p-5">
+              <span className="text-[11px] font-mono uppercase tracking-[0.14em] text-accent-300">
+                Senior-led delivery
+              </span>
+              <p className="mt-2 text-sm leading-relaxed text-gray-300">
+                One senior consultant owns the engagement end to end &mdash; scoping, hands-on
+                testing, evidence-backed findings, retest validation, and handover to your team.
+              </p>
+            </figcaption>
+          </motion.figure>
         </div>
       </div>
     </section>

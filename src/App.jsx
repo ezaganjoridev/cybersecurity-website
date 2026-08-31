@@ -1,10 +1,12 @@
-import React, { useState, useEffect, useRef, lazy, Suspense } from 'react';
+import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import ScrollProgress from './components/ScrollProgress';
 import MobileCTA from './components/MobileCTA';
+import CookieConsent from './components/CookieConsent';
+import VulnTicker from './components/VulnTicker';
 import PageTransition from './components/PageTransition';
 import Home from './pages/Home';
 
@@ -13,7 +15,10 @@ const ServicesPage = lazy(() => import('./pages/ServicesPage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const ExperiencePage = lazy(() => import('./pages/ExperiencePage'));
 const FAQPage = lazy(() => import('./pages/FAQPage'));
-const TestimonialsPage = lazy(() => import('./pages/TestimonialsPage'));
+const BlogPage = lazy(() => import('./pages/BlogPage'));
+const BlogPostPage = lazy(() => import('./pages/BlogPostPage'));
+const PrivacyPage = lazy(() => import('./pages/PrivacyPage'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 const PageFallback = () => (
   <div className="min-h-screen min-h-[100svh] flex items-center justify-center bg-dark-900">
@@ -33,7 +38,12 @@ function AnimatedRoutes() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/experience" element={<ExperiencePage />} />
           <Route path="/faq" element={<FAQPage />} />
-          <Route path="/testimonials" element={<TestimonialsPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<BlogPostPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
+          {/* Catch-all keeps retired URLs (e.g. the removed /testimonials) from
+              rendering a blank shell once they fall out of the index. */}
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
     </PageTransition>
@@ -41,44 +51,17 @@ function AnimatedRoutes() {
 }
 
 function App() {
-  const [scrolled, setScrolled] = useState(false);
-  const scrolledRef = useRef(false);
-  const frameRef = useRef(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (frameRef.current !== null) return;
-
-      frameRef.current = window.requestAnimationFrame(() => {
-        frameRef.current = null;
-        const nextScrolled = window.scrollY > 50;
-
-        if (nextScrolled !== scrolledRef.current) {
-          scrolledRef.current = nextScrolled;
-          setScrolled(nextScrolled);
-        }
-      });
-    };
-
-    handleScroll();
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      if (frameRef.current !== null) {
-        window.cancelAnimationFrame(frameRef.current);
-      }
-    };
-  }, []);
-
   return (
     <Router>
       <ScrollToTop />
       <ScrollProgress />
       <div className="min-h-screen min-h-[100svh] bg-dark-900">
-        <Navbar scrolled={scrolled} />
+        <Navbar />
+        <VulnTicker />
         <AnimatedRoutes />
         <Footer />
         <MobileCTA />
+        <CookieConsent />
       </div>
     </Router>
   );

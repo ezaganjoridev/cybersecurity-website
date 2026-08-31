@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
 
 /**
  * SEO
@@ -10,20 +11,37 @@ import { Helmet } from 'react-helmet-async';
  */
 const SEO = ({
   title,
+  rawTitle,
   description,
   canonical,
   type = 'website',
   name = 'Cloud Secure Canada',
   image = 'https://cloudsecurecanada.com/shield.svg',
+  imageAlt = 'Cloud Secure Canada shield logo',
+  imageWidth = null,
+  imageHeight = null,
+  imageType = null,
   breadcrumbs = null,
   jsonLd = null,
+  noindex = false,
 }) => {
-  const siteTitle = 'Cybersecurity Consultant in Toronto | Cloud Secure Canada | SOC, Pen Testing, GRC';
-  const fullTitle = title ? `${title} | ${name}` : siteTitle;
-  const defaultDescription = 'Boutique cybersecurity consulting in Toronto and the GTA. SANS GIAC certified senior consultant for SOC build out and SIEM engineering (Splunk, Microsoft Sentinel, QRadar), penetration testing, GRC and compliance readiness (NIST CSF, SOC 2, ISO 27001, PCI DSS), security automation and SOAR, alert tuning, and incident response. Remote delivery across Canada, the United States, the United Kingdom, and globally.';
+  const { pathname } = useLocation();
+
+  // Titles follow one shape across the site: the distinctive part first, the
+  // brand last, separated by a middle dot. Leading with the distinctive word
+  // matters because a browser tab shows only the first ~20 characters — when
+  // every page began "Cybersecurity ...", every tab looked the same.
+  const siteTitle = `Toronto Cybersecurity Consulting · ${name}`;
+  // `rawTitle` ships the string verbatim. Use it only when a title already
+  // carries the brand or would exceed the ~60-char SERP truncation point once
+  // the ` · ${name}` suffix (+22 chars) is added.
+  const fullTitle = rawTitle || (title ? `${title} · ${name}` : siteTitle);
+  const defaultDescription = 'Boutique Toronto cybersecurity consultants. SANS GIAC certified penetration testing, SOC 2 readiness, SIEM engineering and incident response.';
   const metaDescription = description || defaultDescription;
   const siteUrl = 'https://cloudsecurecanada.com';
-  const canonicalUrl = canonical || siteUrl;
+  // Self-referencing by default. Derived from the live route so a page that
+  // forgets to pass one can never silently inherit the homepage URL.
+  const canonicalUrl = canonical || `${siteUrl}${pathname === '/' ? '/' : pathname}`;
 
   const breadcrumbSchema = breadcrumbs ? {
     "@context": "https://schema.org",
@@ -53,7 +71,10 @@ const SEO = ({
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={metaDescription} />
       <meta property="og:image" content={image} />
-      <meta property="og:image:alt" content="Cloud Secure Canada shield logo" />
+      <meta property="og:image:alt" content={imageAlt} />
+      {imageWidth && <meta property="og:image:width" content={String(imageWidth)} />}
+      {imageHeight && <meta property="og:image:height" content={String(imageHeight)} />}
+      {imageType && <meta property="og:image:type" content={imageType} />}
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:site_name" content={name} />
       <meta property="og:locale" content="en_CA" />
@@ -63,10 +84,13 @@ const SEO = ({
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={metaDescription} />
       <meta name="twitter:image" content={image} />
-      <meta name="twitter:image:alt" content="Cloud Secure Canada shield logo" />
+      <meta name="twitter:image:alt" content={imageAlt} />
 
       {/* Robots */}
-      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+      <meta
+        name="robots"
+        content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1'}
+      />
 
       {/* BreadcrumbList Structured Data */}
       {breadcrumbSchema && (

@@ -1,3 +1,5 @@
+const themeColor = (name) => `rgb(var(--color-${name}) / <alpha-value>)`;
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -12,35 +14,67 @@ export default {
       },
       colors: {
         primary: {
-          50: '#f0fdf4',
-          100: '#dcfce7',
-          200: '#bbf7d0',
-          300: '#86efac',
-          400: '#4ade80',
-          500: '#22c55e', // Emerald/Neon primary (speed, 'go')
-          600: '#16a34a',
-          700: '#15803d',
-          800: '#166534',
-          900: '#14532d',
+          50: themeColor('primary-50'),
+          100: themeColor('primary-100'),
+          200: themeColor('primary-200'),
+          300: themeColor('primary-300'),
+          400: themeColor('primary-400'),
+          500: themeColor('primary-500'),
+          600: themeColor('primary-600'),
+          700: themeColor('primary-700'),
+          800: themeColor('primary-800'),
+          900: themeColor('primary-900'),
         },
         dark: {
-          50: '#f8fafc',
-          100: '#f1f5f9',
-          200: '#e2e8f0',
-          300: '#cbd5e1',
-          400: '#94a3b8',
-          500: '#64748b',
-          600: '#475569',
-          700: '#2d3342',
-          800: '#171c26',
-          900: '#0e1117', // Very deep gray-violet
+          50: themeColor('dark-50'),
+          100: themeColor('dark-100'),
+          200: themeColor('dark-200'),
+          300: themeColor('dark-300'),
+          400: themeColor('dark-400'),
+          500: themeColor('dark-500'),
+          600: themeColor('dark-600'),
+          700: themeColor('dark-700'),
+          800: themeColor('dark-800'),
+          900: themeColor('dark-900'),
         },
         accent: {
-          100: '#f3e8ff',
-          300: '#d8b4fe',
-          500: '#a855f7', // Electric Violet (tech, contrast)
-          600: '#9333ea',
-          700: '#7e22ce',
+          50: themeColor('accent-50'),
+          100: themeColor('accent-100'),
+          200: themeColor('accent-200'),
+          300: themeColor('accent-300'),
+          400: themeColor('accent-400'),
+          500: themeColor('accent-500'),
+          600: themeColor('accent-600'),
+          700: themeColor('accent-700'),
+          800: themeColor('accent-800'),
+          900: themeColor('accent-900'),
+        },
+        gray: {
+          50: themeColor('gray-50'),
+          100: themeColor('gray-100'),
+          200: themeColor('gray-200'),
+          300: themeColor('gray-300'),
+          400: themeColor('gray-400'),
+          500: themeColor('gray-500'),
+          600: themeColor('gray-600'),
+          700: themeColor('gray-700'),
+          800: themeColor('gray-800'),
+          900: themeColor('gray-900'),
+        },
+        white: themeColor('white'),
+        black: themeColor('black'),
+        // Label colour for a solid brand fill. Does not invert: a primary
+        // button is dark in both themes, so `text-white` would go unreadable
+        // in light mode where the white token becomes ink.
+        onPrimary: themeColor('on-primary'),
+        // The mock CLI stays dark in both themes — see index.css.
+        term: {
+          bg: themeColor('term-bg'),
+          bar: themeColor('term-bar'),
+          border: themeColor('term-border'),
+          ink: themeColor('term-ink'),
+          muted: themeColor('term-muted'),
+          accent: themeColor('term-accent'),
         },
       },
     },

@@ -4,9 +4,10 @@
     <meta charset="utf-8" />
     <title>Cloud Secure Canada</title>
     <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      // MIT License
-      // This script redirects all 404s to the index page
+      // Single-page-app deep-link redirect, adapted from rafgraph's MIT-licensed
+      // redirect shim (author credited per the licence; the upstream project name
+      // is omitted deliberately, as it names the hosting platform).
+      // Sends any unmatched path to the index so the router can resolve it.
       var pathSegmentsToKeep = 0;
       var l = window.location;
       l.replace(

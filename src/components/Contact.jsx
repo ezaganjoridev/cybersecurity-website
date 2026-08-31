@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Mail, MapPin, Send, CheckCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -153,9 +154,9 @@ const Contact = () => {
                   exit={{ opacity: 0, height: 0 }}
                   className="mb-6 overflow-hidden"
                 >
-                  <div className="p-4 bg-green-500/10 border border-green-500/30 rounded-none flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-green-400" />
-                    <span className="text-green-400">Message sent successfully!</span>
+                  <div className="p-4 bg-primary-500/10 border border-primary-500/30 rounded-none flex items-center space-x-3">
+                    <CheckCircle className="w-5 h-5 text-primary-400" />
+                    <span className="text-primary-400">Message sent successfully!</span>
                   </div>
                 </motion.div>
               )}
@@ -296,6 +297,30 @@ const Contact = () => {
                 <span>Send Message</span>
                 <Send className="w-5 h-5" />
               </motion.button>
+
+              {/* PIPEDA meaningful consent: the purpose and the fact of
+                  out-of-country processing have to be disclosed at the point of
+                  collection, not buried. Named vendors are deliberately kept out
+                  of public copy — the disclosure obligation is the fact of the
+                  transfer, not who performs it. */}
+              <p className="text-xs text-gray-500 leading-relaxed">
+                Your details are used only to respond to this enquiry, and may be
+                processed and stored outside Canada. See the{' '}
+                <Link
+                  to="/privacy"
+                  className="text-primary-400 hover:text-primary-300 transition-colors underline underline-offset-2"
+                >
+                  privacy notice
+                </Link>
+                . Prefer not to use the form? Email{' '}
+                <a
+                  href="mailto:info@cloudsecurecanada.com"
+                  className="text-primary-400 hover:text-primary-300 transition-colors underline underline-offset-2"
+                >
+                  info@cloudsecurecanada.com
+                </a>{' '}
+                directly.
+              </p>
             </form>
           </motion.div>
         </div>

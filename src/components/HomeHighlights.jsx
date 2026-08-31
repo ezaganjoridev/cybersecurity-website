@@ -98,8 +98,8 @@ const HomeHighlights = () => {
               variants={item}
               whileHover={{ 
                 y: -4,
-                boxShadow: "0 8px 24px -8px rgba(34, 197, 94, 0.15)",
-                borderColor: "rgba(34, 197, 94, 0.4)",
+                boxShadow: "0 8px 24px -8px rgb(var(--color-primary-500) / 0.15)",
+                borderColor: "rgb(var(--color-primary-500) / 0.4)",
                 transition: { duration: 0.2, ease: 'easeOut' }
               }}
               className="card bg-dark-800/50 hover:bg-dark-800 transition-colors duration-200"

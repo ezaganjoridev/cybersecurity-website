@@ -1,9 +1,17 @@
-import React from 'react';
-import { Shield, ArrowRight, Zap, Target, Lock } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { ArrowRight, Zap, Target, Lock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import MobileTerminal from './MobileTerminal';
 import CyberGrid from './CyberGrid';
+import LogoMark from './LogoMark';
+
+/**
+ * The terminal lists whatever is currently pinned on the blog — pin order and
+ * titles come straight from the post data, so re-pinning or retitling a guide
+ * updates the hero with no change here. Capped at three to fit the panel.
+ */
+const PINNED_LIMIT = 3;
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -22,6 +30,30 @@ const itemVariants = {
 };
 
 const Hero = () => {
+  // The post data is imported dynamically rather than at the top of the file:
+  // Hero is part of the eagerly-loaded app shell, and a static import pulls the
+  // entire post corpus (bodies, detection rules and all) into the initial
+  // bundle — measured at roughly +37 kB gzipped for three titles. Fetching it
+  // after mount keeps first paint cheap and doubles as a prefetch of the chunk
+  // the blog routes need anyway. The list animates in at ~1.8s, so the load is
+  // not perceptible; if it fails, the block simply does not render.
+  const [pinned, setPinned] = useState([]);
+
+  useEffect(() => {
+    let active = true;
+    import('../data/posts')
+      .then(({ pinnedPosts }) => {
+        if (active) setPinned(pinnedPosts().slice(0, PINNED_LIMIT));
+      })
+      .catch(() => {
+        // Chunk failed to load; the terminal renders without the listing.
+      });
+    return () => {
+      active = false;
+    };
+  }, []);
+
+
   return (
     <section id="home" className="relative min-h-screen min-h-[100svh] flex items-center overflow-hidden bg-dark-900 border-b border-white/5">
       <div className="absolute inset-0 bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900">
@@ -30,12 +62,12 @@ const Hero = () => {
           <motion.div 
             animate={{ x: [0, 50, 0], y: [0, 30, 0], scale: [1, 1.1, 1] }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="absolute top-1/4 left-1/4 w-80 h-80 bg-primary-500/40 rounded-full blur-[100px] will-change-transform"
+            className="ambient-orb absolute top-1/4 left-1/4 w-80 h-80 bg-primary-500/40 rounded-full blur-[100px] will-change-transform"
           />
           <motion.div 
              animate={{ x: [0, -50, 0], y: [0, -30, 0], scale: [1, 1.2, 1] }}
             transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-            className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent-500/30 rounded-full blur-[100px] will-change-transform"
+            className="ambient-orb absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent-500/30 rounded-full blur-[100px] will-change-transform"
           />
         </div>
       </div>
@@ -49,13 +81,13 @@ const Hero = () => {
             className="text-center lg:text-left z-10"
           >
             <motion.div variants={itemVariants} className="chip mb-8 justify-center lg:justify-start ring-1 ring-primary-500/40 shadow-lg shadow-primary-500/10 bg-primary-900/30">
-              <Shield className="w-4 h-4 text-primary-400" />
-              <span className="font-semibold tracking-wide text-primary-100">CLOUD SECURE CANADA</span>
+              <LogoMark className="h-4 w-4" />
+              <span className="brand-wordmark font-semibold tracking-wide">CLOUD SECURE CANADA</span>
             </motion.div>
 
             <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-4 leading-[1.15] text-white">
               Adversaries move fast. <br className="hidden sm:block" />
-              <span className="bg-gradient-to-r from-primary-400 via-emerald-400 to-accent-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary-400 via-primary-500 to-accent-400 bg-clip-text text-transparent">
                 We move faster.
               </span>
             </motion.h1>
@@ -97,7 +129,7 @@ const Hero = () => {
               </Link>
             </motion.div>
 
-            <MobileTerminal />
+            <MobileTerminal pinned={pinned} />
           </motion.div>
 
           <motion.div 
@@ -107,42 +139,64 @@ const Hero = () => {
             className="relative hidden lg:block z-10"
           >
              <div className="absolute -inset-1 bg-gradient-to-r from-primary-500 to-accent-500 rounded-none blur opacity-25 animate-pulse"></div>
-              <div className="relative overflow-hidden rounded-none border border-white/10 bg-dark-900/80 p-6 text-left shadow-2xl backdrop-blur-2xl">
-                <div className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-gray-400 mb-5 border-b border-white/10 pb-4">
+              <div className="terminal-surface relative overflow-hidden rounded-none p-6 text-left shadow-2xl">
+                <div className="terminal-muted flex items-center gap-2 text-xs uppercase tracking-[0.2em] mb-5 border-b border-[rgb(var(--color-term-border))] pb-4">
                   <div className="flex gap-2 mr-auto">
                     <span className="h-2.5 w-2.5 rounded-full bg-red-500/80" />
                     <span className="h-2.5 w-2.5 rounded-full bg-amber-500/80" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-primary-500/80" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-[rgb(var(--color-term-accent))]/80" />
                   </div>
-                  <span className="ml-2 font-mono text-primary-400/80">root@csc-core:~#</span>
+                  <span className="ml-2 font-mono terminal-accent opacity-80">root@csc-core:~#</span>
                 </div>
                 
-                <div className="space-y-4 font-mono text-sm text-gray-300">
+                <div className="space-y-4 font-mono text-sm terminal-ink">
                   <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.0 }}>
-                    <p className="text-gray-400">
-                      <span className="text-primary-400">root@csc-core</span>
-                      <span className="text-accent-400">:~#</span> ./engage --mode active
+                    <p className="terminal-muted">
+                      <span className="terminal-accent">root@csc-core</span>
+                      <span className="terminal-muted">:~#</span> ./engage --mode active
                     </p>
-                    <p className="mt-3 text-gray-300 pl-4 border-l-2 border-primary-500/30 font-medium">
+                    <p className="mt-3 terminal-ink pl-4 border-l-2 border-[rgb(var(--color-term-accent))]/40 font-medium">
                       [INITIATING] High-velocity security protocols. No downtime.
                     </p>
                   </motion.div>
 
-                  <motion.div className="space-y-3 text-gray-300 pl-4 mt-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.8 }}>
-                    <motion.p initial={{opacity:0, x:-10}} animate={{opacity:1, x:0}} transition={{delay: 2.0}}>
-                      <span className="text-primary-400">[SEC-01]</span> Threat contained <span className="text-primary-500">...OK</span>
-                    </motion.p>
-                    <motion.p initial={{opacity:0, x:-10}} animate={{opacity:1, x:0}} transition={{delay: 2.2}}>
-                      <span className="text-primary-400">[SEC-02]</span> Vulnerabilities patched <span className="text-primary-500">...OK</span>
-                    </motion.p>
-                    <motion.p initial={{opacity:0, x:-10}} animate={{opacity:1, x:0}} transition={{delay: 2.4}}>
-                      <span className="text-primary-400">[SEC-03]</span> SIEM sensors active <span className="text-primary-500">...OK</span>
-                    </motion.p>
-                  </motion.div>
+                  {pinned.length > 0 && (
+                    <motion.div className="space-y-3 terminal-ink mt-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.8 }}>
+                      <p className="terminal-muted">
+                        <span className="terminal-accent">root@csc-core</span>
+                        <span className="terminal-muted">:~#</span> ls ./field-notes/pinned
+                      </p>
 
-                  <motion.div className="pt-4 text-gray-400 mt-2" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 3.0 }}>
-                    <span className="text-primary-400">root@csc-core</span>
-                    <span className="text-accent-400">:~#</span> <span className="animate-pulse">_</span>
+                      <div className="space-y-3 pl-4">
+                        {pinned.map((post, i) => (
+                          <motion.p
+                            key={post.slug}
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 2.0 + i * 0.2 }}
+                            className="leading-relaxed"
+                          >
+                            {/* red-400 rather than red-500: 6.8:1 on the panel
+                                background against 5.0:1, so the label reads as
+                                an accent instead of a dim smudge. */}
+                            <span className="font-semibold text-red-400">
+                              [SEC-{String(i + 1).padStart(2, '0')}]
+                            </span>{' '}
+                            <Link
+                              to={`/blog/${post.slug}`}
+                              className="terminal-link"
+                            >
+                              {post.title}
+                            </Link>
+                          </motion.p>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+
+                  <motion.div className="pt-4 terminal-muted mt-2" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 3.0 }}>
+                    <span className="terminal-accent">root@csc-core</span>
+                    <span className="terminal-muted">:~#</span> <span className="animate-pulse">_</span>
                   </motion.div>
                 </div>
             </div>

@@ -1,16 +1,19 @@
 import React, { lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Clock, Globe, Award } from 'lucide-react';
+import { MapPin, Clock, Globe, Award } from 'lucide-react';
 import Hero from '../components/Hero';
 import SEO from '../components/SEO';
 
 const HomeSections = lazy(() => import('../components/HomeSections'));
 
+// Every figure here must be independently substantiable on request. Volume
+// claims ("200+ engagements", "6 countries served") were removed: they were
+// unverifiable, and the engagement count contradicted itself across pages.
 const stats = [
-  { icon: Shield, value: '200+', label: 'Engagements delivered' },
-  { icon: Clock, value: '10+', label: 'Years experience' },
-  { icon: Globe, value: '6', label: 'Countries served' },
-  { icon: Award, value: '5', label: 'SANS GIAC certs' },
+  { icon: Award, value: '6', label: 'SANS GIAC certifications' },
+  { icon: Clock, value: '10+', label: 'Years in the field' },
+  { icon: MapPin, value: 'Toronto', label: 'Based in Ontario, Canada' },
+  { icon: Globe, value: 'Remote', label: 'Delivery across Canada, US & UK' },
 ];
 
 const Home = () => {
@@ -19,7 +22,7 @@ const Home = () => {
       <SEO />
       <Hero />
 
-      {/* Social proof stats bar */}
+      {/* Credentials bar */}
       <section className="bg-dark-800 border-y border-dark-700 py-8 md:py-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">

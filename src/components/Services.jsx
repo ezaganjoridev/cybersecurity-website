@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { CyberFieldwork, OperationsFieldwork } from './ServiceFieldwork';
 
 const Services = () => {
   const container = {
@@ -188,14 +189,16 @@ const Services = () => {
             <ShieldCheck className="text-primary-500 w-6 h-6" />
             <h3 className="text-2xl font-bold text-white">Cybersecurity Services</h3>
           </div>
+
+          <CyberFieldwork />
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             {cyberServices.map((service, index) => (
               <motion.div 
                 key={index} 
                 variants={item}
-                whileHover={{ y: -5, borderColor: 'rgba(6, 182, 212, 0.4)', transition: { duration: 0.25, ease: 'easeOut' } }}
-                className="card group hover:bg-dark-800/80 transition-colors duration-200"
+                whileHover={{ y: -5, transition: { duration: 0.25, ease: 'easeOut' } }}
+                className="card group hover:border-primary-500/50 hover:bg-dark-800/80 transition-colors duration-200"
               >
                 <div className="flex items-start gap-4">
                     <div className="p-3 bg-dark-800 rounded-none group-hover:bg-primary-900/20 text-primary-500 transition-colors">
@@ -226,13 +229,15 @@ const Services = () => {
             <h3 className="text-2xl font-bold text-white">IT & Operational Services</h3>
           </div>
 
+          <OperationsFieldwork />
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             {itServices.map((service, index) => (
               <motion.div 
                 key={index} 
                 variants={item}
-                whileHover={{ y: -5, borderColor: 'rgba(6, 182, 212, 0.4)', transition: { duration: 0.25, ease: 'easeOut' } }}
-                className="card group hover:bg-dark-800/80 transition-colors duration-200"
+                whileHover={{ y: -5, transition: { duration: 0.25, ease: 'easeOut' } }}
+                className="card group hover:border-primary-500/50 hover:bg-dark-800/80 transition-colors duration-200"
               >
                <div className="flex items-start gap-4">
                     <div className="p-3 bg-dark-800 rounded-none group-hover:bg-primary-900/20 text-primary-500 transition-colors">
@@ -267,8 +272,8 @@ const Services = () => {
               <motion.div 
                 key={index}
                 variants={item}
-                whileHover={{ y: -5, borderColor: 'rgba(6, 182, 212, 0.4)', transition: { duration: 0.25, ease: 'easeOut' } }}
-                className="card group hover:bg-dark-800/80 transition-colors duration-200"
+                whileHover={{ y: -5, transition: { duration: 0.25, ease: 'easeOut' } }}
+                className="card group hover:border-primary-500/50 hover:bg-dark-800/80 transition-colors duration-200"
               >
                <div className="flex items-start gap-4">
                     <div className="p-3 bg-dark-800 rounded-none group-hover:bg-primary-900/20 text-primary-500 transition-colors">
@@ -306,7 +311,7 @@ const Services = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1, duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-                whileHover={{ y: -5, borderColor: 'rgba(6, 182, 212, 0.4)', transition: { duration: 0.25, ease: 'easeOut' } }}
+                whileHover={{ y: -5, transition: { duration: 0.25, ease: 'easeOut' } }}
                 className="card group text-center hover:bg-dark-800/80"
               >
                 <div className="inline-flex p-4 bg-dark-800 rounded-none mb-4 group-hover:bg-primary-900/20 text-primary-500 transition-colors duration-200 group-hover:scale-110">
@@ -381,7 +386,7 @@ const Services = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-zinc-900/90 border border-dark-600 rounded-none p-10 text-center relative overflow-hidden group"
+            className="bg-dark-800/90 border border-dark-600 rounded-none p-10 text-center relative overflow-hidden group"
         >
           <div className="absolute inset-0 bg-primary-900/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
           
@@ -396,7 +401,7 @@ const Services = () => {
             </p>
             <Link 
                 to="/#contact" 
-                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-primary-600 text-white font-semibold rounded-none hover:bg-primary-500 transition-colors duration-200 shadow-lg shadow-primary-900/50 active:scale-95 sm:group-hover:scale-[1.02] text-sm sm:text-base"
+                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-primary-600 text-onPrimary font-semibold rounded-none hover:bg-primary-500 transition-colors duration-200 shadow-lg shadow-primary-900/50 active:scale-95 sm:group-hover:scale-[1.02] text-sm sm:text-base"
             >
                 Request a Scope <ArrowRight className="w-5 h-5 ml-2" />
             </Link>

@@ -111,7 +111,7 @@ const IndustriesServed = () => {
             <motion.article
               key={ind.name}
               variants={item}
-              whileHover={{ y: -4, borderColor: 'rgba(168, 85, 247, 0.4)', transition: { duration: 0.25 } }}
+              whileHover={{ y: -4, borderColor: 'rgb(var(--color-accent-500) / 0.4)', transition: { duration: 0.25 } }}
               className="card bg-dark-800/60 group"
             >
               <div className="flex items-center gap-3 mb-4">

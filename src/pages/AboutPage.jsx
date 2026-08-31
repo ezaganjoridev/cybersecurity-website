@@ -29,17 +29,18 @@ const personJsonLd = {
       { "@type": "EducationalOccupationalCredential", "name": "GIAC Certified Incident Handler (GCIH)", "credentialCategory": "Professional Certification" },
       { "@type": "EducationalOccupationalCredential", "name": "GIAC Defensible Security Architect (GDSA)", "credentialCategory": "Professional Certification" },
       { "@type": "EducationalOccupationalCredential", "name": "GIAC Certified Enterprise Defender (GCED)", "credentialCategory": "Professional Certification" },
-      { "@type": "EducationalOccupationalCredential", "name": "GIAC Cloud Penetration Tester (GCPN)", "credentialCategory": "Professional Certification" }
+      { "@type": "EducationalOccupationalCredential", "name": "GIAC Cloud Penetration Tester (GCPN)", "credentialCategory": "Professional Certification" },
+      { "@type": "EducationalOccupationalCredential", "name": "GIAC Exploit Researcher and Advanced Penetration Tester (GXPN)", "credentialCategory": "Professional Certification" }
     ]
   }
 };
 
 const AboutPage = () => {
   return (
-    <div className="pt-20 md:pt-24">
+    <div className="page-top">
       <SEO
-        title="About | SANS Certified Cybersecurity Consultant in Toronto"
-        description="SANS GIAC certified cybersecurity consultant with 10+ years of incident response, penetration testing, SIEM and SOC engineering, security architecture, and GRC experience. Based in Toronto, ON with remote delivery across Canada, the US, the UK, and globally."
+        title="About"
+        description="SANS GIAC certified cybersecurity consultant in Toronto. 10+ years in incident response, pen testing, SIEM engineering and security architecture."
         canonical="https://cloudsecurecanada.com/about"
         type="profile"
         breadcrumbs={[
