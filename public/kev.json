@@ -2,11 +2,35 @@
   "source": "CISA Known Exploited Vulnerabilities Catalog, dated via NVD",
   "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
   "ordering": "disclosure",
-  "catalogVersion": "2026.08.27",
-  "dateReleased": "2026-08-27T17:00:36.6632Z",
-  "totalInCatalog": 1685,
-  "fetchedAt": "2026-08-29T21:38:12.935Z",
+  "catalogVersion": "2026.08.31",
+  "dateReleased": "2026-08-31T14:55:13.3856Z",
+  "totalInCatalog": 1687,
+  "fetchedAt": "2026-08-31T17:46:21.389Z",
   "items": [
+    {
+      "id": "CVE-2026-82078",
+      "vendor": "PaperCut",
+      "product": "NG/MF",
+      "name": "PaperCut NG/MF Unsafe Reflection Vulnerability",
+      "published": "2026-08-28",
+      "added": "2026-08-31",
+      "due": "2026-09-14",
+      "score": 9.4,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-81578",
+      "vendor": "PaperCut",
+      "product": "NG/MF",
+      "name": "PaperCut NG/MF Missing Authentication for Critical Function Vulnerability",
+      "published": "2026-08-28",
+      "added": "2026-08-31",
+      "due": "2026-09-14",
+      "score": 8.8,
+      "severity": "HIGH",
+      "ransomware": false
+    },
     {
       "id": "CVE-2026-60004",
       "vendor": "Gitea",
@@ -101,30 +125,6 @@
       "due": "2026-08-14",
       "score": 8.6,
       "severity": "HIGH",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-72898",
-      "vendor": "Metabase",
-      "product": "Metabase",
-      "name": "Metabase SQL Injection Vulnerability",
-      "published": "2026-08-10",
-      "added": "2026-08-11",
-      "due": "2026-08-14",
-      "score": 10,
-      "severity": "CRITICAL",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-65400",
-      "vendor": "Apple",
-      "product": "macOS",
-      "name": "Apple macOS Improper Authentication Vulnerability",
-      "published": "2026-08-06",
-      "added": "2026-08-18",
-      "due": "2026-08-21",
-      "score": 9.8,
-      "severity": "CRITICAL",
       "ransomware": false
     }
   ]
