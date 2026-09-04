@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import MobileTerminal from './MobileTerminal';
 import CyberGrid from './CyberGrid';
-import LogoMark from './LogoMark';
 
 /**
  * The terminal lists whatever is currently pinned on the blog — pin order and
@@ -80,11 +79,6 @@ const Hero = () => {
             variants={containerVariants}
             className="text-center lg:text-left z-10"
           >
-            <motion.div variants={itemVariants} className="chip mb-8 justify-center lg:justify-start ring-1 ring-primary-500/40 shadow-lg shadow-primary-500/10 bg-primary-900/30">
-              <LogoMark className="h-4 w-4" />
-              <span className="brand-wordmark font-semibold tracking-wide">CLOUD SECURE CANADA</span>
-            </motion.div>
-
             <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-4 leading-[1.15] text-white">
               Adversaries move fast. <br className="hidden sm:block" />
               <span className="bg-gradient-to-r from-primary-400 via-primary-500 to-accent-400 bg-clip-text text-transparent">

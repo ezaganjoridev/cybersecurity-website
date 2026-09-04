@@ -9,8 +9,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
-        body: ['"Manrope"', 'system-ui', 'sans-serif'],
+        display: ['"Space Grotesk Variable"', 'system-ui', 'sans-serif'],
+        body: ['"Manrope Variable"', 'system-ui', 'sans-serif'],
       },
       colors: {
         primary: {

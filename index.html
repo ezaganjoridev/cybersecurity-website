@@ -1,46 +1,24 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!--
+      GitHub Pages does not expose response-header configuration. Keep this
+      enforceable CSP fallback first in <head>; the same policy should also be
+      sent as an HTTP header when the site is moved behind a configurable edge.
+    -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; connect-src 'self' https://formspree.io; font-src 'self'; form-action 'self' https://formspree.io; frame-ancestors 'none'; frame-src 'none'; img-src 'self' data:; manifest-src 'self'; media-src 'self'; object-src 'none'; script-src 'self'; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; worker-src 'self'; upgrade-insecure-requests"
+    />
     <meta charset="UTF-8" />
+    <!-- Honoured by browsers as a meta element, unlike the other header-only controls. -->
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <link id="site-favicon" rel="icon" type="image/svg+xml" sizes="any" href="/shield.svg?v=3" />
     <link id="site-mask-icon" rel="mask-icon" href="/shield.svg?v=3" color="#60a5fa" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="color-scheme" content="dark" />
     <meta id="site-theme-color" name="theme-color" content="#0b101b" />
-    <script>
-      (function () {
-        var theme = 'dark';
-        try {
-          var saved = window.localStorage.getItem('csc.theme');
-          theme = saved === 'light' || saved === 'dark'
-            ? saved
-            : (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-        } catch (error) {
-          theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-        }
-
-        document.documentElement.dataset.theme = theme;
-        // Must follow the theme, not be pinned to dark, or light mode renders
-        // dark scrollbars and native controls over a light page.
-        document.documentElement.style.colorScheme = theme;
-
-        if (theme === 'light') {
-          document.querySelector('#site-favicon').setAttribute('href', '/shield-light.svg?v=2');
-          document.querySelector('#site-mask-icon').setAttribute('href', '/shield-light.svg?v=2');
-          document.querySelector('#site-mask-icon').setAttribute('color', '#2563eb');
-          document.querySelector('#site-theme-color').setAttribute('content', '#f4f7fb');
-        }
-      })();
-    </script>
-
-    <!-- Resource hints: faster paint, better Core Web Vitals -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <script src="/site-bootstrap.js"></script>
 
     <!-- Primary Meta Tags -->
     <title>Toronto Cybersecurity Consulting · Cloud Secure Canada</title>
@@ -56,18 +34,6 @@
     <link rel="alternate" hreflang="en-GB" href="https://cloudsecurecanada.com/" />
     <link rel="alternate" hreflang="en" href="https://cloudsecurecanada.com/" />
     <link rel="alternate" hreflang="x-default" href="https://cloudsecurecanada.com/" />
-
-    <!-- Restores the original path after a static-host deep-link redirect -->
-    <script type="text/javascript">
-      (function (l) {
-        if (l.search && l.search[1] === '/') {
-          var decoded = l.search.slice(1).split('&').map(function (s) {
-            return s.replace(/~and~/g, '&');
-          }).join('?');
-          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
-        }
-      })(window.location);
-    </script>
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />

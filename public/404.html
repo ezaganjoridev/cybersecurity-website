@@ -1,23 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; connect-src 'none'; font-src 'self'; form-action 'none'; frame-ancestors 'none'; frame-src 'none'; img-src 'self' data:; object-src 'none'; script-src 'self'; script-src-attr 'none'; style-src 'self'; upgrade-insecure-requests"
+    />
     <meta charset="utf-8" />
     <title>Cloud Secure Canada</title>
-    <script type="text/javascript">
-      // Single-page-app deep-link redirect, adapted from rafgraph's MIT-licensed
-      // redirect shim (author credited per the licence; the upstream project name
-      // is omitted deliberately, as it names the hosting platform).
-      // Sends any unmatched path to the index so the router can resolve it.
-      var pathSegmentsToKeep = 0;
-      var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
-    </script>
+    <script src="/404-redirect.js"></script>
   </head>
   <body>
   </body>

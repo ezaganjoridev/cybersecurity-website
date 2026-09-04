@@ -1,0 +1,38 @@
+<!--
+  The 16:9 artwork sits in the centre of a square render board because macOS
+  Quick Look exports SVG thumbnails to square canvases. Crop the rendered PNG
+  to 1440 × 810 to obtain the final cover without stretching the photography.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1440" viewBox="0 0 1440 1440">
+  <defs>
+    <clipPath id="photo"><rect x="0" y="0" width="1440" height="810"/></clipPath>
+    <linearGradient id="veil" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#06182d" stop-opacity="0.98"/>
+      <stop offset="0.38" stop-color="#06182d" stop-opacity="0.84"/>
+      <stop offset="0.72" stop-color="#06182d" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#06182d" stop-opacity="0.12"/>
+    </linearGradient>
+    <linearGradient id="bottom" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0.52" stop-color="#06182d" stop-opacity="0"/>
+      <stop offset="1" stop-color="#06182d" stop-opacity="0.82"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(0 315)">
+  <g clip-path="url(#photo)">
+    <image href="../../../public/images/engagements/incident-response-fieldwork-1600.jpg" x="0" y="0" width="1440" height="810" preserveAspectRatio="xMidYMid slice"/>
+  </g>
+  <rect width="1440" height="810" fill="url(#veil)"/>
+  <rect width="1440" height="810" fill="url(#bottom)"/>
+  <rect width="1440" height="10" fill="#38bdf8"/>
+  <g transform="translate(68 55) scale(1.45)">
+    <path d="M32 4 52 11v17c0 14-8.6 25.8-20 31C20.6 53.8 12 42 12 28V11L32 4Z" fill="none" stroke="#38bdf8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="m4890 4430-45-863a95 95 0 0 1 111-98l859 151-116-320a65 65 0 0 1 20-73l941-762-212-99a65 65 0 0 1-34-79l186-572-542 115a65 65 0 0 1-73-38l-105-247-423 454a65 65 0 0 1-111-57l204-1052-327 189a65 65 0 0 1-91-27l-332-652-332 652a65 65 0 0 1-91 27l-327-189 204 1052a65 65 0 0 1-111 57l-423-454-105 247a65 65 0 0 1-73 38l-542-115 186 572a65 65 0 0 1-34 79l-212 99 941 762a65 65 0 0 1 20 73l-116 320 859-151a95 95 0 0 1 111 98l-45 863z" transform="matrix(.00794 0 0 .00794 -6.112 9.824)" fill="#ef4444"/>
+  </g>
+  <text x="180" y="113" fill="#ef4444" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="700">Cloud Secure Canada</text>
+  <text x="72" y="337" fill="#7dd3fc" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" letter-spacing="4">TORONTO CYBERSECURITY CONSULTING</text>
+  <text x="72" y="415" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="700">Security that holds up</text>
+  <text x="72" y="487" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="700">when it matters.</text>
+  <text x="72" y="558" fill="#dbeafe" font-family="Arial, Helvetica, sans-serif" font-size="28">Incident response · Penetration testing · SOC engineering</text>
+  <text x="72" y="728" fill="#bae6fd" font-family="Arial, Helvetica, sans-serif" font-size="24">Toronto · Remote across Canada, the US &amp; UK</text>
+  </g>
+</svg>
