@@ -2,11 +2,23 @@
   "source": "CISA Known Exploited Vulnerabilities Catalog, dated via NVD",
   "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
   "ordering": "disclosure",
-  "catalogVersion": "2026.09.02",
-  "dateReleased": "2026-09-02T16:54:39.8321Z",
-  "totalInCatalog": 1694,
-  "fetchedAt": "2026-09-04T14:37:55.382Z",
+  "catalogVersion": "2026.09.04",
+  "dateReleased": "2026-09-04T16:47:03.5197Z",
+  "totalInCatalog": 1695,
+  "fetchedAt": "2026-09-05T13:36:55.886Z",
   "items": [
+    {
+      "id": "CVE-2026-85046",
+      "vendor": "Google",
+      "product": "Chromium V8",
+      "name": "Google Chromium V8 Type Confusion Vulnerability",
+      "published": "2026-09-03",
+      "added": "2026-09-04",
+      "due": "2026-09-18",
+      "score": 8.8,
+      "severity": "HIGH",
+      "ransomware": false
+    },
     {
       "id": "CVE-2026-83549",
       "vendor": "SonicWall",
@@ -113,18 +125,6 @@
       "due": "2026-09-02",
       "score": 9.3,
       "severity": "CRITICAL",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-73570",
-      "vendor": "Synacor",
-      "product": "Zimbra Collaboration Suite (ZCS)",
-      "name": "Zimbra Collaboration Suite (ZCS) OS Command Injection Vulnerability",
-      "published": "2026-08-13",
-      "added": "2026-08-21",
-      "due": "2026-08-24",
-      "score": 8.9,
-      "severity": "HIGH",
       "ransomware": false
     }
   ]
