@@ -1,0 +1,131 @@
+{
+  "source": "CISA Known Exploited Vulnerabilities Catalog, dated via NVD",
+  "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+  "ordering": "disclosure",
+  "catalogVersion": "2026.09.11",
+  "dateReleased": "2026-09-11T19:32:16.8993Z",
+  "totalInCatalog": 1709,
+  "fetchedAt": "2026-09-12T13:48:54.841Z",
+  "items": [
+    {
+      "id": "CVE-2026-85706",
+      "vendor": "GitLab",
+      "product": "Community Edition and Enterprise Edition",
+      "name": "GitLab Community Edition and Enterprise Edition Path Traversal Vulnerability",
+      "published": "2026-09-12",
+      "added": "2026-09-11",
+      "due": "2026-09-14",
+      "score": 10,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-87491",
+      "vendor": "Google",
+      "product": "Chromium V8",
+      "name": "Google Chromium V8 Out of Bounds Write Vulnerability",
+      "published": "2026-09-09",
+      "added": "2026-09-09",
+      "due": "2026-09-23",
+      "score": 8.8,
+      "severity": "HIGH",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-85880",
+      "vendor": "Microsoft",
+      "product": "Windows",
+      "name": "Microsoft Windows Heap-Based Buffer Overflow Vulnerability",
+      "published": "2026-09-08",
+      "added": "2026-09-08",
+      "due": "2026-09-22",
+      "score": 7.8,
+      "severity": "HIGH",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-84869",
+      "vendor": "ConnectWise",
+      "product": "ScreenConnect",
+      "name": "ConnectWise ScreenConnect Improper Privilege Management and Missing Authorization Vulnerability",
+      "published": "2026-09-08",
+      "added": "2026-09-11",
+      "due": "2026-09-14",
+      "score": 9.9,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-81963",
+      "vendor": "Microsoft",
+      "product": "Windows",
+      "name": "Microsoft Windows Link Following Vulnerability",
+      "published": "2026-09-08",
+      "added": "2026-09-08",
+      "due": "2026-09-22",
+      "score": 7.8,
+      "severity": "HIGH",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-75650",
+      "vendor": "Adobe",
+      "product": "Commerce and Magento",
+      "name": "Adobe Commerce and Magento Improper Neutralization of Special Elements Used in a Template Engine Vulnerability",
+      "published": "2026-09-07",
+      "added": "2026-09-08",
+      "due": "2026-09-11",
+      "score": 10,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-86218",
+      "vendor": "N-able",
+      "product": "N-central",
+      "name": "N-able N-central Static Code Injection Vulnerability",
+      "published": "2026-09-06",
+      "added": "2026-09-08",
+      "due": "2026-09-11",
+      "score": 10,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-86060",
+      "vendor": "MikroTik",
+      "product": "RouterOS",
+      "name": "MikroTik RouterOS Improper Neutralization of Argument Delimiters in a Command Vulnerability",
+      "published": "2026-09-05",
+      "added": "2026-09-10",
+      "due": "2026-09-13",
+      "score": 9.2,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-67277",
+      "vendor": "MikroTik",
+      "product": "RouterOS",
+      "name": "MikroTik RouterOS Missing Authentication for Critical Function Vulnerability",
+      "published": "2026-09-05",
+      "added": "2026-09-10",
+      "due": "2026-09-13",
+      "score": 8.8,
+      "severity": "HIGH",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-85046",
+      "vendor": "Google",
+      "product": "Chromium V8",
+      "name": "Google Chromium V8 Type Confusion Vulnerability",
+      "published": "2026-09-03",
+      "added": "2026-09-04",
+      "due": "2026-09-18",
+      "score": 8.8,
+      "severity": "HIGH",
+      "ransomware": false
+    }
+  ]
+}
