@@ -2,11 +2,23 @@
   "source": "CISA Known Exploited Vulnerabilities Catalog, dated via NVD",
   "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
   "ordering": "disclosure",
-  "catalogVersion": "2026.09.10",
-  "dateReleased": "2026-09-10T19:00:05.1949Z",
-  "totalInCatalog": 1705,
-  "fetchedAt": "2026-09-11T14:43:31.360Z",
+  "catalogVersion": "2026.09.11",
+  "dateReleased": "2026-09-11T19:32:16.8993Z",
+  "totalInCatalog": 1709,
+  "fetchedAt": "2026-09-12T13:48:54.841Z",
   "items": [
+    {
+      "id": "CVE-2026-85706",
+      "vendor": "GitLab",
+      "product": "Community Edition and Enterprise Edition",
+      "name": "GitLab Community Edition and Enterprise Edition Path Traversal Vulnerability",
+      "published": "2026-09-12",
+      "added": "2026-09-11",
+      "due": "2026-09-14",
+      "score": 10,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
     {
       "id": "CVE-2026-87491",
       "vendor": "Google",
@@ -29,6 +41,18 @@
       "due": "2026-09-22",
       "score": 7.8,
       "severity": "HIGH",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-84869",
+      "vendor": "ConnectWise",
+      "product": "ScreenConnect",
+      "name": "ConnectWise ScreenConnect Improper Privilege Management and Missing Authorization Vulnerability",
+      "published": "2026-09-08",
+      "added": "2026-09-11",
+      "due": "2026-09-14",
+      "score": 9.9,
+      "severity": "CRITICAL",
       "ransomware": false
     },
     {
@@ -101,30 +125,6 @@
       "due": "2026-09-18",
       "score": 8.8,
       "severity": "HIGH",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-83549",
-      "vendor": "SonicWall",
-      "product": "SMA1000 Appliances",
-      "name": "SonicWall SMA1000 Appliances OS Command Injection Vulnerability",
-      "published": "2026-09-01",
-      "added": "2026-09-02",
-      "due": "2026-09-05",
-      "score": 7.8,
-      "severity": "HIGH",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-83548",
-      "vendor": "SonicWall",
-      "product": "SMA1000 Appliances",
-      "name": "SonicWall SMA1000 Appliances Server-Side Request Forgery Vulnerability",
-      "published": "2026-09-01",
-      "added": "2026-09-02",
-      "due": "2026-09-05",
-      "score": 10,
-      "severity": "CRITICAL",
       "ransomware": false
     }
   ]
