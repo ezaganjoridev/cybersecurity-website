@@ -2,10 +2,10 @@
   "source": "CISA Known Exploited Vulnerabilities Catalog, dated via NVD",
   "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
   "ordering": "disclosure",
-  "catalogVersion": "2026.09.14",
-  "dateReleased": "2026-09-14T19:00:02.426Z",
-  "totalInCatalog": 1710,
-  "fetchedAt": "2026-09-15T15:20:57.055Z",
+  "catalogVersion": "2026.09.16",
+  "dateReleased": "2026-09-16T14:19:54.4996Z",
+  "totalInCatalog": 1711,
+  "fetchedAt": "2026-09-16T15:13:10.121Z",
   "items": [
     {
       "id": "CVE-2026-76461",
