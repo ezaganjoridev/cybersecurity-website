@@ -3,10 +3,34 @@
   "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
   "ordering": "disclosure",
   "catalogVersion": "2026.09.16",
-  "dateReleased": "2026-09-16T14:19:54.4996Z",
-  "totalInCatalog": 1711,
-  "fetchedAt": "2026-09-16T15:13:10.121Z",
+  "dateReleased": "2026-09-16T18:47:50.6796Z",
+  "totalInCatalog": 1713,
+  "fetchedAt": "2026-09-17T15:22:33.096Z",
   "items": [
+    {
+      "id": "CVE-2026-76460",
+      "vendor": "Cisco",
+      "product": "Identity Services Engine",
+      "name": "Cisco Identity Services Engine Incorrect Use of Privileged APIs Vulnerability",
+      "published": "2026-09-16",
+      "added": "2026-09-16",
+      "due": "2026-09-19",
+      "score": 10,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-58704",
+      "vendor": "Google",
+      "product": "Pixel",
+      "name": "Google Pixel Improper Authorization Vulnerability",
+      "published": "2026-09-15",
+      "added": "2026-09-16",
+      "due": "2026-09-19",
+      "score": 8.8,
+      "severity": "HIGH",
+      "ransomware": false
+    },
     {
       "id": "CVE-2026-76461",
       "vendor": "Cisco",
@@ -101,30 +125,6 @@
       "due": "2026-09-11",
       "score": 10,
       "severity": "CRITICAL",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-86060",
-      "vendor": "MikroTik",
-      "product": "RouterOS",
-      "name": "MikroTik RouterOS Improper Neutralization of Argument Delimiters in a Command Vulnerability",
-      "published": "2026-09-05",
-      "added": "2026-09-10",
-      "due": "2026-09-13",
-      "score": 9.2,
-      "severity": "CRITICAL",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-67277",
-      "vendor": "MikroTik",
-      "product": "RouterOS",
-      "name": "MikroTik RouterOS Missing Authentication for Critical Function Vulnerability",
-      "published": "2026-09-05",
-      "added": "2026-09-10",
-      "due": "2026-09-13",
-      "score": 8.8,
-      "severity": "HIGH",
       "ransomware": false
     }
   ]
