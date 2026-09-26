@@ -1,0 +1,131 @@
+{
+  "source": "CISA Known Exploited Vulnerabilities Catalog, dated via NVD",
+  "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+  "ordering": "disclosure",
+  "catalogVersion": "2026.09.25",
+  "dateReleased": "2026-09-25T18:58:16.5029Z",
+  "totalInCatalog": 1726,
+  "fetchedAt": "2026-09-26T14:48:57.034Z",
+  "items": [
+    {
+      "id": "CVE-2026-94127",
+      "vendor": "F5",
+      "product": "BIG-IP APM",
+      "name": "F5 BIG-IP APM Heap-based Buffer Overflow Vulnerability",
+      "published": "2026-09-22",
+      "added": "2026-09-22",
+      "due": "2026-09-25",
+      "score": 9.3,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-93952",
+      "vendor": "Arista",
+      "product": "VeloCloud Orchestrator",
+      "name": "Arista VeloCloud Orchestrator Improper Input Validation Vulnerability",
+      "published": "2026-09-22",
+      "added": "2026-09-22",
+      "due": "2026-09-25",
+      "score": 9.5,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-93616",
+      "vendor": "Check Point",
+      "product": "Multiple Products",
+      "name": "Check Point Multiple Products Path Traversal Vulnerability",
+      "published": "2026-09-22",
+      "added": "2026-09-22",
+      "due": "2026-09-25",
+      "score": 9.8,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-87902",
+      "vendor": "WordPress",
+      "product": "Core",
+      "name": "WordPress Core Remote File Inclusion Vulnerability",
+      "published": "2026-09-22",
+      "added": "2026-09-25",
+      "due": "2026-09-28",
+      "score": 8.1,
+      "severity": "HIGH",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-87886",
+      "vendor": "Acronis",
+      "product": "Backup",
+      "name": "Acronis Backup Incorrect Default Permissions Vulnerability",
+      "published": "2026-09-17",
+      "added": "2026-09-16",
+      "due": "2026-09-19",
+      "score": 7.8,
+      "severity": "HIGH",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-76460",
+      "vendor": "Cisco",
+      "product": "Identity Services Engine",
+      "name": "Cisco Identity Services Engine Incorrect Use of Privileged APIs Vulnerability",
+      "published": "2026-09-16",
+      "added": "2026-09-16",
+      "due": "2026-09-19",
+      "score": 10,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-58704",
+      "vendor": "Google",
+      "product": "Pixel",
+      "name": "Google Pixel Improper Authorization Vulnerability",
+      "published": "2026-09-15",
+      "added": "2026-09-16",
+      "due": "2026-09-19",
+      "score": 8.8,
+      "severity": "HIGH",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-76461",
+      "vendor": "Cisco",
+      "product": "Secure Email Gateway",
+      "name": "Cisco Secure Email Gateway SQL Injection Vulnerability",
+      "published": "2026-09-14",
+      "added": "2026-09-14",
+      "due": "2026-09-17",
+      "score": 9.8,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-85706",
+      "vendor": "GitLab",
+      "product": "Community Edition and Enterprise Edition",
+      "name": "GitLab Community Edition and Enterprise Edition Path Traversal Vulnerability",
+      "published": "2026-09-12",
+      "added": "2026-09-11",
+      "due": "2026-09-14",
+      "score": 10,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-87491",
+      "vendor": "Google",
+      "product": "Chromium V8",
+      "name": "Google Chromium V8 Out of Bounds Write Vulnerability",
+      "published": "2026-09-09",
+      "added": "2026-09-09",
+      "due": "2026-09-23",
+      "score": 8.8,
+      "severity": "HIGH",
+      "ransomware": false
+    }
+  ]
+}
