@@ -3,9 +3,9 @@
   "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
   "ordering": "disclosure",
   "catalogVersion": "2026.09.25",
-  "dateReleased": "2026-09-25T14:39:25.3654Z",
-  "totalInCatalog": 1725,
-  "fetchedAt": "2026-09-25T15:41:11.584Z",
+  "dateReleased": "2026-09-25T18:58:16.5029Z",
+  "totalInCatalog": 1726,
+  "fetchedAt": "2026-09-26T14:48:57.034Z",
   "items": [
     {
       "id": "CVE-2026-94127",
@@ -41,6 +41,18 @@
       "due": "2026-09-25",
       "score": 9.8,
       "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-87902",
+      "vendor": "WordPress",
+      "product": "Core",
+      "name": "WordPress Core Remote File Inclusion Vulnerability",
+      "published": "2026-09-22",
+      "added": "2026-09-25",
+      "due": "2026-09-28",
+      "score": 8.1,
+      "severity": "HIGH",
       "ransomware": false
     },
     {
@@ -113,18 +125,6 @@
       "due": "2026-09-23",
       "score": 8.8,
       "severity": "HIGH",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-85102",
-      "vendor": "Check Point",
-      "product": "Multiple Products",
-      "name": "Check Point Multiple Products Improper Certificate Validation Vulnerability",
-      "published": "2026-09-09",
-      "added": "2026-09-22",
-      "due": "2026-09-25",
-      "score": 9.8,
-      "severity": "CRITICAL",
       "ransomware": false
     }
   ]
