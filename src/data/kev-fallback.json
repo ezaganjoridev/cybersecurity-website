@@ -2,11 +2,35 @@
   "source": "CISA Known Exploited Vulnerabilities Catalog, dated via NVD",
   "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
   "ordering": "disclosure",
-  "catalogVersion": "2026.09.25",
-  "dateReleased": "2026-09-25T18:58:16.5029Z",
-  "totalInCatalog": 1726,
-  "fetchedAt": "2026-09-27T15:27:51.618Z",
+  "catalogVersion": "2026.09.27",
+  "dateReleased": "2026-09-27T21:30:35.5521Z",
+  "totalInCatalog": 1728,
+  "fetchedAt": "2026-09-28T18:18:55.133Z",
   "items": [
+    {
+      "id": "CVE-2026-88772",
+      "vendor": "Citrix",
+      "product": "NetScaler",
+      "name": "Citrix NetScaler Improper Restriction of Operations within the Bounds of a Memory Buffer Vulnerability",
+      "published": "2026-09-27",
+      "added": "2026-09-27",
+      "due": "2026-09-30",
+      "score": 9.5,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-88771",
+      "vendor": "Citrix",
+      "product": "NetScaler",
+      "name": "Citrix NetScaler Improper Input Validation Vulnerability",
+      "published": "2026-09-27",
+      "added": "2026-09-27",
+      "due": "2026-09-30",
+      "score": 9.5,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
     {
       "id": "CVE-2026-94127",
       "vendor": "F5",
@@ -101,30 +125,6 @@
       "due": "2026-09-17",
       "score": 9.8,
       "severity": "CRITICAL",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-85706",
-      "vendor": "GitLab",
-      "product": "Community Edition and Enterprise Edition",
-      "name": "GitLab Community Edition and Enterprise Edition Path Traversal Vulnerability",
-      "published": "2026-09-12",
-      "added": "2026-09-11",
-      "due": "2026-09-14",
-      "score": 10,
-      "severity": "CRITICAL",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-87491",
-      "vendor": "Google",
-      "product": "Chromium V8",
-      "name": "Google Chromium V8 Out of Bounds Write Vulnerability",
-      "published": "2026-09-09",
-      "added": "2026-09-09",
-      "due": "2026-09-23",
-      "score": 8.8,
-      "severity": "HIGH",
       "ransomware": false
     }
   ]
