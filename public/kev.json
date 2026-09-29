@@ -2,11 +2,23 @@
   "source": "CISA Known Exploited Vulnerabilities Catalog, dated via NVD",
   "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
   "ordering": "disclosure",
-  "catalogVersion": "2026.09.27",
-  "dateReleased": "2026-09-27T21:30:35.5521Z",
-  "totalInCatalog": 1728,
-  "fetchedAt": "2026-09-28T18:18:55.133Z",
+  "catalogVersion": "2026.09.29",
+  "dateReleased": "2026-09-29T13:51:33.3852Z",
+  "totalInCatalog": 1729,
+  "fetchedAt": "2026-09-29T16:41:56.401Z",
   "items": [
+    {
+      "id": "CVE-2026-86950",
+      "vendor": "Apple",
+      "product": "Multiple Products",
+      "name": "Apple Multiple Products Out-of-Bounds Write Vulnerability",
+      "published": "2026-09-28",
+      "added": "2026-09-29",
+      "due": "2026-10-02",
+      "score": 8.8,
+      "severity": "HIGH",
+      "ransomware": false
+    },
     {
       "id": "CVE-2026-88772",
       "vendor": "Citrix",
@@ -113,18 +125,6 @@
       "due": "2026-09-19",
       "score": 8.8,
       "severity": "HIGH",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-76461",
-      "vendor": "Cisco",
-      "product": "Secure Email Gateway",
-      "name": "Cisco Secure Email Gateway SQL Injection Vulnerability",
-      "published": "2026-09-14",
-      "added": "2026-09-14",
-      "due": "2026-09-17",
-      "score": 9.8,
-      "severity": "CRITICAL",
       "ransomware": false
     }
   ]
