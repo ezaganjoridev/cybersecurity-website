@@ -2,11 +2,23 @@
   "source": "CISA Known Exploited Vulnerabilities Catalog, dated via NVD",
   "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
   "ordering": "disclosure",
-  "catalogVersion": "2026.09.29",
-  "dateReleased": "2026-09-29T13:51:33.3852Z",
-  "totalInCatalog": 1729,
-  "fetchedAt": "2026-09-30T16:34:01.264Z",
+  "catalogVersion": "2026.09.30",
+  "dateReleased": "2026-09-30T16:59:23.0688Z",
+  "totalInCatalog": 1730,
+  "fetchedAt": "2026-10-01T17:11:54.814Z",
   "items": [
+    {
+      "id": "CVE-2026-76504",
+      "vendor": "Cisco",
+      "product": "Catalyst SD-WAN Manager",
+      "name": "Cisco Catalyst SD-WAN Manager Hex Encoding Vulnerability",
+      "published": "2026-09-30",
+      "added": "2026-09-30",
+      "due": "2026-10-03",
+      "score": 9.8,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
     {
       "id": "CVE-2026-86950",
       "vendor": "Apple",
@@ -113,18 +125,6 @@
       "due": "2026-09-19",
       "score": 10,
       "severity": "CRITICAL",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-58704",
-      "vendor": "Google",
-      "product": "Pixel",
-      "name": "Google Pixel Improper Authorization Vulnerability",
-      "published": "2026-09-15",
-      "added": "2026-09-16",
-      "due": "2026-09-19",
-      "score": 8.8,
-      "severity": "HIGH",
       "ransomware": false
     }
   ]
