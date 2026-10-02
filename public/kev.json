@@ -2,11 +2,23 @@
   "source": "CISA Known Exploited Vulnerabilities Catalog, dated via NVD",
   "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
   "ordering": "disclosure",
-  "catalogVersion": "2026.09.30",
-  "dateReleased": "2026-09-30T16:59:23.0688Z",
-  "totalInCatalog": 1730,
-  "fetchedAt": "2026-10-01T17:11:54.814Z",
+  "catalogVersion": "2026.10.02",
+  "dateReleased": "2026-10-02T15:19:38.2945Z",
+  "totalInCatalog": 1733,
+  "fetchedAt": "2026-10-02T16:25:19.564Z",
   "items": [
+    {
+      "id": "CVE-2026-104286",
+      "vendor": "Fortinet",
+      "product": "FortiMail",
+      "name": "Fortinet FortiMail Path Traversal Vulnerability",
+      "published": "2026-10-01",
+      "added": "2026-10-01",
+      "due": "2026-10-04",
+      "score": 9.8,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
     {
       "id": "CVE-2026-76504",
       "vendor": "Cisco",
@@ -16,6 +28,30 @@
       "added": "2026-09-30",
       "due": "2026-10-03",
       "score": 9.8,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-102490",
+      "vendor": "Zammad GmbH",
+      "product": "Zammad",
+      "name": "Zammad GmbH Zammad Improper Privilege Management Vulnerability",
+      "published": "2026-09-30",
+      "added": "2026-10-02",
+      "due": "2026-10-05",
+      "score": 9.4,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-102489",
+      "vendor": "Zammad GmbH",
+      "product": "Zammad",
+      "name": "Zammad GmbH Zammad Session Fixation Vulnerability",
+      "published": "2026-09-30",
+      "added": "2026-10-02",
+      "due": "2026-10-05",
+      "score": 9.4,
       "severity": "CRITICAL",
       "ransomware": false
     },
@@ -88,42 +124,6 @@
       "added": "2026-09-22",
       "due": "2026-09-25",
       "score": 9.8,
-      "severity": "CRITICAL",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-87902",
-      "vendor": "WordPress",
-      "product": "Core",
-      "name": "WordPress Core Remote File Inclusion Vulnerability",
-      "published": "2026-09-22",
-      "added": "2026-09-25",
-      "due": "2026-09-28",
-      "score": 8.1,
-      "severity": "HIGH",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-87886",
-      "vendor": "Acronis",
-      "product": "Backup",
-      "name": "Acronis Backup Incorrect Default Permissions Vulnerability",
-      "published": "2026-09-17",
-      "added": "2026-09-16",
-      "due": "2026-09-19",
-      "score": 7.8,
-      "severity": "HIGH",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-76460",
-      "vendor": "Cisco",
-      "product": "Identity Services Engine",
-      "name": "Cisco Identity Services Engine Incorrect Use of Privileged APIs Vulnerability",
-      "published": "2026-09-16",
-      "added": "2026-09-16",
-      "due": "2026-09-19",
-      "score": 10,
       "severity": "CRITICAL",
       "ransomware": false
     }
