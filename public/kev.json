@@ -2,11 +2,23 @@
   "source": "CISA Known Exploited Vulnerabilities Catalog, dated via NVD",
   "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
   "ordering": "disclosure",
-  "catalogVersion": "2026.10.02",
-  "dateReleased": "2026-10-02T15:19:38.2945Z",
-  "totalInCatalog": 1733,
-  "fetchedAt": "2026-10-04T15:34:28.778Z",
+  "catalogVersion": "2026.10.04",
+  "dateReleased": "2026-10-04T18:52:56.0635Z",
+  "totalInCatalog": 1734,
+  "fetchedAt": "2026-10-05T19:26:55.526Z",
   "items": [
+    {
+      "id": "CVE-2026-88779",
+      "vendor": "Citrix",
+      "product": "NetScaler",
+      "name": "Citrix NetScaler Improper Restriction of Operations within the Bounds of a Memory Buffer Vulnerability",
+      "published": "2026-10-04",
+      "added": "2026-10-04",
+      "due": "2026-10-07",
+      "score": 8.7,
+      "severity": "HIGH",
+      "ransomware": false
+    },
     {
       "id": "CVE-2026-104286",
       "vendor": "Fortinet",
@@ -112,18 +124,6 @@
       "added": "2026-09-22",
       "due": "2026-09-25",
       "score": 9.5,
-      "severity": "CRITICAL",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-93616",
-      "vendor": "Check Point",
-      "product": "Multiple Products",
-      "name": "Check Point Multiple Products Path Traversal Vulnerability",
-      "published": "2026-09-22",
-      "added": "2026-09-22",
-      "due": "2026-09-25",
-      "score": 9.8,
       "severity": "CRITICAL",
       "ransomware": false
     }
