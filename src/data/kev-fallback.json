@@ -3,9 +3,9 @@
   "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
   "ordering": "disclosure",
   "catalogVersion": "2026.10.08",
-  "dateReleased": "2026-10-08T17:20:54.304Z",
+  "dateReleased": "2026-10-08T20:09:18.9833Z",
   "totalInCatalog": 1739,
-  "fetchedAt": "2026-10-08T17:39:52.525Z",
+  "fetchedAt": "2026-10-09T17:15:08.399Z",
   "items": [
     {
       "id": "CVE-2026-88779",
@@ -74,7 +74,7 @@
       "name": "Apple Multiple Products Out-of-Bounds Write Vulnerability",
       "published": "2026-09-28",
       "added": "2026-09-29",
-      "due": "2026-10-02",
+      "due": "2026-10-13",
       "score": 8.8,
       "severity": "HIGH",
       "ransomware": false
