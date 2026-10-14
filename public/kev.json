@@ -3,10 +3,34 @@
   "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
   "ordering": "disclosure",
   "catalogVersion": "2026.10.13",
-  "dateReleased": "2026-10-13T16:36:26.1679Z",
-  "totalInCatalog": 1740,
-  "fetchedAt": "2026-10-13T17:51:55.345Z",
+  "dateReleased": "2026-10-13T19:10:43.6568Z",
+  "totalInCatalog": 1741,
+  "fetchedAt": "2026-10-14T15:38:29.889Z",
   "items": [
+    {
+      "id": "CVE-2026-96951",
+      "vendor": "Microsoft",
+      "product": "Windows",
+      "name": "Microsoft Windows Command Injection Vulnerability",
+      "published": "2026-10-13",
+      "added": "2026-10-13",
+      "due": "2026-10-16",
+      "score": 8.8,
+      "severity": "HIGH",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-104935",
+      "vendor": "Ivanti",
+      "product": "Connect Secure",
+      "name": "Ivanti Connect Secure Authentication Bypass by Spoofing Vulnerability",
+      "published": "2026-10-13",
+      "added": "2026-10-13",
+      "due": "2026-10-16",
+      "score": 8.6,
+      "severity": "HIGH",
+      "ransomware": false
+    },
     {
       "id": "CVE-2026-88779",
       "vendor": "Citrix",
@@ -99,30 +123,6 @@
       "published": "2026-09-27",
       "added": "2026-09-27",
       "due": "2026-09-30",
-      "score": 9.5,
-      "severity": "CRITICAL",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-94127",
-      "vendor": "F5",
-      "product": "BIG-IP APM",
-      "name": "F5 BIG-IP APM Heap-based Buffer Overflow Vulnerability",
-      "published": "2026-09-22",
-      "added": "2026-09-22",
-      "due": "2026-09-25",
-      "score": 9.3,
-      "severity": "CRITICAL",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-93952",
-      "vendor": "Arista",
-      "product": "VeloCloud Orchestrator",
-      "name": "Arista VeloCloud Orchestrator Improper Input Validation Vulnerability",
-      "published": "2026-09-22",
-      "added": "2026-09-22",
-      "due": "2026-09-25",
       "score": 9.5,
       "severity": "CRITICAL",
       "ransomware": false
