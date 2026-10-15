@@ -2,11 +2,35 @@
   "source": "CISA Known Exploited Vulnerabilities Catalog, dated via NVD",
   "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
   "ordering": "disclosure",
-  "catalogVersion": "2026.10.13",
-  "dateReleased": "2026-10-13T19:10:43.6568Z",
-  "totalInCatalog": 1741,
-  "fetchedAt": "2026-10-14T15:38:29.889Z",
+  "catalogVersion": "2026.10.14",
+  "dateReleased": "2026-10-14T19:27:28.0105Z",
+  "totalInCatalog": 1745,
+  "fetchedAt": "2026-10-15T15:24:37.739Z",
   "items": [
+    {
+      "id": "CVE-2026-76519",
+      "vendor": "Cisco",
+      "product": "Secure Email Gateway",
+      "name": "Cisco Secure Email Gateway Relative Path Traversal Vulnerability",
+      "published": "2026-10-14",
+      "added": "2026-10-14",
+      "due": "2026-10-17",
+      "score": 9.8,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-0322",
+      "vendor": "Palo Alto Networks",
+      "product": "PAN-OS",
+      "name": "Palo Alto Networks PAN-OS Code Injection Vulnerability",
+      "published": "2026-10-14",
+      "added": "2026-10-14",
+      "due": "2026-10-17",
+      "score": 8.6,
+      "severity": "HIGH",
+      "ransomware": false
+    },
     {
       "id": "CVE-2026-96951",
       "vendor": "Microsoft",
@@ -44,6 +68,30 @@
       "ransomware": false
     },
     {
+      "id": "CVE-2026-105134",
+      "vendor": "Ahsay",
+      "product": "AhsayCBS",
+      "name": "Ahsay AhsayCBS Command Injection Vulnerability",
+      "published": "2026-10-04",
+      "added": "2026-10-14",
+      "due": "2026-10-17",
+      "score": 9.3,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-105133",
+      "vendor": "Ahsay",
+      "product": "AhsayCBS",
+      "name": "Ahsay AhsayCBS Improper Authentication Vulnerability",
+      "published": "2026-10-04",
+      "added": "2026-10-14",
+      "due": "2026-10-17",
+      "score": 5.5,
+      "severity": "MEDIUM",
+      "ransomware": false
+    },
+    {
       "id": "CVE-2026-104286",
       "vendor": "Fortinet",
       "product": "FortiMail",
@@ -76,54 +124,6 @@
       "added": "2026-10-02",
       "due": "2026-10-05",
       "score": 9.4,
-      "severity": "CRITICAL",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-102489",
-      "vendor": "Zammad GmbH",
-      "product": "Zammad",
-      "name": "Zammad GmbH Zammad Session Fixation Vulnerability",
-      "published": "2026-09-30",
-      "added": "2026-10-02",
-      "due": "2026-10-05",
-      "score": 9.4,
-      "severity": "CRITICAL",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-86950",
-      "vendor": "Apple",
-      "product": "Multiple Products",
-      "name": "Apple Multiple Products Out-of-Bounds Write Vulnerability",
-      "published": "2026-09-28",
-      "added": "2026-09-29",
-      "due": "2026-10-13",
-      "score": 8.8,
-      "severity": "HIGH",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-88772",
-      "vendor": "Citrix",
-      "product": "NetScaler",
-      "name": "Citrix NetScaler Improper Restriction of Operations within the Bounds of a Memory Buffer Vulnerability",
-      "published": "2026-09-27",
-      "added": "2026-09-27",
-      "due": "2026-09-30",
-      "score": 9.5,
-      "severity": "CRITICAL",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-88771",
-      "vendor": "Citrix",
-      "product": "NetScaler",
-      "name": "Citrix NetScaler Improper Input Validation Vulnerability",
-      "published": "2026-09-27",
-      "added": "2026-09-27",
-      "due": "2026-09-30",
-      "score": 9.5,
       "severity": "CRITICAL",
       "ransomware": false
     }
