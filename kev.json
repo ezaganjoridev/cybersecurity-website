@@ -1,0 +1,131 @@
+{
+  "source": "CISA Known Exploited Vulnerabilities Catalog, dated via NVD",
+  "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+  "ordering": "disclosure",
+  "catalogVersion": "2026.10.16",
+  "dateReleased": "2026-10-16T17:15:48.8752Z",
+  "totalInCatalog": 1748,
+  "fetchedAt": "2026-10-17T13:59:45.233Z",
+  "items": [
+    {
+      "id": "CVE-2026-102764",
+      "vendor": "BeyondTrust",
+      "product": "Remote Support",
+      "name": "BeyondTrust Remote Support Authentication Bypass by Spoofing Vulnerability",
+      "published": "2026-10-15",
+      "added": "2026-10-16",
+      "due": "2026-10-19",
+      "score": 9.3,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-76519",
+      "vendor": "Cisco",
+      "product": "Secure Email Gateway",
+      "name": "Cisco Secure Email Gateway Relative Path Traversal Vulnerability",
+      "published": "2026-10-14",
+      "added": "2026-10-14",
+      "due": "2026-10-17",
+      "score": 9.8,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-0322",
+      "vendor": "Palo Alto Networks",
+      "product": "PAN-OS",
+      "name": "Palo Alto Networks PAN-OS Code Injection Vulnerability",
+      "published": "2026-10-14",
+      "added": "2026-10-14",
+      "due": "2026-10-17",
+      "score": 8.6,
+      "severity": "HIGH",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-96951",
+      "vendor": "Microsoft",
+      "product": "Windows",
+      "name": "Microsoft Windows Command Injection Vulnerability",
+      "published": "2026-10-13",
+      "added": "2026-10-13",
+      "due": "2026-10-16",
+      "score": 8.8,
+      "severity": "HIGH",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-104935",
+      "vendor": "Ivanti",
+      "product": "Connect Secure",
+      "name": "Ivanti Connect Secure Authentication Bypass by Spoofing Vulnerability",
+      "published": "2026-10-13",
+      "added": "2026-10-13",
+      "due": "2026-10-16",
+      "score": 8.6,
+      "severity": "HIGH",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-21589",
+      "vendor": "Atlassian",
+      "product": "Multiple Products",
+      "name": "Atlassian Multiple Products Files or Directories Accessible to External Parties Vulnerability",
+      "published": "2026-10-05",
+      "added": "2026-10-15",
+      "due": "2026-10-18",
+      "score": null,
+      "severity": null,
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-88779",
+      "vendor": "Citrix",
+      "product": "NetScaler",
+      "name": "Citrix NetScaler Improper Restriction of Operations within the Bounds of a Memory Buffer Vulnerability",
+      "published": "2026-10-04",
+      "added": "2026-10-04",
+      "due": "2026-10-07",
+      "score": 8.7,
+      "severity": "HIGH",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-105134",
+      "vendor": "Ahsay",
+      "product": "AhsayCBS",
+      "name": "Ahsay AhsayCBS Command Injection Vulnerability",
+      "published": "2026-10-04",
+      "added": "2026-10-14",
+      "due": "2026-10-17",
+      "score": 9.3,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-105133",
+      "vendor": "Ahsay",
+      "product": "AhsayCBS",
+      "name": "Ahsay AhsayCBS Improper Authentication Vulnerability",
+      "published": "2026-10-04",
+      "added": "2026-10-14",
+      "due": "2026-10-17",
+      "score": 5.5,
+      "severity": "MEDIUM",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-104286",
+      "vendor": "Fortinet",
+      "product": "FortiMail",
+      "name": "Fortinet FortiMail Path Traversal Vulnerability",
+      "published": "2026-10-01",
+      "added": "2026-10-01",
+      "due": "2026-10-04",
+      "score": 9.8,
+      "severity": "CRITICAL",
+      "ransomware": false
+    }
+  ]
+}
