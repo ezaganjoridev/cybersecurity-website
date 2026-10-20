@@ -5,7 +5,7 @@
   "catalogVersion": "2026.10.16",
   "dateReleased": "2026-10-16T17:15:48.8752Z",
   "totalInCatalog": 1748,
-  "fetchedAt": "2026-10-19T17:16:06.626Z",
+  "fetchedAt": "2026-10-20T15:29:22.272Z",
   "items": [
     {
       "id": "CVE-2026-102764",
@@ -75,8 +75,8 @@
       "published": "2026-10-05",
       "added": "2026-10-15",
       "due": "2026-10-18",
-      "score": null,
-      "severity": null,
+      "score": 9.3,
+      "severity": "CRITICAL",
       "ransomware": false
     },
     {
