@@ -1,0 +1,131 @@
+{
+  "source": "CISA Known Exploited Vulnerabilities Catalog, dated via NVD",
+  "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+  "ordering": "disclosure",
+  "catalogVersion": "2026.10.23",
+  "dateReleased": "2026-10-23T19:30:18.9209Z",
+  "totalInCatalog": 1756,
+  "fetchedAt": "2026-10-24T14:10:15.122Z",
+  "items": [
+    {
+      "id": "CVE-2026-114625",
+      "vendor": "Arista",
+      "product": "VeloCloud Orchestrator",
+      "name": "Arista VeloCloud Orchestrator SQL Injection Vulnerability",
+      "published": "2026-10-22",
+      "added": "2026-10-23",
+      "due": "2026-10-26",
+      "score": 9.4,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-110936",
+      "vendor": "Siemens",
+      "product": "Software Center",
+      "name": "Siemens Software Center Uncontrolled Search Path Element Vulnerability",
+      "published": "2026-10-15",
+      "added": "2026-10-20",
+      "due": "2026-11-03",
+      "score": 8.4,
+      "severity": "HIGH",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-102764",
+      "vendor": "BeyondTrust",
+      "product": "Remote Support",
+      "name": "BeyondTrust Remote Support Authentication Bypass by Spoofing Vulnerability",
+      "published": "2026-10-15",
+      "added": "2026-10-16",
+      "due": "2026-10-19",
+      "score": 9.3,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-76519",
+      "vendor": "Cisco",
+      "product": "Secure Email Gateway",
+      "name": "Cisco Secure Email Gateway Relative Path Traversal Vulnerability",
+      "published": "2026-10-14",
+      "added": "2026-10-14",
+      "due": "2026-10-17",
+      "score": 9.8,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-110447",
+      "vendor": "Collabora",
+      "product": "Collabora Online – Built-in CODE Server",
+      "name": "Collabora Online – Built-in CODE Server OS Command Injection Vulnerability",
+      "published": "2026-10-14",
+      "added": "2026-10-23",
+      "due": "2026-10-26",
+      "score": 9.2,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-106931",
+      "vendor": "EG Secure Solutions",
+      "product": "SiteGuard Server Edition",
+      "name": "EG Secure Solutions SiteGuard Server Edition OS Command Injection Vulnerability",
+      "published": "2026-10-14",
+      "added": "2026-10-20",
+      "due": "2026-10-23",
+      "score": 8.5,
+      "severity": "HIGH",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-0322",
+      "vendor": "Palo Alto Networks",
+      "product": "PAN-OS",
+      "name": "Palo Alto Networks PAN-OS Code Injection Vulnerability",
+      "published": "2026-10-14",
+      "added": "2026-10-14",
+      "due": "2026-10-17",
+      "score": 8.6,
+      "severity": "HIGH",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-96951",
+      "vendor": "Microsoft",
+      "product": "Windows",
+      "name": "Microsoft Windows Command Injection Vulnerability",
+      "published": "2026-10-13",
+      "added": "2026-10-13",
+      "due": "2026-10-16",
+      "score": 8.8,
+      "severity": "HIGH",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-104935",
+      "vendor": "Ivanti",
+      "product": "Connect Secure",
+      "name": "Ivanti Connect Secure Authentication Bypass by Spoofing Vulnerability",
+      "published": "2026-10-13",
+      "added": "2026-10-13",
+      "due": "2026-10-16",
+      "score": 8.6,
+      "severity": "HIGH",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-21589",
+      "vendor": "Atlassian",
+      "product": "Multiple Products",
+      "name": "Atlassian Multiple Products Files or Directories Accessible to External Parties Vulnerability",
+      "published": "2026-10-05",
+      "added": "2026-10-15",
+      "due": "2026-10-18",
+      "score": 9.3,
+      "severity": "CRITICAL",
+      "ransomware": false
+    }
+  ]
+}
