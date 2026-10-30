@@ -2,11 +2,23 @@
   "source": "CISA Known Exploited Vulnerabilities Catalog, dated via NVD",
   "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
   "ordering": "disclosure",
-  "catalogVersion": "2026.10.28",
-  "dateReleased": "2026-10-28T19:00:04.8077Z",
-  "totalInCatalog": 1762,
-  "fetchedAt": "2026-10-29T17:12:36.435Z",
+  "catalogVersion": "2026.10.29",
+  "dateReleased": "2026-10-29T19:09:34.4003Z",
+  "totalInCatalog": 1764,
+  "fetchedAt": "2026-10-30T16:53:03.557Z",
   "items": [
+    {
+      "id": "CVE-2026-76418",
+      "vendor": "Cisco",
+      "product": "Secure Firewall ASA Software and Cisco Secure FTD Software",
+      "name": "Cisco Secure Firewall ASA Software and Cisco Secure FTD Software Unchecked Return Value to NULL Pointer Dereference Vulnerability",
+      "published": "2026-10-28",
+      "added": "2026-10-29",
+      "due": "2026-11-01",
+      "score": 8.6,
+      "severity": "HIGH",
+      "ransomware": false
+    },
     {
       "id": "CVE-2026-114625",
       "vendor": "Arista",
@@ -112,18 +124,6 @@
       "added": "2026-10-20",
       "due": "2026-10-23",
       "score": 8.5,
-      "severity": "HIGH",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-0322",
-      "vendor": "Palo Alto Networks",
-      "product": "PAN-OS",
-      "name": "Palo Alto Networks PAN-OS Code Injection Vulnerability",
-      "published": "2026-10-14",
-      "added": "2026-10-14",
-      "due": "2026-10-17",
-      "score": 8.6,
       "severity": "HIGH",
       "ransomware": false
     }
