@@ -2,10 +2,10 @@
   "source": "CISA Known Exploited Vulnerabilities Catalog, dated via NVD",
   "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
   "ordering": "disclosure",
-  "catalogVersion": "2026.10.29",
-  "dateReleased": "2026-10-29T19:09:34.4003Z",
-  "totalInCatalog": 1764,
-  "fetchedAt": "2026-10-30T16:53:03.557Z",
+  "catalogVersion": "2026.10.30",
+  "dateReleased": "2026-10-30T17:02:45.3665Z",
+  "totalInCatalog": 1766,
+  "fetchedAt": "2026-10-31T15:54:59.889Z",
   "items": [
     {
       "id": "CVE-2026-76418",
@@ -68,6 +68,18 @@
       "ransomware": false
     },
     {
+      "id": "CVE-2026-111357",
+      "vendor": "Ivanti",
+      "product": "Connect Secure",
+      "name": "Ivanti Connect Secure Missing Authentication for Critical Function Vulnerability",
+      "published": "2026-10-15",
+      "added": "2026-10-30",
+      "due": "2026-11-02",
+      "score": 7,
+      "severity": "HIGH",
+      "ransomware": false
+    },
+    {
       "id": "CVE-2026-110936",
       "vendor": "Siemens",
       "product": "Software Center",
@@ -113,18 +125,6 @@
       "due": "2026-10-26",
       "score": 9.2,
       "severity": "CRITICAL",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-106931",
-      "vendor": "EG Secure Solutions",
-      "product": "SiteGuard Server Edition",
-      "name": "EG Secure Solutions SiteGuard Server Edition OS Command Injection Vulnerability",
-      "published": "2026-10-14",
-      "added": "2026-10-20",
-      "due": "2026-10-23",
-      "score": 8.5,
-      "severity": "HIGH",
       "ransomware": false
     }
   ]
