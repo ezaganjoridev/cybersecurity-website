@@ -5,8 +5,20 @@
   "catalogVersion": "2026.10.30",
   "dateReleased": "2026-10-30T17:02:45.3665Z",
   "totalInCatalog": 1766,
-  "fetchedAt": "2026-11-02T20:35:06.057Z",
+  "fetchedAt": "2026-11-03T18:10:33.175Z",
   "items": [
+    {
+      "id": "CVE-2026-118527",
+      "vendor": "Ivanti",
+      "product": "Connect Secure",
+      "name": "Ivanti Connect Secure Generation of Predictable Numbers or Identifiers Vulnerability",
+      "published": "2026-11-03",
+      "added": "2026-10-30",
+      "due": "2026-11-13",
+      "score": 4.3,
+      "severity": "MEDIUM",
+      "ransomware": false
+    },
     {
       "id": "CVE-2026-76418",
       "vendor": "Cisco",
@@ -112,18 +124,6 @@
       "added": "2026-10-14",
       "due": "2026-10-17",
       "score": 9.8,
-      "severity": "CRITICAL",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-110447",
-      "vendor": "Collabora",
-      "product": "Collabora Online – Built-in CODE Server",
-      "name": "Collabora Online – Built-in CODE Server OS Command Injection Vulnerability",
-      "published": "2026-10-14",
-      "added": "2026-10-23",
-      "due": "2026-10-26",
-      "score": 9.2,
       "severity": "CRITICAL",
       "ransomware": false
     }
