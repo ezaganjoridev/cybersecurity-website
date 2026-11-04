@@ -2,10 +2,10 @@
   "source": "CISA Known Exploited Vulnerabilities Catalog, dated via NVD",
   "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
   "ordering": "disclosure",
-  "catalogVersion": "2026.10.30",
-  "dateReleased": "2026-10-30T17:02:45.3665Z",
-  "totalInCatalog": 1766,
-  "fetchedAt": "2026-11-03T18:10:33.175Z",
+  "catalogVersion": "2026.11.03",
+  "dateReleased": "2026-11-03T20:00:24.8741Z",
+  "totalInCatalog": 1767,
+  "fetchedAt": "2026-11-04T18:20:24.706Z",
   "items": [
     {
       "id": "CVE-2026-118527",
@@ -17,6 +17,18 @@
       "due": "2026-11-13",
       "score": 4.3,
       "severity": "MEDIUM",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-119977",
+      "vendor": "WordPress",
+      "product": "WordPress Core",
+      "name": "WordPress WordPress Core Time-of-check Time-of-use (TOCTOU) Race Condition Vulnerability",
+      "published": "2026-10-31",
+      "added": "2026-11-03",
+      "due": "2026-11-06",
+      "score": 8.1,
+      "severity": "HIGH",
       "ransomware": false
     },
     {
@@ -112,18 +124,6 @@
       "added": "2026-10-16",
       "due": "2026-10-19",
       "score": 9.3,
-      "severity": "CRITICAL",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-76519",
-      "vendor": "Cisco",
-      "product": "Secure Email Gateway",
-      "name": "Cisco Secure Email Gateway Relative Path Traversal Vulnerability",
-      "published": "2026-10-14",
-      "added": "2026-10-14",
-      "due": "2026-10-17",
-      "score": 9.8,
       "severity": "CRITICAL",
       "ransomware": false
     }
