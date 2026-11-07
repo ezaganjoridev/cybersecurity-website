@@ -2,11 +2,23 @@
   "source": "CISA Known Exploited Vulnerabilities Catalog, dated via NVD",
   "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
   "ordering": "disclosure",
-  "catalogVersion": "2026.11.04",
-  "dateReleased": "2026-11-04T20:00:05.774Z",
-  "totalInCatalog": 1768,
-  "fetchedAt": "2026-11-06T17:44:38.422Z",
+  "catalogVersion": "2026.11.06",
+  "dateReleased": "2026-11-06T19:44:45.1797Z",
+  "totalInCatalog": 1769,
+  "fetchedAt": "2026-11-07T16:41:14.883Z",
   "items": [
+    {
+      "id": "CVE-2026-19868",
+      "vendor": "SonicWall",
+      "product": "SonicOS SSLVPN",
+      "name": "SonicWall SonicOS SSLVPN Use of Single-factor Authentication Vulnerability",
+      "published": "2026-11-06",
+      "added": "2026-11-06",
+      "due": "2026-11-20",
+      "score": 7.5,
+      "severity": "HIGH",
+      "ransomware": false
+    },
     {
       "id": "CVE-2026-118527",
       "vendor": "Ivanti",
@@ -113,18 +125,6 @@
       "due": "2026-11-03",
       "score": 8.4,
       "severity": "HIGH",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-102764",
-      "vendor": "BeyondTrust",
-      "product": "Remote Support",
-      "name": "BeyondTrust Remote Support Authentication Bypass by Spoofing Vulnerability",
-      "published": "2026-10-15",
-      "added": "2026-10-16",
-      "due": "2026-10-19",
-      "score": 9.3,
-      "severity": "CRITICAL",
       "ransomware": false
     }
   ]
