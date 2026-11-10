@@ -5,8 +5,20 @@
   "catalogVersion": "2026.11.09",
   "dateReleased": "2026-11-09T19:54:37.4945Z",
   "totalInCatalog": 1773,
-  "fetchedAt": "2026-11-09T21:12:10.458Z",
+  "fetchedAt": "2026-11-10T18:22:57.757Z",
   "items": [
+    {
+      "id": "CVE-2026-123218",
+      "vendor": "IBM",
+      "product": "Aspera Faspex",
+      "name": "IBM Aspera Faspex Incorrect Authorization Vulnerability",
+      "published": "2026-11-07",
+      "added": "2026-11-09",
+      "due": "2026-11-12",
+      "score": 9.8,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
     {
       "id": "CVE-2026-19868",
       "vendor": "SonicWall",
@@ -111,18 +123,6 @@
       "published": "2026-10-22",
       "added": "2026-10-27",
       "due": "2026-11-10",
-      "score": 9.2,
-      "severity": "CRITICAL",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-109619",
-      "vendor": "PHP Group",
-      "product": "PHP",
-      "name": "PHP Stale Internal Request-State Vulnerability",
-      "published": "2026-10-21",
-      "added": "2026-10-26",
-      "due": "2026-10-29",
       "score": 9.2,
       "severity": "CRITICAL",
       "ransomware": false
