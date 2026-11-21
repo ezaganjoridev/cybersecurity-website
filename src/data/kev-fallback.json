@@ -5,8 +5,32 @@
   "catalogVersion": "2026.11.20",
   "dateReleased": "2026-11-20T17:48:39.1516Z",
   "totalInCatalog": 1790,
-  "fetchedAt": "2026-11-20T18:54:59.592Z",
+  "fetchedAt": "2026-11-21T17:49:37.480Z",
   "items": [
+    {
+      "id": "CVE-2026-123890",
+      "vendor": "Broadcom",
+      "product": "VMware vCenter",
+      "name": "VMWare vCenter Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+      "published": "2026-11-19",
+      "added": "2026-11-20",
+      "due": "2026-11-23",
+      "score": 9.8,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-129448",
+      "vendor": "Apache",
+      "product": "Roller",
+      "name": "Apache Roller Deserialization of Untrusted Data Vulnerability",
+      "published": "2026-11-17",
+      "added": "2026-11-20",
+      "due": "2026-11-23",
+      "score": 9.8,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
     {
       "id": "CVE-2026-123039",
       "vendor": "Check Point",
@@ -101,30 +125,6 @@
       "due": "2026-11-12",
       "score": 8.1,
       "severity": "HIGH",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-116779",
-      "vendor": "SignalWire",
-      "product": "FreeSwitch",
-      "name": "SignalWire FreeSwitch Code Injection Vulnerability",
-      "published": "2026-11-05",
-      "added": "2026-11-09",
-      "due": "2026-11-12",
-      "score": 9.8,
-      "severity": "CRITICAL",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-102895",
-      "vendor": "GPUStack",
-      "product": "GPUStack",
-      "name": "GPUStack Improper Authentication Vulnerability",
-      "published": "2026-11-04",
-      "added": "2026-11-09",
-      "due": "2026-11-12",
-      "score": 9.8,
-      "severity": "CRITICAL",
       "ransomware": false
     }
   ]
