@@ -2,11 +2,47 @@
   "source": "CISA Known Exploited Vulnerabilities Catalog, dated via NVD",
   "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
   "ordering": "disclosure",
-  "catalogVersion": "2026.11.23",
-  "dateReleased": "2026-11-23T19:43:55.7979Z",
-  "totalInCatalog": 1792,
-  "fetchedAt": "2026-11-23T22:19:05.593Z",
+  "catalogVersion": "2026.11.24",
+  "dateReleased": "2026-11-24T17:47:46.199Z",
+  "totalInCatalog": 1795,
+  "fetchedAt": "2026-11-24T20:56:48.148Z",
   "items": [
+    {
+      "id": "CVE-2026-134624",
+      "vendor": "N-able",
+      "product": "MailAssure",
+      "name": "N-able MailAssure (SpamExperts) Server-Side Request Forgery (SSRF) Vulnerability",
+      "published": "2026-11-22",
+      "added": "2026-11-23",
+      "due": "2026-11-26",
+      "score": 9.3,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-133968",
+      "vendor": "Project MONAI",
+      "product": "MONAI Label",
+      "name": "Project MONAI MONAI Label Path Traversal Vulnerability",
+      "published": "2026-11-20",
+      "added": "2026-11-23",
+      "due": "2026-11-26",
+      "score": 9.8,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-131914",
+      "vendor": "Idunno",
+      "product": "AntiCsrf",
+      "name": "Idunno AntiCsrf Deserialization of Untrusted Data Vulnerability",
+      "published": "2026-11-19",
+      "added": "2026-11-24",
+      "due": "2026-11-27",
+      "score": 9.3,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
     {
       "id": "CVE-2026-123890",
       "vendor": "Broadcom",
@@ -17,6 +53,18 @@
       "due": "2026-11-23",
       "score": 9.8,
       "severity": "CRITICAL",
+      "ransomware": false
+    },
+    {
+      "id": "CVE-2026-132224",
+      "vendor": "Optimizely",
+      "product": "Web Experimentation",
+      "name": "Optimizely Web Experimentation External Control of Critical State Data Vulnerability",
+      "published": "2026-11-18",
+      "added": "2026-11-24",
+      "due": "2026-11-27",
+      "score": 7.1,
+      "severity": "HIGH",
       "ransomware": false
     },
     {
@@ -76,54 +124,6 @@
       "added": "2026-11-13",
       "due": "2026-11-16",
       "score": 8.6,
-      "severity": "HIGH",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-123218",
-      "vendor": "IBM",
-      "product": "Aspera Faspex",
-      "name": "IBM Aspera Faspex Incorrect Authorization Vulnerability",
-      "published": "2026-11-07",
-      "added": "2026-11-09",
-      "due": "2026-11-12",
-      "score": 9.8,
-      "severity": "CRITICAL",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-90436",
-      "vendor": "Apache",
-      "product": "Axis",
-      "name": "Apache Axis Unsafe Reflection Vulnerability",
-      "published": "2026-11-06",
-      "added": "2026-11-18",
-      "due": "2026-11-21",
-      "score": 9.8,
-      "severity": "CRITICAL",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-19868",
-      "vendor": "SonicWall",
-      "product": "SonicOS SSLVPN",
-      "name": "SonicWall SonicOS SSLVPN Use of Single-factor Authentication Vulnerability",
-      "published": "2026-11-06",
-      "added": "2026-11-06",
-      "due": "2026-11-20",
-      "score": 7.5,
-      "severity": "HIGH",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-123158",
-      "vendor": "OpenBSD",
-      "product": "OpenSSH",
-      "name": "OpenBSD OpenSSH Unexpected Status Code or Return Value Vulnerability",
-      "published": "2026-11-05",
-      "added": "2026-11-09",
-      "due": "2026-11-12",
-      "score": 8.1,
       "severity": "HIGH",
       "ransomware": false
     }
