@@ -2,10 +2,10 @@
   "source": "CISA Known Exploited Vulnerabilities Catalog, dated via NVD",
   "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
   "ordering": "disclosure",
-  "catalogVersion": "2026.11.25",
-  "dateReleased": "2026-11-25T19:48:12.4344Z",
-  "totalInCatalog": 1805,
-  "fetchedAt": "2026-11-26T19:55:28.681Z",
+  "catalogVersion": "2026.11.27",
+  "dateReleased": "2026-11-27T18:03:12.5733Z",
+  "totalInCatalog": 1808,
+  "fetchedAt": "2026-11-27T19:44:41.624Z",
   "items": [
     {
       "id": "CVE-2026-132165",
@@ -15,8 +15,8 @@
       "published": "2026-11-26",
       "added": "2026-11-24",
       "due": "2026-11-27",
-      "score": null,
-      "severity": null,
+      "score": 9.8,
+      "severity": "CRITICAL",
       "ransomware": false
     },
     {
