@@ -5,8 +5,20 @@
   "catalogVersion": "2026.11.27",
   "dateReleased": "2026-11-27T18:03:12.5733Z",
   "totalInCatalog": 1808,
-  "fetchedAt": "2026-11-27T19:44:41.624Z",
+  "fetchedAt": "2026-11-28T18:36:17.327Z",
   "items": [
+    {
+      "id": "CVE-2026-136716",
+      "vendor": "Drupal",
+      "product": "Core",
+      "name": "Drupal Core Improper Check for Unusual or Exceptional Conditions Vulnerability",
+      "published": "2026-11-26",
+      "added": "2026-11-27",
+      "due": "2026-11-30",
+      "score": 9.8,
+      "severity": "CRITICAL",
+      "ransomware": false
+    },
     {
       "id": "CVE-2026-132165",
       "vendor": "Drupal",
@@ -113,18 +125,6 @@
       "due": "2026-11-28",
       "score": 5.3,
       "severity": "MEDIUM",
-      "ransomware": false
-    },
-    {
-      "id": "CVE-2026-131914",
-      "vendor": "Idunno",
-      "product": "AntiCsrf",
-      "name": "Idunno AntiCsrf Deserialization of Untrusted Data Vulnerability",
-      "published": "2026-11-19",
-      "added": "2026-11-24",
-      "due": "2026-11-27",
-      "score": 9.3,
-      "severity": "CRITICAL",
       "ransomware": false
     }
   ]
